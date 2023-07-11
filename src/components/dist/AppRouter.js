@@ -25,7 +25,7 @@ var AppRouter = function () {
             react_1["default"].createElement(react_router_dom_1.Route, { path: "contacts", element: react_1["default"].createElement(ContactPage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "info", element: react_1["default"].createElement(InfoDisclosurePage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "investment", element: react_1["default"].createElement(InvestmentPage_1["default"], null) }),
-            react_1["default"].createElement(react_router_dom_1.Route, { path: "management", element: react_1["default"].createElement(ManagementPage_1["default"], null) }),
+            react_1["default"].createElement(react_router_dom_1.Route, { path: "managment", element: react_1["default"].createElement(ManagementPage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "news", element: react_1["default"].createElement(News_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "news/:id", element: react_1["default"].createElement(NewsPage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "*", element: react_1["default"].createElement(NotFoundPage_1["default"], null) }),

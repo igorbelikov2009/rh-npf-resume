@@ -1,0 +1,20 @@
+.logotype {
+  text-decoration: none;
+  outline: none;
+}
+.logotype__large {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .logotype__large {
+    display: block;
+  }
+}
+.logotype__small {
+  display: block;
+}
+@media screen and (min-width: 576px) {
+  .logotype__small {
+    display: none;
+  }
+}

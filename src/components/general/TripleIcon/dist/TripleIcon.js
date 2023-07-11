@@ -8,6 +8,6 @@ var TripleIcon = function (_a) {
     var state = light ? "light" : "dark";
     if (isLocalHovered || hovered)
         state = "colored";
-    return (react_1["default"].createElement("img", { onMouseOver: function () { return setIsLocalHovered(true); }, onMouseOut: function () { return setIsLocalHovered(false); }, src: "/icon/triple/" + icon + "/" + state + ".svg", alt: icon, className: TripleIcon_module_scss_1["default"]["triple-icon"] }));
+    return (react_1["default"].createElement("img", { onMouseOver: function () { return setIsLocalHovered(true); }, onMouseOut: function () { return setIsLocalHovered(false); }, src: "/icons/triple/" + icon + "/" + state + ".svg", alt: icon, className: TripleIcon_module_scss_1["default"]["triple-icon"] }));
 };
 exports["default"] = TripleIcon;
