@@ -96,8 +96,8 @@ const TopMenu: FC = () => {
           <div className={styles["top-menu__contacts"]}>
             <div className={styles["top-menu__phone"]}>
               <a
-                href="tel:+78002004766"
                 className={isBackgroundWhite ? styles["top-menu__link_news"] : styles["top-menu__link"]}
+                href="tel:+78002004766"
               >
                 8 800 200-47-66
               </a>

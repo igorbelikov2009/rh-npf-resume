@@ -1,10 +1,10 @@
 "use strict";
 exports.__esModule = true;
-var react_1 = require("react");
-require("../styles/Layout.scss");
 var react_router_dom_1 = require("react-router-dom");
+var react_1 = require("react");
 var Footer_1 = require("./Footer");
 var TopMenu_1 = require("./topMenu/TopMenu/TopMenu");
+require("../styles/Layout.scss");
 var Layout = function () {
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement("main", { className: "layuot" },

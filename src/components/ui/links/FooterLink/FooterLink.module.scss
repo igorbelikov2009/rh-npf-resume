@@ -1,0 +1,60 @@
+.link {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 13px;
+  line-height: 24px;
+  margin-bottom: 0;
+  color: #78828c;
+
+  transition: color 0.22s;
+  transition-duration: 0.22s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: color;
+
+  &:hover {
+    color: #28323c;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.link-active {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #28323c;
+
+  transition: color 0.22s;
+  transition-duration: 0.22s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: color;
+
+  &:last-of-type {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+}

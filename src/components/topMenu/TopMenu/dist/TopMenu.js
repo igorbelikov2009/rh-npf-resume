@@ -69,7 +69,7 @@ var TopMenu = function () {
             react_1["default"].createElement("div", { className: TopMenu_module_scss_1["default"]["top-menu__right-block"] },
                 react_1["default"].createElement("div", { className: TopMenu_module_scss_1["default"]["top-menu__contacts"] },
                     react_1["default"].createElement("div", { className: TopMenu_module_scss_1["default"]["top-menu__phone"] },
-                        react_1["default"].createElement("a", { href: "tel:+78002004766", className: isBackgroundWhite ? TopMenu_module_scss_1["default"]["top-menu__link_news"] : TopMenu_module_scss_1["default"]["top-menu__link"] }, "8 800 200-47-66"),
+                        react_1["default"].createElement("a", { className: isBackgroundWhite ? TopMenu_module_scss_1["default"]["top-menu__link_news"] : TopMenu_module_scss_1["default"]["top-menu__link"], href: "tel:+78002004766" }, "8 800 200-47-66"),
                         react_1["default"].createElement("button", { onClick: openAdminLogin, className: isBackgroundWhite ? TopMenu_module_scss_1["default"]["top-menu__call-back_news"] : TopMenu_module_scss_1["default"]["top-menu__call-back"] }, "\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440"))),
                 react_1["default"].createElement("div", { onMouseOver: function () { return setPrivateOfficeHovered(true); }, onMouseOut: function () { return setPrivateOfficeHovered(false); }, onClick: openLoginForm, className: TopMenu_module_scss_1["default"]["top-menu__private-office"] },
                     react_1["default"].createElement(TripleIcon_1["default"], { icon: "User", light: !isBackgroundWhite, hovered: isPrivateOfficeHovered }),

@@ -1,0 +1,109 @@
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.left-arrow__cursor-pointer {
+  position: relative;
+  width: 24px;
+  height: 26px;
+  cursor: pointer;
+
+  &:hover .left-image {
+    display: block;
+  }
+}
+
+.left-arrow__cursor-default {
+  position: relative;
+  width: 24px;
+  height: 26px;
+  cursor: default;
+
+  &:hover .left-image {
+    display: none;
+  }
+}
+
+.right-arrow__cursor-pointer {
+  position: relative;
+  width: 24px;
+  height: 26px;
+  cursor: pointer;
+
+  &:hover .right-image {
+    display: block;
+  }
+}
+
+.right-arrow__cursor-default {
+  position: relative;
+  width: 24px;
+  height: 26px;
+  cursor: default;
+
+  &:hover .right-image {
+    display: none;
+  }
+}
+
+.left-image {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+  display: none;
+}
+
+.left-image_opacity-1 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+
+  opacity: 1;
+}
+
+.left-image_opacity-04 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+
+  opacity: 0.4;
+}
+
+.right-image {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.right-image_opacity-1 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.right-image_opacity-04 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}

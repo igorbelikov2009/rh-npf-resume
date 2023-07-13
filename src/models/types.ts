@@ -8,3 +8,30 @@ export interface MenuLinkProps {
   to: string;
   isBackgroundWhite?: boolean;
 }
+
+export interface FooterLinkProps {
+  children: string;
+  to: string;
+}
+
+export interface DarkIconProps {
+  icon: string;
+  isDecreased?: boolean;
+}
+
+export interface IColumn {
+  title: string;
+  description: string;
+}
+
+export interface IColumn {
+  title: string;
+  description: string;
+}
+
+export interface ICard {
+  icon: string;
+  title?: string;
+  span?: string;
+  subtitle: string;
+}

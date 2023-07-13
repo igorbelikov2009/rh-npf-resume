@@ -1,10 +1,10 @@
-import React from "react";
-import "../styles/Layout.scss";
 import { Outlet } from "react-router-dom";
+import React, { FC } from "react";
 import Footer from "./Footer";
 import TopMenu from "./topMenu/TopMenu/TopMenu";
+import "../styles/Layout.scss";
 
-const Layout = () => {
+const Layout: FC = () => {
   return (
     <>
       <main className="layuot">
