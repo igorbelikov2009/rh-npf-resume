@@ -1,10 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
-import { RadioItemProps } from "../../../../models/types";
-import Checkbox from "../../../ui/Checkbox/Checkbox";
-import RadioSecondary from "../../../ui/radios/RadioSecondary/RadioSecondary";
-import Slider, { SliderProps } from "../../../ui/Slider/Slider";
+import CheckboxRetirement from "../checkbox/CheckboxRetirement";
 import Graph from "../Graph/Graph";
 import PensionInfo from "../PensionInfo/PensionInfo";
+import GenderRadio from "../radios/GenderRadio";
+import AgeSlider from "../sliders/AgeSlider";
+import DownPaymentSlider from "../sliders/DownPaymentSlider";
+import MonthlyInstallmenSlider from "../sliders/MonthlyInstallmenSlider";
+import PeriodPaymentPensionSlider from "../sliders/PeriodPaymentPensionSlider";
 
 import styles from "./Calculator.module.scss";
 
@@ -21,59 +23,7 @@ const Calculator: FC = () => {
   const yearPersent = 0.05; // годовой процент накопления => annualPercentage
   const [generalAccumValue, setGeneralAccumValue] = useState(0); // общие накопления => generalSavings
   const [pensionValue, setPensionValue] = useState(0); // размер выплаты пенсии => pension
-
   const [earlyRretirement, setEarlyRretirement] = useState(false); // ускоренный выход на пенсию
-  // const [earlyRretirementPeriod, setEarlyRretirementPeriod] = useState(5); // на сколько лет ускоренный выход на пенсию
-
-  const radioItems: RadioItemProps[] = [
-    { value: ageMan, title: "М", name: "gender" },
-    { value: ageWoman, title: "Ж", name: "gender" },
-  ];
-
-  const ageSlider: SliderProps = {
-    title: "Возраст, лет",
-    name: "ageSlider",
-    min: 18,
-    max: ageSliderMax,
-    step: 1,
-    value: 30,
-    emitValue: function (event: React.SetStateAction<number>): void {
-      throw new Error("Function not implemented.");
-    },
-  };
-  const downPaymentSlider: SliderProps = {
-    title: " Первоначальный взнос, р",
-    name: "downPayment",
-    min: 0,
-    max: 1000000,
-    step: 10000,
-    value: 10000,
-    emitValue: function (event: React.SetStateAction<number>): void {
-      throw new Error("Function not implemented.");
-    },
-  };
-  const monthlyInstallmenSlider: SliderProps = {
-    title: "Ежемесячный взнос, р.",
-    name: "monthlyInstallment",
-    min: 0,
-    max: 50000,
-    step: 500,
-    value: 5000,
-    emitValue: function (event: React.SetStateAction<number>): void {
-      throw new Error("Function not implemented.");
-    },
-  };
-  const periodPaymentPensionSlider: SliderProps = {
-    title: "Срок выплаты пенсии, лет",
-    name: "periodPaymentPension",
-    min: 5,
-    max: 30,
-    step: 1,
-    value: 15,
-    emitValue: function (event: React.SetStateAction<number>): void {
-      throw new Error("Function not implemented.");
-    },
-  };
 
   useEffect(() => {
     if (earlyRretirement) {
@@ -183,59 +133,24 @@ const Calculator: FC = () => {
               <form className={styles["slider-block"]}>
                 <div className={styles["slider-block__age"]}>
                   <div className={styles["slider-block__switch"]}>
-                    <RadioSecondary
-                      radioItems={radioItems}
-                      emitValue={onChangeGenderRadio}
-                      currentValue={genderValue}
+                    <GenderRadio
+                      ageMan={ageMan}
+                      ageWoman={ageWoman}
+                      genderValue={genderValue}
+                      onChangeGenderRadio={onChangeGenderRadio}
                     />
                   </div>
-                  <Slider
-                    title={ageSlider.title}
-                    name={ageSlider.name}
-                    min={ageSlider.min}
-                    max={ageSlider.max}
-                    step={ageSlider.step}
-                    value={ageSlider.value}
-                    emitValue={ageSliderHandler}
-                  />
+                  <AgeSlider ageSliderMax={ageSliderMax} ageSliderHandler={ageSliderHandler} />
                 </div>
 
                 <div>
-                  <Slider
-                    title={downPaymentSlider.title}
-                    name={downPaymentSlider.name}
-                    min={downPaymentSlider.min}
-                    max={downPaymentSlider.max}
-                    step={downPaymentSlider.step}
-                    value={downPaymentSlider.value}
-                    emitValue={downPaymentSliderHandler}
-                  />
-                  <Slider
-                    title={monthlyInstallmenSlider.title}
-                    name={monthlyInstallmenSlider.name}
-                    min={monthlyInstallmenSlider.min}
-                    max={monthlyInstallmenSlider.max}
-                    step={monthlyInstallmenSlider.step}
-                    value={monthlyInstallmenSlider.value}
-                    emitValue={monthlyInstallmenSliderHandler}
-                  />
-                  <Slider
-                    title={periodPaymentPensionSlider.title}
-                    name={periodPaymentPensionSlider.name}
-                    min={periodPaymentPensionSlider.min}
-                    max={periodPaymentPensionSlider.max}
-                    step={periodPaymentPensionSlider.step}
-                    value={periodPaymentPensionSlider.value}
-                    emitValue={periodPaymentPensionSliderHandler}
-                  />
+                  <DownPaymentSlider downPaymentSliderHandler={downPaymentSliderHandler} />
+                  <MonthlyInstallmenSlider monthlyInstallmenSliderHandler={monthlyInstallmenSliderHandler} />
+                  <PeriodPaymentPensionSlider periodPaymentPensionSliderHandler={periodPaymentPensionSliderHandler} />
                 </div>
 
                 <div className={styles["slider-block__checkbox"]}>
-                  <Checkbox
-                    checkedValue={earlyRretirement}
-                    toogleChecked={toogleChecked}
-                    title="Выход на пенсию в 55/60 лет*"
-                  />
+                  <CheckboxRetirement earlyRretirement={earlyRretirement} toogleChecked={toogleChecked} />
                 </div>
 
                 {!earlyRretirement && (

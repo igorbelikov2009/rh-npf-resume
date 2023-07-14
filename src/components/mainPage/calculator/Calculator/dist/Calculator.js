@@ -1,11 +1,14 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var Checkbox_1 = require("../../../ui/Checkbox/Checkbox");
-var RadioSecondary_1 = require("../../../ui/radios/RadioSecondary/RadioSecondary");
-var Slider_1 = require("../../../ui/Slider/Slider");
+var CheckboxRetirement_1 = require("../checkbox/CheckboxRetirement");
 var Graph_1 = require("../Graph/Graph");
 var PensionInfo_1 = require("../PensionInfo/PensionInfo");
+var GenderRadio_1 = require("../radios/GenderRadio");
+var AgeSlider_1 = require("../sliders/AgeSlider");
+var DownPaymentSlider_1 = require("../sliders/DownPaymentSlider");
+var MonthlyInstallmenSlider_1 = require("../sliders/MonthlyInstallmenSlider");
+var PeriodPaymentPensionSlider_1 = require("../sliders/PeriodPaymentPensionSlider");
 var Calculator_module_scss_1 = require("./Calculator.module.scss");
 var Calculator = function () {
     var _a = react_1.useState("60"), genderValue = _a[0], setGenderValue = _a[1]; // гендерный возраст выхода на пенсию
@@ -21,55 +24,6 @@ var Calculator = function () {
     var _k = react_1.useState(0), generalAccumValue = _k[0], setGeneralAccumValue = _k[1]; // общие накопления => generalSavings
     var _l = react_1.useState(0), pensionValue = _l[0], setPensionValue = _l[1]; // размер выплаты пенсии => pension
     var _m = react_1.useState(false), earlyRretirement = _m[0], setEarlyRretirement = _m[1]; // ускоренный выход на пенсию
-    // const [earlyRretirementPeriod, setEarlyRretirementPeriod] = useState(5); // на сколько лет ускоренный выход на пенсию
-    var radioItems = [
-        { value: ageMan, title: "М", name: "gender" },
-        { value: ageWoman, title: "Ж", name: "gender" },
-    ];
-    var ageSlider = {
-        title: "Возраст, лет",
-        name: "ageSlider",
-        min: 18,
-        max: ageSliderMax,
-        step: 1,
-        value: 30,
-        emitValue: function (event) {
-            throw new Error("Function not implemented.");
-        }
-    };
-    var downPaymentSlider = {
-        title: " Первоначальный взнос, р",
-        name: "downPayment",
-        min: 0,
-        max: 1000000,
-        step: 10000,
-        value: 10000,
-        emitValue: function (event) {
-            throw new Error("Function not implemented.");
-        }
-    };
-    var monthlyInstallmenSlider = {
-        title: "Ежемесячный взнос, р.",
-        name: "monthlyInstallment",
-        min: 0,
-        max: 50000,
-        step: 500,
-        value: 5000,
-        emitValue: function (event) {
-            throw new Error("Function not implemented.");
-        }
-    };
-    var periodPaymentPensionSlider = {
-        title: "Срок выплаты пенсии, лет",
-        name: "periodPaymentPension",
-        min: 5,
-        max: 30,
-        step: 1,
-        value: 15,
-        emitValue: function (event) {
-            throw new Error("Function not implemented.");
-        }
-    };
     react_1.useEffect(function () {
         if (earlyRretirement) {
             setGenderValue("60");
@@ -162,14 +116,14 @@ var Calculator = function () {
                         react_1["default"].createElement("form", { className: Calculator_module_scss_1["default"]["slider-block"] },
                             react_1["default"].createElement("div", { className: Calculator_module_scss_1["default"]["slider-block__age"] },
                                 react_1["default"].createElement("div", { className: Calculator_module_scss_1["default"]["slider-block__switch"] },
-                                    react_1["default"].createElement(RadioSecondary_1["default"], { radioItems: radioItems, emitValue: onChangeGenderRadio, currentValue: genderValue })),
-                                react_1["default"].createElement(Slider_1["default"], { title: ageSlider.title, name: ageSlider.name, min: ageSlider.min, max: ageSlider.max, step: ageSlider.step, value: ageSlider.value, emitValue: ageSliderHandler })),
+                                    react_1["default"].createElement(GenderRadio_1["default"], { ageMan: ageMan, ageWoman: ageWoman, genderValue: genderValue, onChangeGenderRadio: onChangeGenderRadio })),
+                                react_1["default"].createElement(AgeSlider_1["default"], { ageSliderMax: ageSliderMax, ageSliderHandler: ageSliderHandler })),
                             react_1["default"].createElement("div", null,
-                                react_1["default"].createElement(Slider_1["default"], { title: downPaymentSlider.title, name: downPaymentSlider.name, min: downPaymentSlider.min, max: downPaymentSlider.max, step: downPaymentSlider.step, value: downPaymentSlider.value, emitValue: downPaymentSliderHandler }),
-                                react_1["default"].createElement(Slider_1["default"], { title: monthlyInstallmenSlider.title, name: monthlyInstallmenSlider.name, min: monthlyInstallmenSlider.min, max: monthlyInstallmenSlider.max, step: monthlyInstallmenSlider.step, value: monthlyInstallmenSlider.value, emitValue: monthlyInstallmenSliderHandler }),
-                                react_1["default"].createElement(Slider_1["default"], { title: periodPaymentPensionSlider.title, name: periodPaymentPensionSlider.name, min: periodPaymentPensionSlider.min, max: periodPaymentPensionSlider.max, step: periodPaymentPensionSlider.step, value: periodPaymentPensionSlider.value, emitValue: periodPaymentPensionSliderHandler })),
+                                react_1["default"].createElement(DownPaymentSlider_1["default"], { downPaymentSliderHandler: downPaymentSliderHandler }),
+                                react_1["default"].createElement(MonthlyInstallmenSlider_1["default"], { monthlyInstallmenSliderHandler: monthlyInstallmenSliderHandler }),
+                                react_1["default"].createElement(PeriodPaymentPensionSlider_1["default"], { periodPaymentPensionSliderHandler: periodPaymentPensionSliderHandler })),
                             react_1["default"].createElement("div", { className: Calculator_module_scss_1["default"]["slider-block__checkbox"] },
-                                react_1["default"].createElement(Checkbox_1["default"], { checkedValue: earlyRretirement, toogleChecked: toogleChecked, title: "\u0412\u044B\u0445\u043E\u0434 \u043D\u0430 \u043F\u0435\u043D\u0441\u0438\u044E \u0432 55/60 \u043B\u0435\u0442*" })),
+                                react_1["default"].createElement(CheckboxRetirement_1["default"], { earlyRretirement: earlyRretirement, toogleChecked: toogleChecked })),
                             !earlyRretirement && (react_1["default"].createElement("p", { className: Calculator_module_scss_1["default"]["slider-block__checkbox-value"] }, "* \u0420\u0430\u0441\u0447\u0435\u0442 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0441\u044F \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0438 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u044F \u0432\u043E\u0437\u0440\u0430\u0441\u0442\u0430, \u0434\u0430\u044E\u0449\u0435\u0433\u043E \u043F\u0440\u0430\u0432\u043E \u043D\u0430 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u043E\u0439 \u043F\u0435\u043D\u0441\u0438\u0438 \u043F\u043E \u0441\u0442\u0430\u0440\u043E\u0441\u0442\u0438, \u0432 \u0441\u043B\u0443\u0447\u0430\u0435 \u0435\u0441\u043B\u0438 \u044D\u0442\u043E \u043F\u0440\u0435\u0434\u0443\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u043E \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u043C \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u043E\u043C.")))),
                     react_1["default"].createElement(PensionInfo_1["default"], { generalAccumValue: generalAccumValue, pensionValue: pensionValue })),
                 react_1["default"].createElement("div", { className: Calculator_module_scss_1["default"]["calculator__graph-container"] },
