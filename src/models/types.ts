@@ -65,3 +65,9 @@ export interface IPreliminaryNews {
   preliminaryDate: string;
   arrayInfo: IInfo[];
 }
+
+export interface IBusinessCard {
+  icon: string;
+  header: string;
+  titles: string[];
+}

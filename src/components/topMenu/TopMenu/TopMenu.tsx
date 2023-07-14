@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Logotypes from "../../general/Logotypes/Logotypes";
 import { MenuLinkProps } from "../../../models/types";
 import MenuLink from "../../ui/links/MenuLink/MenuLink";
+import MenuMobil from "../MenuMobil/MenuMobil";
 
 const TopMenu: FC = () => {
   const [isBackgroundWhite, setBackgroundWhite] = useState(false);
@@ -60,6 +61,10 @@ const TopMenu: FC = () => {
   const openMenuMobil = () => {
     setMenuMobilVisible(true);
     document.body.style.overflow = "hidden";
+  };
+  const closeMenuMobil = () => {
+    setMenuMobilVisible(false);
+    document.body.style.overflow = "";
   };
 
   const openAdminLogin = () => {
@@ -125,6 +130,8 @@ const TopMenu: FC = () => {
           </div>
         </div>
       </div>
+
+      <MenuMobil isVisible={isMenuMobilVisible} closeMenuMobil={closeMenuMobil} />
     </header>
   );
 };

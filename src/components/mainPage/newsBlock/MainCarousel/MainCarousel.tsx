@@ -11,10 +11,6 @@ interface MainCarouselProps {
 }
 
 const MainCarousel: FC<MainCarouselProps> = ({ jj, qq, carouselLinks, emitWidthColumn }) => {
-  const getWidthColumn = (width: React.SetStateAction<number>) => {
-    emitWidthColumn(width);
-  };
-
   return (
     <div className={styles["carousel-tape"]}>
       {carouselLinks &&
@@ -23,7 +19,7 @@ const MainCarousel: FC<MainCarouselProps> = ({ jj, qq, carouselLinks, emitWidthC
             key={index}
             isClear={index === qq || jj === index}
             link={link}
-            emitWidthColumn={getWidthColumn}
+            emitWidthColumn={emitWidthColumn}
           />
         ))}
     </div>
