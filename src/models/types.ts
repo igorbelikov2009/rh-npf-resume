@@ -35,3 +35,9 @@ export interface ICard {
   span?: string;
   subtitle: string;
 }
+
+export interface RadioItemProps {
+  value: string;
+  title: string;
+  name: string;
+}

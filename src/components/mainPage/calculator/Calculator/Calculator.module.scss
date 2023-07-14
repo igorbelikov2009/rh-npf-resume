@@ -1,0 +1,165 @@
+// calculator
+.calculator {
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 24px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 48px 0;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media screen and (min-width: 576px) {
+      padding: 0 28px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+    }
+  }
+
+  &__heading {
+    display: block;
+    font-size: 13px;
+    color: #5a646e;
+    margin-bottom: 24px;
+    margin-left: 24px;
+
+    @media screen and (min-width: 576px) {
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__subheading {
+    display: block;
+    font-size: 34px;
+    line-height: 48px;
+    color: #28323c;
+    margin-bottom: 24px;
+    margin-left: 24px;
+
+    @media screen and (min-width: 576px) {
+      margin-left: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 55px;
+      line-height: 73.54px;
+      margin-bottom: 44px;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    position: relative;
+  }
+
+  &__box {
+    width: 100%;
+    display: block;
+
+    @media screen and (min-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__sliders {
+    width: calc(100% - 48px);
+    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 576px) {
+      width: 63.53%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 41.66%;
+      margin-bottom: 96px;
+    }
+  }
+
+  &__graph-container {
+    width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 576px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 47.92%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding: 0;
+    }
+  }
+}
+// calculator
+
+// sliders
+.slider-block {
+  width: 100%;
+
+  &__age {
+    width: 100%;
+    display: block;
+
+    @media screen and (min-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__switch {
+    min-width: 136px;
+    max-width: 136px;
+    margin-right: 0;
+    margin-bottom: 24px;
+    position: relative;
+
+    @media screen and (min-width: 576px) {
+      margin-right: 24px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__time-invest-inner {
+    font-size: 11px;
+    color: #b5bdc8;
+    position: absolute;
+    bottom: -24px;
+    left: 36px;
+  }
+
+  &__checkbox {
+    width: 100%;
+    display: block;
+  }
+
+  &__checkbox-value {
+    font-size: 11px;
+    line-height: 15px;
+    color: #5a646e;
+  }
+}
+// sliders

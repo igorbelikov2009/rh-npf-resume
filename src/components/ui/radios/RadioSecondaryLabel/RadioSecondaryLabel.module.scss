@@ -1,0 +1,50 @@
+.radio-secondary-label {
+  cursor: pointer;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  display: flex;
+  opacity: 1;
+  background-color: #b5bdc8;
+  transition: background-color 0.5s;
+
+  &:hover {
+    transition: all 0.5;
+    opacity: 0.8;
+  }
+
+  &:hover .radio-secondary-label__title {
+    opacity: 1;
+  }
+
+  &__field {
+    display: none;
+  }
+
+  &__title {
+    opacity: 0.7;
+    font-size: 16px;
+    color: #ffffff;
+    margin: auto;
+  }
+}
+
+.radio-secondary-label_active {
+  cursor: pointer;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  display: flex;
+  opacity: 1;
+  background-color: #50287d;
+  transition: background-color 0.5s;
+
+  &:hover {
+    transition: all 0.5;
+    opacity: 0.8;
+  }
+
+  &:hover .radio-secondary-label__title {
+    opacity: 1;
+  }
+}
