@@ -2,7 +2,7 @@
 exports.__esModule = true;
 var react_1 = require("react");
 var client_1 = require("react-dom/client");
-require("./index.css");
+require("./styles/index.scss");
 require("./styles/reset.css");
 var App_1 = require("./App");
 var react_router_dom_1 = require("react-router-dom");

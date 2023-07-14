@@ -6,6 +6,7 @@ import Cards from "../components/general/cards/Cards/Cards";
 import Calculator from "../components/mainPage/calculator/Calculator/Calculator";
 import ImagesCalculator from "../components/mainPage/ImagesCalculator/ImagesCalculator";
 import { cardsMainPage } from "../data/dist/CardsMainPage";
+import NewsBlock from "../components/mainPage/newsBlock/NewsBlock/NewsBlock";
 
 const MainPage = () => {
   return (
@@ -26,6 +27,7 @@ const MainPage = () => {
       </div>
 
       <ImagesCalculator />
+      <NewsBlock />
     </>
   );
 };

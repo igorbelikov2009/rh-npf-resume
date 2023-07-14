@@ -41,3 +41,27 @@ export interface RadioItemProps {
   title: string;
   name: string;
 }
+
+export interface INews {
+  id: number;
+  title: string;
+  date: string;
+  paragraphs: string[];
+}
+
+export interface INewsLink {
+  id: number;
+  title: string;
+  date: string;
+}
+
+export interface IInfo {
+  paragraph: string;
+  number?: number | undefined;
+}
+export interface IPreliminaryNews {
+  id: number;
+  title: string;
+  preliminaryDate: string;
+  arrayInfo: IInfo[];
+}
