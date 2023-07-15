@@ -71,3 +71,13 @@ export interface IBusinessCard {
   header: string;
   titles: string[];
 }
+
+export type ICarouselCard = {
+  value: string;
+  icon: string;
+  title: string;
+};
+
+export type ITitle = {
+  title: string;
+};

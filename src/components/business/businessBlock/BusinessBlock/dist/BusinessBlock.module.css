@@ -1,0 +1,43 @@
+.carousel {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-top: 24px;
+  padding-bottom: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media screen and (min-width: 576px) {
+  .carousel {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carousel {
+    padding-top: 48px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.carousel__carouselHeader {
+  width: 100%;
+  padding: 48px 0;
+  overflow: hidden;
+}
+.carousel__container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.carousel__scrollableElement {
+  transition: all 600ms ease;
+  position: relative;
+}
+.carousel__box-for-transmitted {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}

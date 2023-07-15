@@ -10,7 +10,7 @@ exports.__esModule = true;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
 var UserDate_1 = require("../../../../api/UserDate/UserDate");
-var News_1 = require("../../../../data/dist/News");
+var News_1 = require("../../../../data/News");
 var CarouselHeader_1 = require("../../../general/carousel/CarouselHeader/CarouselHeader");
 var MainCarousel_1 = require("../MainCarousel/MainCarousel");
 var NewsBlock_module_scss_1 = require("./NewsBlock.module.scss");

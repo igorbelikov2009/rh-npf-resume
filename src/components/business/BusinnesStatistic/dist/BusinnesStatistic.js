@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var CardsBusinnesStatistic_1 = require("../../../data/dist/CardsBusinnesStatistic");
+var CardsBusinnesStatistic_1 = require("../../../data/CardsBusinnesStatistic");
 var DarkIcon_1 = require("../../general/DarkIcon/DarkIcon");
 var BusinnesStatistic_module_scss_1 = require("./BusinnesStatistic.module.scss");
 var BusinnesStatistic = function () {
