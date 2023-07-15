@@ -3,7 +3,8 @@ import TopBlock from "../components/general/TopBlock/TopBlock";
 import businessImage from "../assets/images/businnes/businnesTop.jpg";
 import BusinessProgramm from "../components/business/BusinessProgramm/BusinessProgramm";
 import BusinnesImages from "../components/business/BusinnesImages/BusinnesImages";
-import "../styles/Businness.scss";
+import BusinnesStatistic from "../components/business/BusinnesStatistic/BusinnesStatistic";
+import TaxPreferences from "../components/business/TaxPreferences/TaxPreferences";
 
 const BusinessPage = () => {
   return (
@@ -17,6 +18,8 @@ const BusinessPage = () => {
       <div className="business-page">
         <BusinessProgramm />
         <BusinnesImages />
+        <BusinnesStatistic />
+        <TaxPreferences />
       </div>
     </>
   );
