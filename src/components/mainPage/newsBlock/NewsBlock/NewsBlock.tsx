@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
 import UserDate from "../../../../api/UserDate/UserDate";
-import { news } from "../../../../data/News";
+import { news } from "../../../../data/newsData";
+
 import { INews } from "../../../../models/types";
 import CarouselHeader from "../../../general/carousel/CarouselHeader/CarouselHeader";
 import MainCarousel from "../MainCarousel/MainCarousel";

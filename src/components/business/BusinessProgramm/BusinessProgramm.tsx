@@ -1,5 +1,5 @@
 import React from "react";
-import { businessCards } from "../../../data/dist/BusinesCards";
+import { businessCards } from "../../../data/businessPageData";
 import DarkIcon from "../../general/DarkIcon/DarkIcon";
 import styles from "./BusinessProgramm.module.scss";
 

@@ -5,8 +5,8 @@ import Info from "../components/mainPage/Info/Info";
 import Cards from "../components/general/cards/Cards/Cards";
 import Calculator from "../components/mainPage/calculator/Calculator/Calculator";
 import ImagesCalculator from "../components/mainPage/ImagesCalculator/ImagesCalculator";
-import { cardsMainPage } from "../data/dist/CardsMainPage";
 import NewsBlock from "../components/mainPage/newsBlock/NewsBlock/NewsBlock";
+import { cardsMainPage } from "../data/mainPageData";
 
 const MainPage = () => {
   return (

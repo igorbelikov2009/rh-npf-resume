@@ -1,0 +1,46 @@
+.taxation {
+  width: 100%;
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 576px) {
+  .taxation {
+    padding: 48px 28px;
+  }
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 24px;
+  font-style: normal;
+  color: #5a646e;
+  margin: 12px 0;
+}
+
+.paragraph-bold {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #010;
+  margin: 12px 0;
+}
+
+.paragraph-heading {
+  color: #28323c;
+  font-size: 18px;
+  line-height: 1.5rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 24px 0;
+}
+
+.expanding {
+  width: 100%;
+  border-bottom: 1px solid #e6f0fa;
+  position: relative;
+}
+.expanding__content {
+  width: 100%;
+  padding: 24px 0 48px;
+}

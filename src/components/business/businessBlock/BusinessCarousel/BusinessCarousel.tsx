@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { cardsBusinessCarousel } from "../../../../data/CardsBusinessCarousel";
-
+import { cardsBusinessCarousel } from "../../../../data/businessPageData";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import styles from "./BusinessCarousel.module.scss";
 

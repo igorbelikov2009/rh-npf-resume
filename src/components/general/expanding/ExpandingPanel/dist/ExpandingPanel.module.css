@@ -1,0 +1,77 @@
+.expanding__row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 32px;
+  position: relative;
+  cursor: pointer;
+}
+.expanding__title {
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #50287d;
+}
+.expanding__title:hover {
+  color: #000;
+}
+.expanding__button {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-left: 12px;
+  flex: none;
+}
+.expanding__image {
+  width: 18px;
+  height: 18px;
+}
+.expanding__plus {
+  cursor: pointer;
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: all 500ms;
+}
+.expanding__plus-rotate {
+  cursor: pointer;
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: rotate(180deg);
+  transition: all 500ms;
+}
+.expanding__minus {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 500ms;
+}
+.expanding__minus-rotate {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+  transition: all 500ms;
+}

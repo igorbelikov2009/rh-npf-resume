@@ -1,0 +1,52 @@
+.table {
+  width: 100%;
+  background-color: #fff;
+  overflow-x: scroll;
+}
+@media screen and (min-width: 960px) {
+  .table {
+    overflow-x: hidden;
+  }
+}
+.table__scrolling {
+  width: 960px;
+}
+
+.td {
+  vertical-align: baseline;
+  box-sizing: border-box;
+  border-top: 1px solid #e6f0fa;
+  color: #28323c;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 12px;
+}
+.td:first-of-type {
+  padding: 8px 12px 8px 0;
+}
+.td:last-of-type {
+  padding: 8px 0 8px 12px;
+}
+
+.th {
+  text-align: left;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-weight: 400;
+  color: #5a646e;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 8px 12px;
+}
+.th:first-of-type {
+  padding: 8px 12px 8px 0;
+}
+.th:last-of-type {
+  padding: 8px 0 8px 12px;
+}
+
+.tr {
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}

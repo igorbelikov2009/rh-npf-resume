@@ -1,0 +1,95 @@
+.contacts {
+  width: 100%;
+  padding: 24px;
+  margin-top: 72px;
+
+  @media screen and (min-width: 576px) {
+    padding: 48px 28px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__column {
+    width: 100%;
+
+    @media screen and (min-width: 576px) {
+      width: 50%;
+    }
+
+    &:first-of-type {
+      margin-bottom: 48px;
+
+      @media screen and (min-width: 576px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__contacts {
+    width: 100%;
+    font-size: 34px;
+    line-height: 48px;
+    color: #000;
+    margin-bottom: 24px;
+  }
+
+  &__address {
+    width: 100%;
+    font-size: 34px;
+    line-height: 48px;
+    color: #000;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 576px) {
+      margin-bottom: 68px;
+    }
+  }
+
+  &__title {
+    color: #28323c;
+    font-size: 18px;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: 24px 0;
+  }
+
+  &__paragraph {
+    color: #5a646e;
+    line-height: 1.5rem;
+    margin: 12px 0;
+    font-weight: 500;
+  }
+
+  &__span {
+    display: block;
+    font-size: 13px;
+    line-height: 24px;
+    font-style: italic;
+    color: #5a646e;
+  }
+
+  &__link {
+    color: #50287d;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &__heading {
+    color: #28323c;
+    font-size: 18px;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin: 24px 0;
+  }
+}

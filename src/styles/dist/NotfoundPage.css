@@ -1,0 +1,43 @@
+.not-page {
+  width: 100%;
+  padding: 24px;
+  margin-top: 72px;
+  margin-bottom: 48px;
+  background-color: #fff;
+}
+@media screen and (min-width: 576px) {
+  .not-page {
+    padding: 48px 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .not-page {
+    margin-bottom: 72px;
+  }
+}
+.not-page__container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.not-page__heading {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  color: red;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .not-page__heading {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .not-page__heading {
+    max-width: 860px;
+  }
+}

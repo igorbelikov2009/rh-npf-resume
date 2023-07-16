@@ -10,7 +10,7 @@ exports.__esModule = true;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
 var UserDate_1 = require("../../../../api/UserDate/UserDate");
-var News_1 = require("../../../../data/News");
+var newsData_1 = require("../../../../data/newsData");
 var CarouselHeader_1 = require("../../../general/carousel/CarouselHeader/CarouselHeader");
 var MainCarousel_1 = require("../MainCarousel/MainCarousel");
 var NewsBlock_module_scss_1 = require("./NewsBlock.module.scss");
@@ -34,7 +34,7 @@ var NewsBlock = function () {
     //  columns[q] и columns[j]
     // ===================================================================================
     // Получаем данные с newsReducer, сортируем данные:
-    var sortedNews = __spreadArrays(News_1.news).sort(function (a, b) { return (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1); });
+    var sortedNews = __spreadArrays(newsData_1.news).sort(function (a, b) { return (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1); });
     // Полученный массив форматируем по дате
     var formatedDateNews = __spreadArrays(sortedNews).map(function (item) { return ({
         id: Number(item.id),
@@ -49,7 +49,7 @@ var NewsBlock = function () {
     // console.log(widthLink);
     react_1.useEffect(function () {
         // получаем количество детей массива, новостных колонок (NewsLinkContainer)
-        setAmountChildren(News_1.news.length);
+        setAmountChildren(newsData_1.news.length);
         // высчитываем общую длину карусельной ленты (carousel-tape)
         setOverallWidth(widthLink * amountChildren);
     }, [amountChildren, widthLink]);

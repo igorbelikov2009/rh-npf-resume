@@ -81,3 +81,21 @@ export type ICarouselCard = {
 export type ITitle = {
   title: string;
 };
+
+export interface IObjectQuestionsAnswers {
+  question: string;
+  answer: string[];
+  isParagraph?: boolean;
+  isParagraphBefore?: boolean;
+}
+
+export interface IExpandingTable {
+  tableName: string;
+  headings: string[];
+  arrayRows: string[][];
+}
+
+export interface ITableContributions {
+  headings: string[];
+  arrayRows: string[][];
+}

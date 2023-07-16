@@ -1,7 +1,25 @@
 import React from "react";
+import supportImage from "../assets/images/support/supportTop.jpg";
+import TopBlock from "../components/general/TopBlock/TopBlock";
+import PensionPrograms from "../components/serviceSupport/PensionPrograms/PensionPrograms";
+import QuestionsAnswers from "../components/serviceSupport/QuestionsAnswers/QuestionsAnswers";
 
 const ServiceSupportPage = () => {
-  return <div>ServiceSupportPage</div>;
+  return (
+    <>
+      <TopBlock heading="Поддержка" image={supportImage} />
+
+      <div>
+        <div id={"questionsAnswers"}>
+          <QuestionsAnswers />
+        </div>
+
+        <PensionPrograms />
+
+        <div></div>
+      </div>
+    </>
+  );
 };
 
 export default ServiceSupportPage;

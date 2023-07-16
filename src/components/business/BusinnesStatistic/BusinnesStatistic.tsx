@@ -1,5 +1,5 @@
 import React from "react";
-import { cardsBusinnesStatistic } from "../../../data/CardsBusinnesStatistic";
+import { cardsBusinnesStatistic } from "../../../data/businessPageData";
 import DarkIcon from "../../general/DarkIcon/DarkIcon";
 import styles from "./BusinnesStatistic.module.scss";
 
