@@ -99,3 +99,27 @@ export interface ITableContributions {
   headings: string[];
   arrayRows: string[][];
 }
+
+export interface IAdaptiveRadioItem {
+  value: string;
+  id: string;
+  title: string;
+  name?: string;
+}
+
+export interface ISwitchItem {
+  value: string;
+  title: string;
+  name: string;
+}
+
+export interface IOptionItem {
+  date: string;
+  value: string;
+  id: string;
+}
+
+export interface ISidebarLink {
+  itemName: string;
+  id: string;
+}

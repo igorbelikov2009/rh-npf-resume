@@ -1,0 +1,13 @@
+.radio-primary {
+  display: flex;
+
+  &__flex-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #e7e7e7;
+    padding: 4px;
+    border-radius: 28px;
+    box-sizing: border-box;
+  }
+}

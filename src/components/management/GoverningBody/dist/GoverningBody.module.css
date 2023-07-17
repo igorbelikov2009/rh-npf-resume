@@ -1,0 +1,47 @@
+.management__heading {
+  font-size: 34px;
+  line-height: 48px;
+  color: #28323c;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 24px 0;
+}
+.management__description {
+  font-size: 18px;
+  line-height: 24px;
+  color: #5a646e;
+  margin: 24px 0;
+}
+.management__name {
+  font-size: 34px;
+  line-height: 48px;
+  color: #28323c;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-top: 72px;
+}
+.management__name-span {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #001100;
+}
+.management__post {
+  font-size: 16px;
+  line-height: 24px;
+  color: #96a0aa;
+  margin-bottom: 24px;
+}
+.management__paragraph {
+  font-size: 16px;
+  line-height: 24px;
+  color: #5a646e;
+  margin-bottom: 24px;
+}
+.management__alignment-line {
+  border-top: 1px solid #e6f0fa;
+  margin-top: 63px;
+  position: relative;
+  top: 10px;
+  border: none;
+}

@@ -1,0 +1,59 @@
+.link {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  display: inline;
+  margin-right: 24px;
+  margin-bottom: 0;
+  color: #50287d;
+  transition: color 0.22s;
+  transition-duration: 0.22s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: color;
+}
+.link:hover {
+  color: black;
+}
+@media screen and (min-width: 944px) {
+  .link {
+    white-space: normal;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+.link_active {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline;
+  margin-right: 24px;
+  margin-bottom: 0;
+  color: black;
+  transition: color 0.22s;
+  transition-duration: 0.22s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: color;
+}
+@media screen and (min-width: 944px) {
+  .link_active {
+    white-space: normal;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+.li {
+  list-style-type: none;
+}

@@ -1,0 +1,40 @@
+.management__department-title {
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 48px;
+}
+@media screen and (min-width: 576px) {
+  .management__department-title {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+.management__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.management__offis-man {
+  width: 100%;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 576px) {
+  .management__offis-man {
+    width: 50%;
+  }
+}
+.management__offis-man:nth-of-type(2n) {
+  padding-left: 0;
+}
+@media screen and (min-width: 576px) {
+  .management__offis-man:nth-of-type(2n) {
+    padding-left: 40px;
+  }
+}
+.management__man-name {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #000000;
+}
