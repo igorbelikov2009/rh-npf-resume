@@ -199,7 +199,7 @@ const InvestmentPage = () => {
 
       <div id="portfolioStructure">
         <PortfolioStructure
-          ifPressed={firstBlockVisible}
+          isVisible={firstBlockVisible}
           selectorValue={firstCurrentValue}
           idOption={firstBlockIdOption}
           onClickSelector={onClickFirstSelectController}
@@ -209,7 +209,7 @@ const InvestmentPage = () => {
       </div>
 
       <CompositionReserves
-        ifPressed={secondBlockVisible}
+        isVisible={secondBlockVisible}
         selectorValue={secondCurrentValue}
         idOption={secondBlockIdOption}
         onClickSelector={onClickSecondSelectController}

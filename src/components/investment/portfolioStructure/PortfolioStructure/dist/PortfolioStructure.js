@@ -7,7 +7,7 @@ var Graph_1 = require("../Graph/Graph");
 var Percents_1 = require("../Percents/Percents");
 var PortfolioStructure_module_scss_1 = require("./PortfolioStructure.module.scss");
 var PortfolioStructure = function (_a) {
-    var ifPressed = _a.ifPressed, idOption = _a.idOption, selectorValue = _a.selectorValue, onClickSelector = _a.onClickSelector, emitCoords = _a.emitCoords, emitSelectorBottomLeft = _a.emitSelectorBottomLeft;
+    var isVisible = _a.isVisible, idOption = _a.idOption, selectorValue = _a.selectorValue, onClickSelector = _a.onClickSelector, emitCoords = _a.emitCoords, emitSelectorBottomLeft = _a.emitSelectorBottomLeft;
     var _b = react_1.useState(0), top = _b[0], setTop = _b[1];
     var _c = react_1.useState(0), bottom = _c[0], setBottom = _c[1];
     var _d = react_1.useState(0), left = _d[0], setLeft = _d[1];
@@ -40,7 +40,7 @@ var PortfolioStructure = function (_a) {
     return (react_1["default"].createElement("section", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure"] },
         react_1["default"].createElement("h1", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure__heading"] }, "\u0421\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 \u043F\u043E\u0440\u0442\u0444\u0435\u043B\u044F"),
         react_1["default"].createElement("div", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure__selection"], ref: selectorRef },
-            react_1["default"].createElement(Selector_1["default"], { ifPressed: ifPressed, value: selectorValue, onClickSelector: onClickSelector })),
+            react_1["default"].createElement(Selector_1["default"], { isVisible: isVisible, value: selectorValue, onClickSelector: onClickSelector })),
         react_1["default"].createElement("div", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure__content"] },
             react_1["default"].createElement(Graph_1["default"], null),
             investData_1.investPercent &&

@@ -5,7 +5,7 @@ import CompositionReservesItem from "../CompositionReservesItem/CompositionReser
 import styles from "./CompositionReserves.module.scss";
 
 interface CompositionReservesProps {
-  ifPressed: boolean;
+  isVisible: boolean;
   selectorValue: string;
   idOption: string;
   onClickSelector: () => void;
@@ -14,7 +14,7 @@ interface CompositionReservesProps {
 }
 
 const CompositionReserves: FC<CompositionReservesProps> = ({
-  ifPressed,
+  isVisible,
   selectorValue,
   idOption,
   onClickSelector,
@@ -61,7 +61,7 @@ const CompositionReserves: FC<CompositionReservesProps> = ({
       <h1 className={styles["composition-of-funds__heading"]}>Состав средств пенсионных резервов Фонда</h1>
 
       <div className={styles["composition-of-funds__selection"]} ref={selectorRef}>
-        <Selector ifPressed={ifPressed} value={selectorValue} onClickSelector={onClickSelector} />
+        <Selector isVisible={isVisible} value={selectorValue} onClickSelector={onClickSelector} />
       </div>
 
       {investmentTables &&

@@ -6,7 +6,7 @@ import Percents from "../Percents/Percents";
 import styles from "./PortfolioStructure.module.scss";
 
 interface PortfolioStructureProps {
-  ifPressed: boolean;
+  isVisible: boolean;
   selectorValue: string;
   idOption: string;
   onClickSelector: () => void;
@@ -15,7 +15,7 @@ interface PortfolioStructureProps {
 }
 
 const PortfolioStructure: FC<PortfolioStructureProps> = ({
-  ifPressed,
+  isVisible,
   idOption,
   selectorValue,
   onClickSelector,
@@ -64,7 +64,7 @@ const PortfolioStructure: FC<PortfolioStructureProps> = ({
       <h1 className={styles["portfolie-structure__heading"]}>Структура портфеля</h1>
 
       <div className={styles["portfolie-structure__selection"]} ref={selectorRef}>
-        <Selector ifPressed={ifPressed} value={selectorValue} onClickSelector={onClickSelector} />
+        <Selector isVisible={isVisible} value={selectorValue} onClickSelector={onClickSelector} />
       </div>
 
       <div className={styles["portfolie-structure__content"]}>
