@@ -5,7 +5,7 @@ import SidebarLink from "../../ui/links/SidebarLink/SidebarLink";
 import AuditCommittee from "../AuditCommittee/AuditCommittee";
 import BoardOfDirectors from "../BoardOfDirectors/BoardOfDirectors";
 import ChiefAccountant from "../ChiefAccountant/ChiefAccountant";
-import Controller from "../Controller/Controller";
+import TeamController from "../TeamController/TeamController";
 import GeneralMeetingOfShareholders from "../GeneralMeetingOfShareholders/GeneralMeetingOfShareholders";
 import GoverningBody from "../GoverningBody/GoverningBody";
 import Team from "../Team/Team";
@@ -174,7 +174,7 @@ const Management = () => {
           </div>
 
           <div className={styles["management__department"]} id="Контролер" ref={block6}>
-            <Controller />
+            <TeamController />
           </div>
 
           <div className={styles["management__department"]} id="Собрание акционеров" ref={block7}>

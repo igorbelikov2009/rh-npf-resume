@@ -13,7 +13,7 @@ var TripleIcon_1 = require("../components/general/TripleIcon/TripleIcon");
 var NewsLink_1 = require("../components/news/NewsLink/NewsLink");
 var Article_1 = require("../components/newsPage/Article/Article");
 var newsData_1 = require("../data/newsData");
-require("../styles/dist/NewsPage.css");
+require("../styles/NewsPage.scss");
 var NewsPage = function () {
     var id = react_router_dom_1.useParams().id;
     var prevID = Number(id) - 1;

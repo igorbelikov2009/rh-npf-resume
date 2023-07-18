@@ -1,0 +1,50 @@
+.composition-of-funds {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  border-color: #ffffff;
+  padding: 24px 24px 0;
+}
+@media screen and (min-width: 576px) {
+  .composition-of-funds {
+    padding: 24px 28px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .composition-of-funds {
+    padding: 48px 28px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .composition-of-funds {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.composition-of-funds__heading {
+  font-size: 18px;
+  line-height: 24px;
+  color: #28323c;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 576px) {
+  .composition-of-funds__heading {
+    font-size: 34px;
+    line-height: 48px;
+    margin-bottom: 48px;
+  }
+}
+.composition-of-funds__selection {
+  max-width: 382px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 576px) {
+  .composition-of-funds__selection {
+    max-width: 210px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .composition-of-funds__selection {
+    margin: 0;
+  }
+}

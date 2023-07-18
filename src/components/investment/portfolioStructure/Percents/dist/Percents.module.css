@@ -1,0 +1,151 @@
+.percents-container {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 48px;
+}
+@media screen and (min-width: 768px) {
+  .percents-container {
+    width: calc(100% - 280px);
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+}
+
+.percents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.percent-block {
+  width: calc(50% - 24px);
+  margin: 0 12px;
+  margin-bottom: 24px;
+  display: block;
+}
+@media screen and (min-width: 578px) {
+  .percent-block {
+    display: flex;
+  }
+}
+
+.percent-01 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-01::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #45c253;
+}
+
+.percent-02 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-02::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #d6df5e;
+}
+
+.percent-03 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-03::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #c55edf;
+}
+
+.percent-04 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-04::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #922706;
+}
+
+.percent-05 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-05::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #5eccdf;
+}
+
+.percent-06 {
+  position: relative;
+  width: 25%;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  color: black;
+}
+.percent-06::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  background-color: #161614;
+}
+
+.title {
+  font-size: 13px;
+  line-height: 24px;
+  color: #5a646e;
+  width: 75%;
+  margin-left: 24px;
+}

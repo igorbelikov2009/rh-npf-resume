@@ -4,7 +4,7 @@ import TripleIcon from "../components/general/TripleIcon/TripleIcon";
 import NewsLink from "../components/news/NewsLink/NewsLink";
 import Article from "../components/newsPage/Article/Article";
 import { news } from "../data/newsData";
-import "../styles/dist/NewsPage.css";
+import "../styles/NewsPage.scss";
 
 const NewsPage = () => {
   const { id } = useParams();

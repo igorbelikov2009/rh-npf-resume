@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  border-color: #ffffff;
+  padding: 0 24px 48px;
+
+  @media screen and (min-width: 576px) {
+    padding: 0 28px 48px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+    padding-bottom: 48px;
+  }
+
+  &__heading {
+    font-size: 34px;
+    line-height: 48px;
+    margin: 24px 0;
+    color: #28323c;
+  }
+}

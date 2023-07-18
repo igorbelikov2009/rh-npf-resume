@@ -123,3 +123,25 @@ export interface ISidebarLink {
   itemName: string;
   id: string;
 }
+
+export interface IAdaptiveRadioItem {
+  value: string;
+  id: string;
+  title: string;
+  name?: string;
+}
+
+export interface IPercent {
+  percent01: string;
+  percent02: string;
+  percent03: string;
+  percent04: string;
+  percent05: string;
+  percent06: string;
+}
+
+export interface ArchiveLinkProps {
+  href: string;
+  title: string;
+  subtitle?: string;
+}

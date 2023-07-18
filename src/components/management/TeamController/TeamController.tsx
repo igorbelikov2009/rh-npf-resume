@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Controller.module.scss";
+import styles from "./TeamController.module.scss";
 
-const Controller = () => {
+const TeamController = () => {
   return (
     <div>
       <h2 className={styles["management__department-title"]}>Контролер</h2>
@@ -14,4 +14,5 @@ const Controller = () => {
     </div>
   );
 };
-export default Controller;
+
+export default TeamController;

@@ -1,22 +1,20 @@
 import React, { FC } from "react";
-import styles from "./Controller.module.scss";
+import styles from "./Selector.module.scss";
 
-interface ControllerProps {
+export interface SelectorProps {
   value: string;
   ifPressed: boolean;
-  onClickController: () => void;
+  onClickSelector: () => void;
 }
 
-const Controller: FC<ControllerProps> = ({ value, ifPressed, onClickController }) => {
-  // console.log(ifPressed);
-
+const Selector: FC<SelectorProps> = ({ value, ifPressed, onClickSelector }) => {
   return (
     <div className={styles["select-controller"]}>
       <div className={styles["changing-title"]}>
         <div className={ifPressed ? styles["border-gray"] : styles["border-white"]}>
           <div
             className={ifPressed ? styles["container-backgr-gray"] : styles["container-backgr-white"]}
-            onClick={onClickController}
+            onClick={onClickSelector}
           >
             <div className={styles["controller-date"]}>
               <div>
@@ -44,4 +42,4 @@ const Controller: FC<ControllerProps> = ({ value, ifPressed, onClickController }
   );
 };
 
-export default Controller;
+export default Selector;

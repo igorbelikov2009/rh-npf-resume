@@ -1,16 +1,21 @@
 import React, { FC } from "react";
 import { IOptionItem } from "../../../../models/types";
 import OptionItem from "../OptionItem/OptionItem";
-import styles from "./OptionsBlock.module.scss";
+import styles from "./OptionBlockForSelector.module.scss";
 
-interface OptionsBlockProps {
-  arrayOptionsItem: IOptionItem[];
-  currentValue: string;
+interface OptionBlockForSelectorProps {
+  arrayOptionsBlock: IOptionItem[];
   emitValue: (event: React.SetStateAction<string>, id: string) => void;
   onClickOptionsBlock: () => void;
+  currentValue: string;
 }
 
-const OptionsBlock: FC<OptionsBlockProps> = ({ arrayOptionsItem, currentValue, emitValue, onClickOptionsBlock }) => {
+const OptionBlockForSelector: FC<OptionBlockForSelectorProps> = ({
+  arrayOptionsBlock,
+  currentValue,
+  emitValue,
+  onClickOptionsBlock,
+}) => {
   const onChangeOption = (value: React.SetStateAction<string>, id: string) => {
     emitValue(value, id);
   };
@@ -18,7 +23,7 @@ const OptionsBlock: FC<OptionsBlockProps> = ({ arrayOptionsItem, currentValue, e
   return (
     <div className={styles["options-block"]} onClick={onClickOptionsBlock}>
       <div className={styles["scrollable-block"]}>
-        {arrayOptionsItem.map((option, index) => (
+        {arrayOptionsBlock.map((option, index) => (
           <OptionItem
             key={index}
             date={option.date}
@@ -33,4 +38,4 @@ const OptionsBlock: FC<OptionsBlockProps> = ({ arrayOptionsItem, currentValue, e
   );
 };
 
-export default OptionsBlock;
+export default OptionBlockForSelector;

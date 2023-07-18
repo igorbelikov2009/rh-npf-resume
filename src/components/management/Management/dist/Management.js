@@ -6,7 +6,7 @@ var SidebarLink_1 = require("../../ui/links/SidebarLink/SidebarLink");
 var AuditCommittee_1 = require("../AuditCommittee/AuditCommittee");
 var BoardOfDirectors_1 = require("../BoardOfDirectors/BoardOfDirectors");
 var ChiefAccountant_1 = require("../ChiefAccountant/ChiefAccountant");
-var Controller_1 = require("../Controller/Controller");
+var TeamController_1 = require("../TeamController/TeamController");
 var GeneralMeetingOfShareholders_1 = require("../GeneralMeetingOfShareholders/GeneralMeetingOfShareholders");
 var GoverningBody_1 = require("../GoverningBody/GoverningBody");
 var Team_1 = require("../Team/Team");
@@ -149,7 +149,7 @@ var Management = function () {
                 react_1["default"].createElement("div", { className: Management_module_scss_1["default"]["management__department"], id: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0431\u0443\u0445\u0433\u0430\u043B\u0442\u0435\u0440", ref: block5 },
                     react_1["default"].createElement(ChiefAccountant_1["default"], null)),
                 react_1["default"].createElement("div", { className: Management_module_scss_1["default"]["management__department"], id: "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u0435\u0440", ref: block6 },
-                    react_1["default"].createElement(Controller_1["default"], null)),
+                    react_1["default"].createElement(TeamController_1["default"], null)),
                 react_1["default"].createElement("div", { className: Management_module_scss_1["default"]["management__department"], id: "\u0421\u043E\u0431\u0440\u0430\u043D\u0438\u0435 \u0430\u043A\u0446\u0438\u043E\u043D\u0435\u0440\u043E\u0432", ref: block7 },
                     react_1["default"].createElement(GeneralMeetingOfShareholders_1["default"], null))),
             react_1["default"].createElement("div", { className: Management_module_scss_1["default"]["management__bar-container"], ref: refBbarContainer },
