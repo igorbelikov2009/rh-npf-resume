@@ -4,12 +4,12 @@ import RadioPrimaryLabel from "../RadioPrimaryLabel/RadioPrimaryLabel";
 import styles from "./RadioPrimary.module.scss";
 
 interface RadioPrimaryProps {
-  radioItems: RadioItemProps[];
+  optionsItems: RadioItemProps[];
   emitValue: (event: React.SetStateAction<string>) => void;
   currentValue: string;
 }
 
-const RadioPrimary: FC<RadioPrimaryProps> = ({ radioItems, currentValue, emitValue }) => {
+const RadioPrimary: FC<RadioPrimaryProps> = ({ optionsItems, currentValue, emitValue }) => {
   const [valueRadio, setValueRadio] = useState(currentValue);
 
   const onChangeRadio = (value: React.SetStateAction<string>) => {
@@ -22,7 +22,7 @@ const RadioPrimary: FC<RadioPrimaryProps> = ({ radioItems, currentValue, emitVal
   return (
     <div className={styles["radio-primary"]}>
       <div className={styles["radio-primary__flex-container"]}>
-        {radioItems.map((item) => (
+        {optionsItems.map((item) => (
           <RadioPrimaryLabel
             key={item.value}
             title={item.title}

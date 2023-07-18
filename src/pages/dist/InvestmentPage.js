@@ -168,12 +168,12 @@ var InvestmentPage = function () {
                 left: firstSelectorLeft + 6 + "px",
                 width: firstSelectorWidth - 12 + "px"
             }, className: firstBlockVisible ? "options-block-visible" : "options-block-hidden" },
-            react_1["default"].createElement(OptionBlockForSelector_1["default"], { arrayOptionsBlock: formattedOptionsItems, emitValue: onChangeFirstOptionsBlock, onClickOptionsBlock: onClickFirstOptionsBlock, currentValue: firstCurrentValue })),
+            react_1["default"].createElement(OptionBlockForSelector_1["default"], { optionsItems: formattedOptionsItems, emitValue: onChangeFirstOptionsBlock, onClickOptionsBlock: onClickFirstOptionsBlock, currentValue: firstCurrentValue })),
         react_1["default"].createElement("div", { style: {
                 top: secondBlockTop + "px",
                 left: secondSelectorLeft + 6 + "px",
                 width: secondSelectorWidth - 12 + "px"
             }, className: secondBlockVisible ? "options-block-visible" : "options-block-hidden" },
-            react_1["default"].createElement(OptionBlockForSelector_1["default"], { arrayOptionsBlock: formattedOptionsItems, emitValue: onChangeSecondOptionsBlock, onClickOptionsBlock: onClickSecondOptionsBlock, currentValue: secondCurrentValue }))));
+            react_1["default"].createElement(OptionBlockForSelector_1["default"], { optionsItems: formattedOptionsItems, emitValue: onChangeSecondOptionsBlock, onClickOptionsBlock: onClickSecondOptionsBlock, currentValue: secondCurrentValue }))));
 };
 exports["default"] = InvestmentPage;

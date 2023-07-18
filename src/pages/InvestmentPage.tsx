@@ -230,7 +230,7 @@ const InvestmentPage = () => {
         className={firstBlockVisible ? "options-block-visible" : "options-block-hidden"}
       >
         <OptionBlockForSelector
-          arrayOptionsBlock={formattedOptionsItems}
+          optionsItems={formattedOptionsItems}
           emitValue={onChangeFirstOptionsBlock}
           onClickOptionsBlock={onClickFirstOptionsBlock}
           currentValue={firstCurrentValue}
@@ -246,7 +246,7 @@ const InvestmentPage = () => {
         className={secondBlockVisible ? "options-block-visible" : "options-block-hidden"}
       >
         <OptionBlockForSelector
-          arrayOptionsBlock={formattedOptionsItems}
+          optionsItems={formattedOptionsItems}
           emitValue={onChangeSecondOptionsBlock}
           onClickOptionsBlock={onClickSecondOptionsBlock}
           currentValue={secondCurrentValue}

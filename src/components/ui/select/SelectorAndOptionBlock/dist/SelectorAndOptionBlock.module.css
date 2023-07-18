@@ -1,0 +1,24 @@
+.select-options_hide {
+  width: calc(100% - 12px);
+  position: absolute;
+  left: 6px;
+  top: 94px;
+  visibility: hidden;
+  transform: scale(0.1);
+  transition: all 0.28s;
+}
+
+.select-options_show {
+  width: calc(100% - 12px);
+  position: absolute;
+  left: 6px;
+  top: 94px;
+  visibility: visible;
+  transform: scale(1);
+  transition: all 0.28s;
+}
+
+.list {
+  width: 100%;
+  position: relative;
+}

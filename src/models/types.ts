@@ -117,18 +117,12 @@ export interface IOptionItem {
   date: string;
   value: string;
   id: string;
+  name?: string;
 }
 
 export interface ISidebarLink {
   itemName: string;
   id: string;
-}
-
-export interface IAdaptiveRadioItem {
-  value: string;
-  id: string;
-  title: string;
-  name?: string;
 }
 
 export interface IPercent {

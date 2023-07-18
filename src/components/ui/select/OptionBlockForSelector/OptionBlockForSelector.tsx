@@ -4,14 +4,14 @@ import OptionItem from "../OptionItem/OptionItem";
 import styles from "./OptionBlockForSelector.module.scss";
 
 interface OptionBlockForSelectorProps {
-  arrayOptionsBlock: IOptionItem[];
+  optionsItems: IOptionItem[];
   emitValue: (event: React.SetStateAction<string>, id: string) => void;
   onClickOptionsBlock: () => void;
   currentValue: string;
 }
 
 const OptionBlockForSelector: FC<OptionBlockForSelectorProps> = ({
-  arrayOptionsBlock,
+  optionsItems,
   currentValue,
   emitValue,
   onClickOptionsBlock,
@@ -23,7 +23,7 @@ const OptionBlockForSelector: FC<OptionBlockForSelectorProps> = ({
   return (
     <div className={styles["options-block"]} onClick={onClickOptionsBlock}>
       <div className={styles["scrollable-block"]}>
-        {arrayOptionsBlock.map((option, index) => (
+        {optionsItems.map((option, index) => (
           <OptionItem
             key={index}
             date={option.date}

@@ -4,19 +4,19 @@ import AdaptiveRadioItem from "../AdaptiveRadioItem/AdaptiveRadioItem";
 import styles from "./AdaptiveRadio.module.scss";
 
 interface AdaptiveRadioProps {
-  radioItems: IAdaptiveRadioItem[];
+  optionsItems: IAdaptiveRadioItem[];
   emitValue: (event: any, id: string) => void;
   currentValue: string;
 }
 
-const AdaptiveRadio: FC<AdaptiveRadioProps> = ({ radioItems, currentValue, emitValue }) => {
+const AdaptiveRadio: FC<AdaptiveRadioProps> = ({ optionsItems, currentValue, emitValue }) => {
   const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
     emitValue(value, id);
   };
 
   return (
     <div className={styles["adaptive-radio"]}>
-      {radioItems.map((item) => (
+      {optionsItems.map((item) => (
         <AdaptiveRadioItem
           key={item.value}
           title={item.title}
