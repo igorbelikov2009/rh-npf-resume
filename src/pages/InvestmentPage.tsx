@@ -16,12 +16,12 @@ import "../styles/investment.scss";
 const InvestmentPage = () => {
   const [clientHeight, setClientHeight] = useState(0);
 
-  // firstSelectController
+  // firstSelector
   const [firstCurrentValue, setFirstCurrentValue] = useState("30 ноября 2021 г.");
-  const [, setFirstControllerTop] = useState(0);
-  const [firstControllerBottom, setFirstControllerBottom] = useState(0);
-  const [firstControllerLeft, setFirstControllerLeft] = useState(0);
-  const [firstControllerWidth, setFirstControllerWidth] = useState(0);
+  const [, setFirstSelectorTop] = useState(0);
+  const [firstSelectorBottom, setFirstSelectorBottom] = useState(0);
+  const [firstSelectorLeft, setFirstSelectorLeft] = useState(0);
+  const [firstSelectorWidth, setFirstSelectorWidth] = useState(0);
 
   // firstOptionsBlock
   const [firstBlockIdOption, setFirstBlockIdOption] = useState("0");
@@ -29,12 +29,12 @@ const InvestmentPage = () => {
   const [firstBlockTop, setFirstBlockTop] = useState(0);
   const [firstBlockVisible, setFirstBlockVisible] = useState(false);
 
-  // secondSelectController
+  // secondSelector
   const [secondCurrentValue, setSecondCurrentValue] = useState("30 ноября 2021 г.");
-  const [, setSecondControllerTop] = useState(0);
-  const [secondControllerBottom, setSecondControllerBottom] = useState(0);
-  const [secondControllerLeft, setSecondControllerLeft] = useState(0);
-  const [secondControllerWidth, setSecondControllerWidth] = useState(0);
+  const [, setSecondSelectorTop] = useState(0);
+  const [secondSelectorBottom, setSecondSelectorBottom] = useState(0);
+  const [secondSelectorLeft, setSecondSelectorLeft] = useState(0);
+  const [secondSelectorWidth, setSecondSelectorWidth] = useState(0);
 
   // secondOptionsBlock secondBlock
   const [secondBlockIdOption, setSecondBlockIdOption] = useState("0");
@@ -74,41 +74,41 @@ const InvestmentPage = () => {
 
   // Получаем значения bottom и left (selectController) из компонента PortfolioStructure.tsx
   // Они нужны для первичного установления координат при useEffect, до вызова scrollHandler
-  const getFirstControllerBottomLeft = (bottom: React.SetStateAction<number>, left: React.SetStateAction<number>) => {
-    setFirstControllerBottom(bottom);
-    setFirstControllerLeft(left);
+  const getFirstSelectorBottomLeft = (bottom: React.SetStateAction<number>, left: React.SetStateAction<number>) => {
+    setFirstSelectorBottom(bottom);
+    setFirstSelectorLeft(left);
   };
 
   // Получаем значения bottom и left (selectController) из компонента CompositionReserves.tsx
   // Они нужны для первичного установления координат при useEffect, до вызова scrollHandler
-  const getSecondControllerBottomLeft = (bottom: React.SetStateAction<number>, left: React.SetStateAction<number>) => {
-    setSecondControllerBottom(bottom);
-    setSecondControllerLeft(left);
+  const getSecondSelectorBottomLeft = (bottom: React.SetStateAction<number>, left: React.SetStateAction<number>) => {
+    setSecondSelectorBottom(bottom);
+    setSecondSelectorLeft(left);
   };
 
   // useEffect для первых first Controller и OptionsBlock
   useEffect(() => {
-    setFirstBlockTop(firstControllerBottom);
-    if (firstControllerBottom <= 0) {
+    setFirstBlockTop(firstSelectorBottom);
+    if (firstSelectorBottom <= 0) {
       setFirstBlockTop(0);
-    } else if (firstControllerBottom >= clientHeight - firstBlockHeight && firstControllerBottom <= clientHeight) {
-      setFirstBlockTop(firstControllerBottom - firstBlockHeight);
-    } else if (firstControllerBottom >= clientHeight) {
+    } else if (firstSelectorBottom >= clientHeight - firstBlockHeight && firstSelectorBottom <= clientHeight) {
+      setFirstBlockTop(firstSelectorBottom - firstBlockHeight);
+    } else if (firstSelectorBottom >= clientHeight) {
       setFirstBlockTop(clientHeight - firstBlockHeight);
     }
-  }, [clientHeight, firstBlockHeight, firstControllerBottom]);
+  }, [clientHeight, firstBlockHeight, firstSelectorBottom]);
 
   // useEffect для вторых second Controller и OptionsBlock
   useEffect(() => {
-    setSecondBlockTop(secondControllerBottom);
-    if (secondControllerBottom <= 0) {
+    setSecondBlockTop(secondSelectorBottom);
+    if (secondSelectorBottom <= 0) {
       setSecondBlockTop(0);
-    } else if (secondControllerBottom >= clientHeight - secondBlockHeight && secondControllerBottom <= clientHeight) {
-      setSecondBlockTop(secondControllerBottom - secondBlockHeight);
-    } else if (secondControllerBottom >= clientHeight) {
+    } else if (secondSelectorBottom >= clientHeight - secondBlockHeight && secondSelectorBottom <= clientHeight) {
+      setSecondBlockTop(secondSelectorBottom - secondBlockHeight);
+    } else if (secondSelectorBottom >= clientHeight) {
       setSecondBlockTop(clientHeight - secondBlockHeight);
     }
-  }, [clientHeight, secondBlockHeight, secondControllerBottom]);
+  }, [clientHeight, secondBlockHeight, secondSelectorBottom]);
 
   // Клик первого контроллера (first Controller)
   const onClickFirstSelectController = () => {
@@ -165,10 +165,10 @@ const InvestmentPage = () => {
     left: React.SetStateAction<number>,
     width: React.SetStateAction<number>
   ) => {
-    setFirstControllerTop(top);
-    setFirstControllerBottom(bottom);
-    setFirstControllerLeft(left);
-    setFirstControllerWidth(width);
+    setFirstSelectorTop(top);
+    setFirstSelectorBottom(bottom);
+    setFirstSelectorLeft(left);
+    setFirstSelectorWidth(width);
     // Делаем вызов функции
     getClientHeight();
   };
@@ -180,10 +180,10 @@ const InvestmentPage = () => {
     left: React.SetStateAction<number>,
     width: React.SetStateAction<number>
   ) => {
-    setSecondControllerTop(top);
-    setSecondControllerBottom(bottom);
-    setSecondControllerLeft(left);
-    setSecondControllerWidth(width);
+    setSecondSelectorTop(top);
+    setSecondSelectorBottom(bottom);
+    setSecondSelectorLeft(left);
+    setSecondSelectorWidth(width);
   };
 
   return (
@@ -204,7 +204,7 @@ const InvestmentPage = () => {
           idOption={firstBlockIdOption}
           onClickSelector={onClickFirstSelectController}
           emitCoords={onScrollPortfolioStructure}
-          emitSelectorBottomLeft={getFirstControllerBottomLeft}
+          emitSelectorBottomLeft={getFirstSelectorBottomLeft}
         />
       </div>
 
@@ -214,7 +214,7 @@ const InvestmentPage = () => {
         idOption={secondBlockIdOption}
         onClickSelector={onClickSecondSelectController}
         emitCoords={onScrollCompositionReserves}
-        emitSelectorBottomLeft={getSecondControllerBottomLeft}
+        emitSelectorBottomLeft={getSecondSelectorBottomLeft}
       />
 
       <InvestmentArchive />
@@ -224,8 +224,8 @@ const InvestmentPage = () => {
         ref={refFirstSelectBlock}
         style={{
           top: `${firstBlockTop}px`,
-          left: `${firstControllerLeft + 6}px`,
-          width: `${firstControllerWidth - 12}px`,
+          left: `${firstSelectorLeft + 6}px`,
+          width: `${firstSelectorWidth - 12}px`,
         }}
         className={firstBlockVisible ? "options-block-visible" : "options-block-hidden"}
       >
@@ -240,8 +240,8 @@ const InvestmentPage = () => {
       <div
         style={{
           top: `${secondBlockTop}px`,
-          left: `${secondControllerLeft + 6}px`,
-          width: `${secondControllerWidth - 12}px`,
+          left: `${secondSelectorLeft + 6}px`,
+          width: `${secondSelectorWidth - 12}px`,
         }}
         className={secondBlockVisible ? "options-block-visible" : "options-block-hidden"}
       >
