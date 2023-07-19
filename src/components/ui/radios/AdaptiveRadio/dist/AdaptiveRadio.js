@@ -8,6 +8,6 @@ var AdaptiveRadio = function (_a) {
     var onChangeRadio = function (value, id) {
         emitValue(value, id);
     };
-    return (react_1["default"].createElement("div", { className: AdaptiveRadio_module_scss_1["default"]["adaptive-radio"] }, optionsItems.map(function (item) { return (react_1["default"].createElement(AdaptiveRadioItem_1["default"], { key: item.value, title: item.title, value: item.value, id: item.id, name: item.name, isActive: item.value === currentValue, emitValue: onChangeRadio })); })));
+    return (react_1["default"].createElement("div", { className: AdaptiveRadio_module_scss_1["default"]["adaptive-radio"] }, optionsItems.map(function (item) { return (react_1["default"].createElement(AdaptiveRadioItem_1["default"], { key: item.value, title: item.date, value: item.value, id: item.id, name: item.name, isActive: item.value === currentValue, emitValue: onChangeRadio })); })));
 };
 exports["default"] = AdaptiveRadio;

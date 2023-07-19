@@ -13,6 +13,7 @@ interface SelectorAndOptionBlockProps {
   emitOnClickRadioListBlock: () => void;
 }
 
+// const ControllerOption
 const SelectorAndOptionBlock: FC<SelectorAndOptionBlockProps> = ({
   isRadioListVisible,
   optionsItems,

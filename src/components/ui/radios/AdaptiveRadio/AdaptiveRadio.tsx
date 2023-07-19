@@ -19,7 +19,7 @@ const AdaptiveRadio: FC<AdaptiveRadioProps> = ({ optionsItems, currentValue, emi
       {optionsItems.map((item) => (
         <AdaptiveRadioItem
           key={item.value}
-          title={item.title}
+          title={item.date}
           value={item.value}
           id={item.id}
           name={item.name}

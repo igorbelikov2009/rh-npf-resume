@@ -103,7 +103,7 @@ export interface ITableContributions {
 export interface IAdaptiveRadioItem {
   value: string;
   id: string;
-  title: string;
+  date: string;
   name?: string;
 }
 
