@@ -1,0 +1,37 @@
+.my-input__field {
+  width: 100%;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 24px 0 8px;
+  color: #28323c;
+  border-bottom: 1px solid #b5bdc8;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.my-input__field:hover {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+.my-input__field:focus {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+
+.my-input__field_invalid {
+  width: 100%;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 24px 0 8px;
+  color: #28323c;
+  border-bottom: 1px solid red;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.my-input__field_invalid:hover {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+.my-input__field_invalid:focus {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}

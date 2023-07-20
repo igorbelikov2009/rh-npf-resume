@@ -1,0 +1,15 @@
+.my-input__label {
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+}
+.my-input__error {
+  display: block;
+  position: absolute;
+  top: 67px;
+  top: 56px;
+  left: 0;
+  font-size: 12px;
+  line-height: 12px;
+  color: red;
+}
