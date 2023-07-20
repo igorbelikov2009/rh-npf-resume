@@ -6,9 +6,9 @@ var Selector_1 = require("../Selector/Selector");
 var SelectorAndOptionBlock_module_scss_1 = require("./SelectorAndOptionBlock.module.scss");
 // const ControllerOption
 var SelectorAndOptionBlock = function (_a) {
-    var isRadioListVisible = _a.isRadioListVisible, optionsItems = _a.optionsItems, currentValue = _a.currentValue, onClickController = _a.onClickController, emitOnChangeRadioListBlock = _a.emitOnChangeRadioListBlock, emitOnClickRadioListBlock = _a.emitOnClickRadioListBlock;
+    var isRadioListVisible = _a.isRadioListVisible, optionsItems = _a.optionsItems, currentValue = _a.currentValue, onClickSelector = _a.onClickSelector, emitOnChangeRadioListBlock = _a.emitOnChangeRadioListBlock, emitOnClickRadioListBlock = _a.emitOnClickRadioListBlock;
     var onClickRadioListSelector = function () {
-        onClickController();
+        onClickSelector();
     };
     var onChangeRadioListBlock = function (value, id) {
         emitOnChangeRadioListBlock(value, id);

@@ -45,7 +45,7 @@ const ListNews = () => {
     }));
   }, [newsFilteredByYear]);
 
-  const onClickController = () => {
+  const onClickSelector = () => {
     setRadioListVisible((prev) => !prev);
   };
   const onChangeRadioListBlock = (value: React.SetStateAction<string>, id: string) => {
@@ -68,7 +68,7 @@ const ListNews = () => {
             currentValue={selectedYear}
             optionsItems={optionsItems}
             isRadioListVisible={isRadioListVisible}
-            onClickController={onClickController}
+            onClickSelector={onClickSelector}
             emitOnChangeRadioListBlock={onChangeRadioListBlock}
             emitOnClickRadioListBlock={onClickRadioListBlock}
           />

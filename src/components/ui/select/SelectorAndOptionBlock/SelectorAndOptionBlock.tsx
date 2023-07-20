@@ -8,7 +8,7 @@ interface SelectorAndOptionBlockProps {
   isRadioListVisible: boolean;
   optionsItems: IOptionItem[];
   currentValue: string;
-  onClickController: () => void;
+  onClickSelector: () => void;
   emitOnChangeRadioListBlock: (value: React.SetStateAction<string>, id: string) => void;
   emitOnClickRadioListBlock: () => void;
 }
@@ -18,12 +18,12 @@ const SelectorAndOptionBlock: FC<SelectorAndOptionBlockProps> = ({
   isRadioListVisible,
   optionsItems,
   currentValue,
-  onClickController,
+  onClickSelector,
   emitOnChangeRadioListBlock,
   emitOnClickRadioListBlock,
 }) => {
   const onClickRadioListSelector = () => {
-    onClickController();
+    onClickSelector();
   };
 
   const onChangeRadioListBlock = (value: React.SetStateAction<string>, id: string) => {

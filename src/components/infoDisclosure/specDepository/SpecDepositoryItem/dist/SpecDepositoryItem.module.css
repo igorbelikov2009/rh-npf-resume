@@ -1,0 +1,22 @@
+.spec-depository__paragraph {
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #5a646e;
+}
+.spec-depository__subheading {
+  display: block;
+  font-weight: 700;
+  color: #010;
+}
+.spec-depository__title {
+  display: block;
+  font-size: 13px;
+  line-height: 24px;
+  color: #5a646e;
+  font-style: normal;
+  font-weight: 400;
+}

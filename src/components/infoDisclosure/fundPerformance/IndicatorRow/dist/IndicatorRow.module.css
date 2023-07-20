@@ -1,0 +1,34 @@
+.indicator-row {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e4e4;
+}
+.indicator-row:first-of-type {
+  padding-top: 0;
+}
+.indicator-row__title {
+  width: 100%;
+  max-width: 560px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #5a646e;
+}
+@media screen and (min-width: 576px) {
+  .indicator-row__title {
+    font-size: 16px;
+  }
+}
+.indicator-row__index {
+  font-size: 13px;
+  line-height: 24px;
+  color: #5a646e;
+  margin-left: 12px;
+}
+@media screen and (min-width: 576px) {
+  .indicator-row__index {
+    font-size: 16px;
+    margin-left: 40px;
+  }
+}

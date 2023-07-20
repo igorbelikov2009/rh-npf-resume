@@ -1,0 +1,67 @@
+.radio-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 17px;
+  border-radius: 50%;
+  background-color: #dfe6ec;
+  opacity: 1;
+  transition: background 0.4s;
+  transition-property: background;
+  transition-duration: 0.3s, 0.4s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+}
+.radio-item:hover {
+  opacity: 0.8;
+}
+.radio-item:hover .title {
+  opacity: 1;
+}
+
+.radio-item_chosen {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 17px;
+  border-radius: 50%;
+  background-color: #50287d;
+  opacity: 1;
+  transition: background 0.4s;
+  transition-property: background;
+  transition-duration: 0.3s, 0.4s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+}
+.radio-item_chosen:hover {
+  opacity: 0.8;
+}
+.radio-item_chosen:hover .title {
+  opacity: 1;
+}
+
+.field {
+  display: none;
+}
+
+.title {
+  color: #464242;
+  opacity: 0.6;
+  transition: color 0.3s;
+  transition-property: color;
+  transition-duration: 0.3s, 0.4s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+}
+
+.title_chosen {
+  color: #fff;
+  opacity: 0.6;
+  transition: color 0.3s;
+  transition-property: color;
+  transition-duration: 0.3s, 0.4s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+}

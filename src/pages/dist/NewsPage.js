@@ -9,6 +9,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 exports.__esModule = true;
 var react_1 = require("react");
 var react_router_dom_1 = require("react-router-dom");
+var UserDate_1 = require("../api/UserDate/UserDate");
 var TripleIcon_1 = require("../components/general/TripleIcon/TripleIcon");
 var NewsLink_1 = require("../components/news/NewsLink/NewsLink");
 var Article_1 = require("../components/newsPage/Article/Article");
@@ -24,10 +25,24 @@ var NewsPage = function () {
     var anotherNews = __spreadArrays(newsData_1.news).filter(function (item) {
         return item.id === prevID || item.id === nextID;
     });
+    // Форматируем дату других новостей:
+    var formatedAnotherNews = __spreadArrays(anotherNews).map(function (item) { return ({
+        id: Number(item.id),
+        title: String(item.title),
+        date: String(UserDate_1["default"].format(new Date(item.date))),
+        paragraphs: item.paragraphs
+    }); });
     // Оставляем в массиве только те новости, ID которых соответствуют id.
     var currentNews = __spreadArrays(newsData_1.news).filter(function (item) {
         return item.id === Number(id);
     });
+    // форматируем дату текущих новостей:
+    var formatedCurrentNews = __spreadArrays(currentNews).map(function (item) { return ({
+        id: Number(item.id),
+        title: String(item.title),
+        date: String(UserDate_1["default"].format(new Date(item.date))),
+        paragraphs: item.paragraphs
+    }); });
     return (react_1["default"].createElement("div", { className: "news-page" },
         react_1["default"].createElement("div", { className: "news-page__head" },
             react_1["default"].createElement("div", { className: "news-page__container" },
@@ -35,11 +50,11 @@ var NewsPage = function () {
                     react_1["default"].createElement("div", { className: "news-page__icons" },
                         react_1["default"].createElement(TripleIcon_1["default"], { hovered: isHovered, light: false, icon: "Arrow Down" })),
                     react_1["default"].createElement("p", { className: "news-page__link-title" }, "\u041A \u0441\u043F\u0438\u0441\u043A\u0443 \u043D\u043E\u0432\u043E\u0441\u0442\u0435\u0439")),
-                currentNews ? (currentNews.map(function (item) { return (react_1["default"].createElement(Article_1["default"], { key: item.id, id: item.id, date: item.date, title: item.date, paragraphs: item.paragraphs })); })) : (react_1["default"].createElement("div", null,
+                formatedCurrentNews ? (formatedCurrentNews.map(function (item) { return (react_1["default"].createElement(Article_1["default"], { key: item.id, id: item.id, date: item.date, title: item.date, paragraphs: item.paragraphs })); })) : (react_1["default"].createElement("div", null,
                     " \u041D\u043E\u0432\u043E\u0441\u0442\u0438 \u0441 ID ",
                     id,
                     " \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E")),
-                anotherNews &&
-                    anotherNews.map(function (item) { return (react_1["default"].createElement(NewsLink_1["default"], { key: item.id, date: item.date, title: item.title, id: Number(item.id) })); })))));
+                formatedAnotherNews &&
+                    formatedAnotherNews.map(function (item) { return (react_1["default"].createElement(NewsLink_1["default"], { key: item.id, date: item.date, title: item.title, id: Number(item.id) })); })))));
 };
 exports["default"] = NewsPage;

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import UserDate from "../api/UserDate/UserDate";
 import TripleIcon from "../components/general/TripleIcon/TripleIcon";
 import NewsLink from "../components/news/NewsLink/NewsLink";
 import Article from "../components/newsPage/Article/Article";
 import { news } from "../data/newsData";
+import { INews } from "../models/types";
 import "../styles/NewsPage.scss";
 
 const NewsPage = () => {
@@ -18,10 +20,26 @@ const NewsPage = () => {
     return item.id === prevID || item.id === nextID;
   });
 
+  // Форматируем дату других новостей:
+  const formatedAnotherNews: INews[] = [...anotherNews].map((item) => ({
+    id: Number(item.id),
+    title: String(item.title),
+    date: String(UserDate.format(new Date(item.date))),
+    paragraphs: item.paragraphs,
+  }));
+
   // Оставляем в массиве только те новости, ID которых соответствуют id.
   const currentNews = [...news].filter((item) => {
     return item.id === Number(id);
   });
+
+  // форматируем дату текущих новостей:
+  const formatedCurrentNews: INews[] = [...currentNews].map((item) => ({
+    id: Number(item.id),
+    title: String(item.title),
+    date: String(UserDate.format(new Date(item.date))),
+    paragraphs: item.paragraphs,
+  }));
 
   return (
     <div className="news-page">
@@ -39,16 +57,16 @@ const NewsPage = () => {
             <p className="news-page__link-title">К списку новостей</p>
           </Link>
 
-          {currentNews ? (
-            currentNews.map((item) => (
+          {formatedCurrentNews ? (
+            formatedCurrentNews.map((item) => (
               <Article key={item.id} id={item.id} date={item.date} title={item.date} paragraphs={item.paragraphs} />
             ))
           ) : (
             <div> Новости с ID {id} не найдено</div>
           )}
 
-          {anotherNews &&
-            anotherNews.map((item) => (
+          {formatedAnotherNews &&
+            formatedAnotherNews.map((item) => (
               <NewsLink key={item.id} date={item.date} title={item.title} id={Number(item.id)} />
             ))}
         </div>

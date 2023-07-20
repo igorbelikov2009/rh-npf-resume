@@ -1,0 +1,82 @@
+"use strict";
+exports.__esModule = true;
+var react_1 = require("react");
+var RadioPrimary_1 = require("../../ui/radios/RadioPrimary/RadioPrimary");
+var GeneralInfo_module_scss_1 = require("./GeneralInfo.module.scss");
+var GeneralInfo = function () {
+    var _a = react_1.useState("information"), currentValue = _a[0], setCurrentValue = _a[1];
+    var optionsItems = [
+        { name: "information", title: "Сведения", value: "information" },
+        { name: "information", title: "Реквизиты", value: "requisites" },
+    ];
+    var onChangePrimaryRadio = function (value) {
+        setCurrentValue(value);
+    };
+    return (react_1["default"].createElement("section", { className: GeneralInfo_module_scss_1["default"]["general-Info"] },
+        react_1["default"].createElement("div", { className: GeneralInfo_module_scss_1["default"]["general-Info__container"] },
+            react_1["default"].createElement("h1", { className: GeneralInfo_module_scss_1["default"]["general-Info__heading"] }, "\u041E\u0431\u0449\u0438\u0435 \u0441\u0432\u0435\u0434\u0435\u043D\u0438\u044F"),
+            react_1["default"].createElement("div", { className: GeneralInfo_module_scss_1["default"]["general-Info__param-switch"] },
+                react_1["default"].createElement(RadioPrimary_1["default"], { currentValue: currentValue, optionsItems: optionsItems, emitValue: onChangePrimaryRadio })),
+            react_1["default"].createElement("div", null, currentValue === "information" ? (react_1["default"].createElement("div", null,
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041F\u043E\u043B\u043D\u043E\u0435 \u0444\u0438\u0440\u043C\u0435\u043D\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u0440\u0443\u0441\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435"),
+                    "\u0410\u043A\u0446\u0438\u043E\u043D\u0435\u0440\u043D\u043E\u0435 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u043E \u043D\u0435\u0433\u043E\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0439 \u0444\u043E\u043D\u0434 \u00AB\u0420\u0435\u043D\u0435\u0441\u0441\u0430\u043D\u0441 \u043F\u0435\u043D\u0441\u0438\u0438\u00BB"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0421\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u043D\u043E\u0435 \u0444\u0438\u0440\u043C\u0435\u043D\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u0440\u0443\u0441\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435"),
+                    "\u0410\u041E \u041D\u041F\u0424 \u00AB\u0420\u0435\u043D\u0435\u0441\u0441\u0430\u043D\u0441 \u043F\u0435\u043D\u0441\u0438\u0438\u00BB"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041F\u043E\u043B\u043D\u043E\u0435 \u0444\u0438\u0440\u043C\u0435\u043D\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u0430\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435"),
+                    "Joint Stock Company Non-State Pension Fund Renaissance pensions"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0421\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u043D\u043E\u0435 \u0444\u0438\u0440\u043C\u0435\u043D\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u0430\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435"),
+                    "JSC NSPF Renaissance pensions"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F"),
+                    "\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F \u043D\u0430 \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u0435\u043D\u0438\u0435 \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u043E \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u043E\u043C\u0443 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0435\u043D\u0438\u044E \u0438 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u043E\u043C\u0443 \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044E ",
+                    react_1["default"].createElement("br", null),
+                    "\u2116 383/2 \u043E\u0442 16 \u0438\u044E\u043D\u044F 2009 \u0433\u043E\u0434\u0430 *"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0410\u0434\u0440\u0435\u0441 \u043C\u0435\u0441\u0442\u0430 \u043D\u0430\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u044F \u0424\u043E\u043D\u0434\u0430. \u041F\u043E\u0447\u0442\u043E\u0432\u044B\u0439 (\u043A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u044B\u0439) \u0430\u0434\u0440\u0435\u0441"),
+                    "115114, \u0433. \u041C\u043E\u0441\u043A\u0432\u0430, \u0414\u0435\u0440\u0431\u0435\u043D\u0435\u0432\u0441\u043A\u0430\u044F \u043D\u0430\u0431., \u0434. 7, \u0441\u0442\u0440. 22"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041E\u0431\u043E\u0441\u043E\u0431\u043B\u0435\u043D\u043D\u044B\u0435 \u043F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u0438\u044F"),
+                    "\u041D\u0435\u0442"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0424\u043E\u043D\u0434 \u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0441 \u0430\u0433\u0435\u043D\u0442\u0430\u043C\u0438")),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "*\u0424\u043E\u043D\u0434 \u0432\u043F\u0440\u0430\u0432\u0435 \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0442\u044C \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u043F\u043E \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u043C\u0443 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u043E\u043C\u0443 \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044E \u043F\u043E\u0441\u043B\u0435 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u044B\u0445 \u043F\u0440\u0430\u0432\u0438\u043B \u0432 \u0411\u0430\u043D\u043A\u0435 \u0420\u043E\u0441\u0441\u0438\u0438 \u0438 \u0432\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443 \u0433\u0430\u0440\u0430\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u043F\u0440\u0430\u0432 \u0437\u0430\u0441\u0442\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043B\u0438\u0446.")))) : (react_1["default"].createElement("div", null,
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041F\u043E\u043B\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u0440\u0443\u0441\u0441\u043A\u043E\u043C \u044F\u0437\u044B\u043A\u0435"),
+                    "\u0410\u043A\u0446\u0438\u043E\u043D\u0435\u0440\u043D\u043E\u0435 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u043E \u043D\u0435\u0433\u043E\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0439 \u0444\u043E\u043D\u0434 \u00AB\u0420\u0435\u043D\u0435\u0441\u0441\u0430\u043D\u0441 \u043F\u0435\u043D\u0441\u0438\u0438\u00BB"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u042E\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0430\u0434\u0440\u0435\u0441"),
+                    "115114, \u0433. \u041C\u043E\u0441\u043A\u0432\u0430, \u0414\u0435\u0440\u0431\u0435\u043D\u0435\u0432\u0441\u043A\u0430\u044F \u043D\u0430\u0431., \u0434. 7, \u0441\u0442\u0440. 22"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041F\u043E\u0447\u0442\u043E\u0432\u044B\u0439 (\u043A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u044B\u0439) \u0430\u0434\u0440\u0435\u0441"),
+                    "115114, \u0433. \u041C\u043E\u0441\u043A\u0432\u0430, \u0414\u0435\u0440\u0431\u0435\u043D\u0435\u0432\u0441\u043A\u0430\u044F \u043D\u0430\u0431., \u0434. 7, \u0441\u0442\u0440. 22"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0418\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 (\u0418\u041D\u041D/\u041A\u041F\u041F)"),
+                    "9725000621 / 772501001"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041E\u0413\u0420\u041D"),
+                    "1187700021948"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041A\u043E\u0434 \u043F\u043E \u041E\u041A\u041F\u041E"),
+                    "34981417"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041E\u041A\u0422\u041C\u041E"),
+                    "45914000000 \u2013 \u043C\u0443\u043D\u0438\u0446\u0438\u043F\u0430\u043B\u044C\u043D\u044B\u0439 \u043E\u043A\u0440\u0443\u0433 \u0414\u0430\u043D\u0438\u043B\u043E\u0432\u0441\u043A\u0438\u0439"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041E\u041A\u041E\u041F"),
+                    "12267"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u041F\u043E\u043B\u043D\u043E\u0435 \u043D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0431\u0430\u043D\u043A\u0430"),
+                    "\u0411\u0430\u043D\u043A \u0412\u0422\u0411 (\u041F\u0410\u041E)"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0420\u0430\u0441\u0447\u0435\u0442\u043D\u044B\u0439 \u0441\u0447\u0435\u0442 (\u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0435 \u0440\u0435\u0437\u0435\u0440\u0432\u044B)"),
+                    "40701810726800000147"),
+                react_1["default"].createElement("p", { className: GeneralInfo_module_scss_1["default"]["general-Info__paragraph"] },
+                    react_1["default"].createElement("span", { className: GeneralInfo_module_scss_1["default"]["general-Info__span"] }, "\u0420\u0430\u0441\u0447\u0435\u0442\u043D\u044B\u0439 \u0441\u0447\u0435\u0442 (\u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430)"),
+                    "40701810026800000148")))))));
+};
+exports["default"] = GeneralInfo;

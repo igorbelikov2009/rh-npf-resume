@@ -42,6 +42,11 @@ export interface RadioItemProps {
   name: string;
 }
 
+export interface IRadioCircleItem {
+  value: string;
+  title: string;
+}
+
 export interface INews {
   id: number;
   title: string;
@@ -138,4 +143,41 @@ export interface ArchiveLinkProps {
   href: string;
   title: string;
   subtitle?: string;
+}
+
+export interface INotificsContent {
+  date: string;
+  description: string;
+}
+
+export interface ISpecDepositoryBlock {
+  subheading: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface IIndicatorRow {
+  title: string;
+  index: string;
+}
+
+export interface IIndicatorsYear {
+  heading?: string;
+  subheading?: string;
+  indicatorRows?: IIndicatorRow[];
+  archiveLinks: ArchiveLinkProps[];
+}
+
+export interface IReports {
+  heading: string;
+  links: ArchiveLinkProps[];
+}
+
+export interface IReport {
+  heading: string;
+  archiveLinks: {
+    href: string;
+    title: string;
+    subtitle: string;
+  }[];
 }

@@ -1,0 +1,40 @@
+.notifics {
+  width: 100%;
+  padding: 24px;
+
+  @media screen and (min-width: 576px) {
+    padding: 48px 28px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 576px) {
+      font-size: 34px;
+      line-height: 48px;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__triple-param-switch {
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 576px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+}

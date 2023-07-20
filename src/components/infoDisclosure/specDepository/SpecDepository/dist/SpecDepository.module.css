@@ -1,0 +1,61 @@
+.spec-depository {
+  width: 100%;
+  padding: 24px;
+}
+@media screen and (min-width: 576px) {
+  .spec-depository {
+    padding: 48px 28px;
+  }
+}
+.spec-depository__container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.spec-depository__heading {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  color: #5a646e;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 576px) {
+  .spec-depository__heading {
+    font-size: 34px;
+    line-height: 48px;
+    margin-bottom: 48px;
+  }
+}
+.spec-depository__param-switch {
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 576px) {
+  .spec-depository__param-switch {
+    margin-bottom: 48px;
+  }
+}
+.spec-depository__interactions {
+  width: 100%;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+@media screen and (min-width: 576px) {
+  .spec-depository__interactions {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+.spec-depository__description {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5a646e;
+}
+.spec-depository__link {
+  text-decoration: none;
+  font-size: inherit;
+  line-height: inherit;
+  color: #50287d;
+  cursor: pointer;
+}

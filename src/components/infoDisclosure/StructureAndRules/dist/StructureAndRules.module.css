@@ -1,0 +1,72 @@
+.structure-and-rules {
+  width: 100%;
+  padding: 24px;
+}
+@media screen and (min-width: 576px) {
+  .structure-and-rules {
+    padding: 48px 28px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1160px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+}
+
+.column {
+  width: 100%;
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e4e4e4;
+}
+
+.heading {
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+}
+@media screen and (min-width: 576px) {
+  .heading {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  color: #50287c;
+  max-width: 400px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+.link:hover {
+  color: #50287d;
+}
+@media screen and (min-width: 576px) {
+  .link {
+    margin-top: 48px;
+  }
+}
+
+.container-button {
+  margin-top: 24px;
+  width: 112px;
+}
+@media screen and (min-width: 576px) {
+  .container-button {
+    margin-top: 48px;
+  }
+}

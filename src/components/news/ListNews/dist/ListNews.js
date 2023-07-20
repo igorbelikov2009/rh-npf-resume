@@ -46,7 +46,7 @@ var ListNews = function () {
             paragraphs: item.paragraphs
         }); });
     }, [newsFilteredByYear]);
-    var onClickController = function () {
+    var onClickSelector = function () {
         setRadioListVisible(function (prev) { return !prev; });
     };
     var onChangeRadioListBlock = function (value, id) {
@@ -63,7 +63,7 @@ var ListNews = function () {
     return (react_1["default"].createElement("section", { className: ListNews_module_scss_1["default"]["news__section"] },
         react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__container-select-radio"] },
             react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__select"] },
-                react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, isRadioListVisible: isRadioListVisible, onClickController: onClickController, emitOnChangeRadioListBlock: onChangeRadioListBlock, emitOnClickRadioListBlock: onClickRadioListBlock })),
+                react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, isRadioListVisible: isRadioListVisible, onClickSelector: onClickSelector, emitOnChangeRadioListBlock: onChangeRadioListBlock, emitOnClickRadioListBlock: onClickRadioListBlock })),
             react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__radio"] },
                 react_1["default"].createElement(AdaptiveRadio_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, emitValue: onChangeAdaptiveRadio }))),
         react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__container-news"] },
