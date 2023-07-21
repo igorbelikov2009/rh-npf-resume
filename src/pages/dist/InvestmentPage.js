@@ -37,7 +37,7 @@ var InvestmentPage = function () {
     var _s = react_1.useState(0), secondBlockHeight = _s[0], setSecondBlockHeight = _s[1];
     var _t = react_1.useState(0), secondBlockTop = _t[0], setSecondBlockTop = _t[1];
     var _u = react_1.useState(false), secondBlockVisible = _u[0], setSecondBlockVisible = _u[1];
-    // ПОлучаем данныес сервера
+    // Получаем данные с сервера
     // const { data: investmentCards, isError } = investmentCardsApi.useGetInvestmentCardsQuery();
     // const { data: investmentOptions } = investmentOptionsAPI.useGetInvestmentOptionsQuery();
     var data1 = investData_1.investmentCards;

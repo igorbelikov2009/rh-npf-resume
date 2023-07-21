@@ -1,13 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import Logotypes from "./general/Logotypes/Logotypes";
+import FooterLink from "./ui/links/FooterLink/FooterLink";
 import "../styles/Footer.scss";
 import { useNavigate } from "react-router-dom";
-import Logotypes from "./general/Logotypes/Logotypes";
+import { AuthContext } from "../context";
 import { FooterLinkProps } from "../models/types";
-import FooterLink from "./ui/links/FooterLink/FooterLink";
 
 const Footer: FC = () => {
-  const navigate = useNavigate();
+  const { isAuth, setAdminLoginVisible } = useContext(AuthContext);
 
+  const navigate = useNavigate();
   const FirstBlock: FooterLinkProps[] = [
     {
       to: "/support#form",
@@ -40,7 +42,7 @@ const Footer: FC = () => {
     },
   ];
 
-  const ThiirdBlock: FooterLinkProps[] = [
+  let ThirdBlock: FooterLinkProps[] = [
     {
       children: "Раскрытие информации",
       to: "/info",
@@ -51,6 +53,14 @@ const Footer: FC = () => {
     },
   ];
 
+  const handleAdminLink = () => {
+    if (isAuth) {
+      return;
+    } else {
+      setAdminLoginVisible(true);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer__top-block">
@@ -59,9 +69,11 @@ const Footer: FC = () => {
         </div>
 
         <div>
-          <img src="/icons/logoNapf.svg" alt="logo" className="footer__logos" />
-          <img src="/icons/logoAeb.svg" alt="logo" className="footer__logos" />
-          <img src="/icons/logoExpert.svg" alt="logo" className="footer__logos" />
+          <img className="footer__logos" src="/icons/logoNapf.svg" alt="logo" />
+
+          <img className="footer__logos" src="/icons/logoAeb.svg" alt="logo" />
+
+          <img className="footer__logos" src="/icons/logoExpert.svg" alt="logo" />
         </div>
       </div>
 
@@ -88,11 +100,19 @@ const Footer: FC = () => {
           </div>
 
           <div className="footer__column">
-            {ThiirdBlock.map((link) => (
+            {ThirdBlock.map((link) => (
               <FooterLink key={link.to} to={link.to}>
                 {link.children}
               </FooterLink>
             ))}
+
+            <div className="footer__admin-link" onClick={handleAdminLink}>
+              {isAuth ? (
+                <FooterLink children="Панель администратора" to="/adminpanel" />
+              ) : (
+                <p className="footer__admin-paragraph">Панель администратора</p>
+              )}
+            </div>
           </div>
 
           <div className="footer__column">

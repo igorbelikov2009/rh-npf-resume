@@ -1,4 +1,4 @@
-import React from "react";
+// страница готова
 import TopBlock from "../components/general/TopBlock/TopBlock";
 import businessImage from "../assets/images/businnes/businnesTop.jpg";
 import BusinessProgramm from "../components/business/BusinessProgramm/BusinessProgramm";
@@ -6,6 +6,7 @@ import BusinnesImages from "../components/business/BusinnesImages/BusinnesImages
 import BusinnesStatistic from "../components/business/BusinnesStatistic/BusinnesStatistic";
 import TaxPreferences from "../components/business/TaxPreferences/TaxPreferences";
 import BusinessBlock from "../components/business/businessBlock/BusinessBlock/BusinessBlock";
+import BusinnesForm from "../components/business/BusinnesForm/BusinnesForm";
 
 const BusinessPage = () => {
   return (
@@ -16,12 +17,13 @@ const BusinessPage = () => {
         image={businessImage}
       />
 
-      <div className="business-page">
+      <div>
         <BusinessBlock />
         <BusinessProgramm />
         <BusinnesImages />
         <BusinnesStatistic />
         <TaxPreferences />
+        <BusinnesForm />
       </div>
     </>
   );

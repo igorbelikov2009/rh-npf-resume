@@ -1,0 +1,139 @@
+.support-form {
+  width: 100%;
+  background: #f3f5f7;
+  padding: 48px 24px;
+}
+@media screen and (min-width: 576px) {
+  .support-form {
+    padding: 72px 28px;
+  }
+}
+.support-form__container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.support-form__content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1160px) {
+  .support-form__content {
+    flex-wrap: nowrap;
+  }
+}
+.support-form__customer-service {
+  width: 100%;
+}
+@media screen and (min-width: 1160px) {
+  .support-form__customer-service {
+    max-width: 360px;
+  }
+}
+.support-form__header {
+  font-size: 34px;
+  line-height: 48px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 576px) {
+  .support-form__header {
+    margin-bottom: 48px;
+  }
+}
+.support-form__span {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: inline;
+}
+@media screen and (min-width: 1160px) {
+  .support-form__span {
+    display: block;
+  }
+}
+.support-form__phone-support {
+  font-size: 34px;
+  line-height: 48px;
+  font-weight: 500;
+  color: #00e;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+.support-form__phone-title {
+  font-size: 13px;
+  line-height: 24px;
+  color: #96a0aa;
+  margin-bottom: 48px;
+}
+.support-form__form {
+  width: 100%;
+  max-width: 460px;
+}
+@media screen and (min-width: 1160px) {
+  .support-form__form {
+    max-width: 460px;
+    margin-left: 40px;
+  }
+}
+.support-form__button-container {
+  width: 184px;
+}
+
+.my-input__label {
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+}
+.my-input__error {
+  display: block;
+  position: absolute;
+  top: 67px;
+  top: 56px;
+  left: 0;
+  font-size: 12px;
+  line-height: 12px;
+  color: red;
+}
+
+.my-input__field {
+  width: 100%;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 24px 0 8px;
+  color: #28323c;
+  border-bottom: 1px solid #b5bdc8;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.my-input__field:hover {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+.my-input__field:focus {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+
+.my-input__field_invalid {
+  width: 100%;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 24px 0 8px;
+  color: #28323c;
+  border-bottom: 1px solid red;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.my-input__field_invalid:hover {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}
+.my-input__field_invalid:focus {
+  line-height: 22px;
+  border-bottom: 2px solid #50287d;
+}

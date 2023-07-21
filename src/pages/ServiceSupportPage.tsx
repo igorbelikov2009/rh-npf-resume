@@ -3,6 +3,7 @@ import supportImage from "../assets/images/support/supportTop.jpg";
 import TopBlock from "../components/general/TopBlock/TopBlock";
 import PensionPrograms from "../components/serviceSupport/PensionPrograms/PensionPrograms";
 import QuestionsAnswers from "../components/serviceSupport/QuestionsAnswers/QuestionsAnswers";
+import SupportForm from "../components/serviceSupport/SupportForm/SupportForm";
 
 const ServiceSupportPage = () => {
   return (
@@ -16,7 +17,9 @@ const ServiceSupportPage = () => {
 
         <PensionPrograms />
 
-        <div></div>
+        <div id={"form"}>
+          <SupportForm />
+        </div>
       </div>
     </>
   );

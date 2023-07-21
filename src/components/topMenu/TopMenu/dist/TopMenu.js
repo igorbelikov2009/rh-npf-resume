@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// Страница готова
+var framer_motion_1 = require("framer-motion"); // анимация
 var react_1 = require("react");
 var TripleIcon_1 = require("../../general/TripleIcon/TripleIcon");
 var TopMenu_module_scss_1 = require("./TopMenu.module.scss");
@@ -8,13 +9,15 @@ var react_router_dom_1 = require("react-router-dom");
 var Logotypes_1 = require("../../general/Logotypes/Logotypes");
 var MenuLink_1 = require("../../ui/links/MenuLink/MenuLink");
 var MenuMobil_1 = require("../MenuMobil/MenuMobil");
+var context_1 = require("../../../context");
+var AdminLogin_1 = require("../AdminLogin/AdminLogin");
+var LoginForm_1 = require("../LoginForm/LoginForm");
 var TopMenu = function () {
-    var _a = react_1.useState(false), isBackgroundWhite = _a[0], setBackgroundWhite = _a[1];
-    var _b = react_1.useState(false), isAdminLoginVisible = _b[0], setAdminLoginVisible = _b[1];
-    var _c = react_1.useState(false), isPrivateOfficeHovered = _c[0], setPrivateOfficeHovered = _c[1];
-    var _d = react_1.useState(false), isHamburgerHovered = _d[0], setHamburgerHovered = _d[1];
-    var _e = react_1.useState(false), isMenuMobilVisible = _e[0], setMenuMobilVisible = _e[1];
-    var _f = react_1.useState(false), isLoginFormVisible = _f[0], setLoginFormVisible = _f[1];
+    var _a = react_1.useContext(context_1.AuthContext), isBackgroundWhite = _a.isBackgroundWhite, setBackgroundWhite = _a.setBackgroundWhite, isAdminLoginVisible = _a.isAdminLoginVisible, setAdminLoginVisible = _a.setAdminLoginVisible;
+    var _b = react_1.useState(false), isPrivateOfficeHovered = _b[0], setPrivateOfficeHovered = _b[1];
+    var _c = react_1.useState(false), isHamburgerHovered = _c[0], setHamburgerHovered = _c[1];
+    var _d = react_1.useState(false), isMenuMobilVisible = _d[0], setMenuMobilVisible = _d[1];
+    var _e = react_1.useState(false), isLoginFormVisible = _e[0], setLoginFormVisible = _e[1];
     var navigate = react_router_dom_1.useNavigate();
     var pathname = react_router_dom_1.useLocation().pathname;
     // console.log(pathname);
@@ -52,6 +55,15 @@ var TopMenu = function () {
             document.body.style.overflow = "hidden";
         }
     };
+    var closeLoginForm = function () {
+        setLoginFormVisible(function (prev) { return !prev; });
+        if (isLoginFormVisible) {
+            document.body.style.overflow = "";
+        }
+        else {
+            document.body.style.overflow = "hidden";
+        }
+    };
     var openMenuMobil = function () {
         setMenuMobilVisible(true);
         document.body.style.overflow = "hidden";
@@ -62,6 +74,11 @@ var TopMenu = function () {
     };
     var openAdminLogin = function () {
         setAdminLoginVisible(!isAdminLoginVisible);
+        // document.body.style.overflow = "hidden";
+    };
+    var closeAdminLogin = function () {
+        setAdminLoginVisible(false);
+        // document.body.style.overflow = "";
     };
     return (react_1["default"].createElement("header", { className: isBackgroundWhite ? TopMenu_module_scss_1["default"]["top-menu__with-border"] : TopMenu_module_scss_1["default"]["top-menu"] },
         react_1["default"].createElement("div", { className: TopMenu_module_scss_1["default"]["top-menu__container"] },
@@ -79,6 +96,9 @@ var TopMenu = function () {
                 react_1["default"].createElement("div", { onMouseOver: function () { return setPrivateOfficeHovered(true); }, onMouseOut: function () { return setPrivateOfficeHovered(false); }, onClick: openLoginForm, className: TopMenu_module_scss_1["default"]["top-menu__private-office"] },
                     react_1["default"].createElement(TripleIcon_1["default"], { icon: "User", light: !isBackgroundWhite, hovered: isPrivateOfficeHovered }),
                     react_1["default"].createElement("p", { className: isBackgroundWhite ? TopMenu_module_scss_1["default"]["top-menu__title_news"] : TopMenu_module_scss_1["default"]["top-menu__title"] }, "\u041B\u0438\u0447\u043D\u044B\u0439 \u043A\u0430\u0431\u0438\u043D\u0435\u0442")))),
-        react_1["default"].createElement(MenuMobil_1["default"], { isVisible: isMenuMobilVisible, closeMenuMobil: closeMenuMobil })));
+        react_1["default"].createElement(LoginForm_1["default"], { isVisible: isLoginFormVisible, closeLoginForm: closeLoginForm }),
+        react_1["default"].createElement(MenuMobil_1["default"], { isVisible: isMenuMobilVisible, closeMenuMobil: closeMenuMobil }),
+        react_1["default"].createElement(framer_motion_1.AnimatePresence, null, isAdminLoginVisible && (react_1["default"].createElement(framer_motion_1.motion.div, { initial: { height: 0, opacity: 0 }, animate: { height: "auto", opacity: 1 }, exit: { height: 0, opacity: 0 }, style: { overflow: "hidden" } },
+            react_1["default"].createElement(AdminLogin_1["default"], { closeAdminLogin: closeAdminLogin }))))));
 };
 exports["default"] = TopMenu;

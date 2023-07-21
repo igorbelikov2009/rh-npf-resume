@@ -42,7 +42,7 @@ const InvestmentPage = () => {
   const [secondBlockTop, setSecondBlockTop] = useState(0);
   const [secondBlockVisible, setSecondBlockVisible] = useState(false);
 
-  // ПОлучаем данныес сервера
+  // Получаем данные с сервера
   // const { data: investmentCards, isError } = investmentCardsApi.useGetInvestmentCardsQuery();
   // const { data: investmentOptions } = investmentOptionsAPI.useGetInvestmentOptionsQuery();
 

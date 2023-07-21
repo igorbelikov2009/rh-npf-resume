@@ -1,0 +1,84 @@
+.admin-panel {
+  width: 100%;
+  padding: 24px;
+  margin-top: 72px;
+  margin-bottom: 48px;
+  background-color: #fff;
+}
+@media screen and (min-width: 576px) {
+  .admin-panel {
+    padding: 48px 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .admin-panel {
+    margin-bottom: 72px;
+  }
+}
+.admin-panel__container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.admin-panel__container-input-button {
+  margin-bottom: 12px;
+}
+.admin-panel__input {
+  border: 1px solid #28323c;
+  margin-bottom: 36px;
+}
+.admin-panel__button {
+  border: 1px solid #28323c;
+  margin-left: 36px;
+  margin-bottom: 36px;
+}
+.admin-panel__heading {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #28323c;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .admin-panel__heading {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .admin-panel__heading {
+    max-width: 860px;
+  }
+}
+.admin-panel__subheading {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #28323c;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .admin-panel__subheading {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .admin-panel__subheading {
+    max-width: 860px;
+  }
+}
+.admin-panel__paragraph {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #727476;
+}

@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// Страница готова
+import { motion, AnimatePresence } from "framer-motion"; // анимация
 import React, { FC, useEffect, useState, useContext } from "react";
 import TripleIcon from "../../general/TripleIcon/TripleIcon";
 import styles from "./TopMenu.module.scss";
@@ -7,10 +8,12 @@ import Logotypes from "../../general/Logotypes/Logotypes";
 import { MenuLinkProps } from "../../../models/types";
 import MenuLink from "../../ui/links/MenuLink/MenuLink";
 import MenuMobil from "../MenuMobil/MenuMobil";
+import { AuthContext } from "../../../context";
+import AdminLogin from "../AdminLogin/AdminLogin";
+import LoginForm from "../LoginForm/LoginForm";
 
 const TopMenu: FC = () => {
-  const [isBackgroundWhite, setBackgroundWhite] = useState(false);
-  const [isAdminLoginVisible, setAdminLoginVisible] = useState(false);
+  const { isBackgroundWhite, setBackgroundWhite, isAdminLoginVisible, setAdminLoginVisible } = useContext(AuthContext);
 
   const [isPrivateOfficeHovered, setPrivateOfficeHovered] = useState(false);
   const [isHamburgerHovered, setHamburgerHovered] = useState(false);
@@ -57,6 +60,14 @@ const TopMenu: FC = () => {
       document.body.style.overflow = "hidden";
     }
   };
+  const closeLoginForm = () => {
+    setLoginFormVisible((prev) => !prev);
+    if (isLoginFormVisible) {
+      document.body.style.overflow = "";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
 
   const openMenuMobil = () => {
     setMenuMobilVisible(true);
@@ -69,6 +80,11 @@ const TopMenu: FC = () => {
 
   const openAdminLogin = () => {
     setAdminLoginVisible(!isAdminLoginVisible);
+    // document.body.style.overflow = "hidden";
+  };
+  const closeAdminLogin = () => {
+    setAdminLoginVisible(false);
+    // document.body.style.overflow = "";
   };
 
   return (
@@ -131,7 +147,21 @@ const TopMenu: FC = () => {
         </div>
       </div>
 
+      <LoginForm isVisible={isLoginFormVisible} closeLoginForm={closeLoginForm} />
       <MenuMobil isVisible={isMenuMobilVisible} closeMenuMobil={closeMenuMobil} />
+
+      <AnimatePresence>
+        {isAdminLoginVisible && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            style={{ overflow: "hidden" }}
+          >
+            <AdminLogin closeAdminLogin={closeAdminLogin} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
