@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { fundIndicators } from "../../../../data/infoDisclosureData";
 import { optionsItemsFundPerformance } from "../../../../data/infoDisclosureData";
+import { fundIndicatorsAPI } from "../../../../store/services/fundIndicatorsAPI";
+import ServerError from "../../../general/ServerError/ServerError";
+import ServerIsLoading from "../../../general/ServerIsLoading/ServerIsLoading";
 import AdaptiveRadio from "../../../ui/radios/AdaptiveRadio/AdaptiveRadio";
 import SelectorAndOptionBlock from "../../../ui/select/SelectorAndOptionBlock/SelectorAndOptionBlock";
 import IndicatorsYear from "../IndicatorsYear/IndicatorsYear";
@@ -10,6 +12,9 @@ const FundPerformance = () => {
   const [currentValue, setCurrentValue] = useState("2021");
   const [idOptions, setIdOptions] = useState("0");
   const [isRadioListVisible, setRadioListVisible] = useState(false);
+
+  // Получаем данные с сервера
+  const { data: fundIndicators, isLoading, isError } = fundIndicatorsAPI.useGetFundIndicatorsQuery();
 
   const onChangeAdaptiveRadio = (value: string, id: string) => {
     setCurrentValue(value);
@@ -52,6 +57,9 @@ const FundPerformance = () => {
             />
           </div>
         </div>
+
+        {isLoading && <ServerIsLoading />}
+        {isError && <ServerError />}
 
         <div className={styles["fund-performance__list"]}>
           {fundIndicators &&

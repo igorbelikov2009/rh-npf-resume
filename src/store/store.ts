@@ -3,10 +3,16 @@ import newsReducer from "./reducers/newsReducer";
 import { aboutFundAPI } from "./services/aboutFundAPI";
 import { aboutFundCardsAPI } from "./services/aboutFundCardAPI";
 import { businessCardsAPI } from "./services/businessCardsAPI";
+import { fundIndicatorsAPI } from "./services/fundIndicatorsAPI";
 import { cardsBusinessCarouselAPI } from "./services/getCardsBusinessCarouselAPI";
 import { cardsBusinnesStatisticAPI } from "./services/getCardsBusinnesStatisticAPI";
-
+import { investmentCardsAPI } from "./services/investmentCardsAPI";
+import { investmentOptionsAPI } from "./services/investmentOptionsAPI";
+import { investmentTablesAPI } from "./services/investmentTablesAPI";
+import { investPercentAPI } from "./services/investPercentAPI";
 import { newsAPI } from "./services/newsAPI";
+import { optionsItemsReportingAPI } from "./services/optionsItemsReportingAPI";
+import { reportingsAPI } from "./services/reportingsAPI";
 
 // Создаём корневой редюсер, состоящий из комбинации всех редюсеров
 const rootReducer = combineReducers({
@@ -17,6 +23,13 @@ const rootReducer = combineReducers({
   [businessCardsAPI.reducerPath]: businessCardsAPI.reducer,
   [cardsBusinessCarouselAPI.reducerPath]: cardsBusinessCarouselAPI.reducer,
   [cardsBusinnesStatisticAPI.reducerPath]: cardsBusinnesStatisticAPI.reducer,
+  [investmentCardsAPI.reducerPath]: investmentCardsAPI.reducer,
+  [investmentOptionsAPI.reducerPath]: investmentOptionsAPI.reducer,
+  [investPercentAPI.reducerPath]: investPercentAPI.reducer,
+  [investmentTablesAPI.reducerPath]: investmentTablesAPI.reducer,
+  [fundIndicatorsAPI.reducerPath]: fundIndicatorsAPI.reducer,
+  [reportingsAPI.reducerPath]: reportingsAPI.reducer,
+  [optionsItemsReportingAPI.reducerPath]: optionsItemsReportingAPI.reducer,
 });
 
 // Создаём функцию setupStore, с помощью её мы будем конфигурировать
@@ -34,7 +47,14 @@ export const setupStore = () => {
         .concat(aboutFundCardsAPI.middleware)
         .concat(businessCardsAPI.middleware)
         .concat(cardsBusinessCarouselAPI.middleware)
-        .concat(cardsBusinnesStatisticAPI.middleware),
+        .concat(cardsBusinnesStatisticAPI.middleware)
+        .concat(investmentCardsAPI.middleware)
+        .concat(investmentOptionsAPI.middleware)
+        .concat(investPercentAPI.middleware)
+        .concat(investmentTablesAPI.middleware)
+        .concat(fundIndicatorsAPI.middleware)
+        .concat(reportingsAPI.middleware)
+        .concat(optionsItemsReportingAPI.middleware),
   });
 };
 

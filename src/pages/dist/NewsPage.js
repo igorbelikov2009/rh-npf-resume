@@ -21,7 +21,7 @@ require("../styles/NewsPage.scss");
 var NewsPage = function () {
     var id = react_router_dom_1.useParams().id;
     var prevID = Number(id) - 1;
-    var nextID = Number(id);
+    var nextID = Number(id) + 1;
     var _a = react_1.useState(false), isHovered = _a[0], setHovered = _a[1];
     // Получаем данные с newsReducer,
     var dispatch = redux_1.useAppDispatch();

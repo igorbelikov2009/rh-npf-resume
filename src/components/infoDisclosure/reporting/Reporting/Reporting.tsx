@@ -1,5 +1,9 @@
 import React, { FC, useState } from "react";
-import { optionsItemsReporting, reportings } from "../../../../data/infoDisclosureData";
+import { IOptionItem } from "../../../../models/types";
+import { optionsItemsReportingAPI } from "../../../../store/services/optionsItemsReportingAPI";
+import { reportingsAPI } from "../../../../store/services/reportingsAPI";
+import ServerError from "../../../general/ServerError/ServerError";
+import ServerIsLoading from "../../../general/ServerIsLoading/ServerIsLoading";
 import ButtonToArchive from "../../../ui/buttons/ButtonToArchive/ButtonToArchive";
 import AdaptiveRadio from "../../../ui/radios/AdaptiveRadio/AdaptiveRadio";
 import SelectorAndOptionBlock from "../../../ui/select/SelectorAndOptionBlock/SelectorAndOptionBlock";
@@ -16,8 +20,13 @@ const Reporting: FC<ReportingProps> = ({ onClickArchiveReporting }) => {
   const [isSelectorOptionBlockVisible, setSelectorOptionBlockVisible] = useState(false);
 
   // Поучаем данные с сервера
-  // const data1 = reportings;
-  // const data2 = optionsItemsReporting;
+  const { data: reportings, isLoading, isError } = reportingsAPI.useGetReportingsQuery();
+  // const { data: optionsItemsReporting } = optionsItemsReportingAPI.useGetOptionsItemsReportingQuery();
+  const { data } = optionsItemsReportingAPI.useGetOptionsItemsReportingQuery();
+  let optionsItemsReporting: IOptionItem[] = [];
+  if (data) {
+    optionsItemsReporting = data;
+  }
 
   const onChangeAdaptiveRadio = (value: string, id: string) => {
     setCurrentValue(value);
@@ -68,6 +77,9 @@ const Reporting: FC<ReportingProps> = ({ onClickArchiveReporting }) => {
         </div>
 
         <div>
+          {isLoading && <ServerIsLoading />}
+          {isError && <ServerError />}
+
           {reportings &&
             reportings.map((reports, index) => (
               <Reports key={index} reports={reports} isVisible={index === Number(id)} />

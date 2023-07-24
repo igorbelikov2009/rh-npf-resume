@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var investData_1 = require("../../../../data/investData");
+var investPercentAPI_1 = require("../../../../store/services/investPercentAPI");
 var Selector_1 = require("../../../ui/select/Selector/Selector");
 var Graph_1 = require("../Graph/Graph");
 var Percents_1 = require("../Percents/Percents");
@@ -12,6 +12,8 @@ var PortfolioStructure = function (_a) {
     var _c = react_1.useState(0), bottom = _c[0], setBottom = _c[1];
     var _d = react_1.useState(0), left = _d[0], setLeft = _d[1];
     var _e = react_1.useState(0), width = _e[0], setWidth = _e[1];
+    // Получаем данные с сервера
+    var investPercent = investPercentAPI_1.investPercentAPI.useGetInvestPercentQuery().data;
     var selectorRef = react_1.useRef(null);
     var getSelectControllerCoords = function () {
         if (selectorRef.current) {
@@ -43,7 +45,7 @@ var PortfolioStructure = function (_a) {
             react_1["default"].createElement(Selector_1["default"], { isVisible: isVisible, value: selectorValue, onClickSelector: onClickSelector })),
         react_1["default"].createElement("div", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure__content"] },
             react_1["default"].createElement(Graph_1["default"], null),
-            investData_1.investPercent &&
-                investData_1.investPercent.map(function (item, index) { return (react_1["default"].createElement(Percents_1["default"], { key: index, percent01: item.percent01, percent02: item.percent02, percent03: item.percent03, percent04: item.percent04, percent05: item.percent05, percent06: item.percent06, isVisible: Number(idOption) === index })); }))));
+            investPercent &&
+                investPercent.map(function (item, index) { return (react_1["default"].createElement(Percents_1["default"], { key: index, percent01: item.percent01, percent02: item.percent02, percent03: item.percent03, percent04: item.percent04, percent05: item.percent05, percent06: item.percent06, isVisible: Number(idOption) === index })); }))));
 };
 exports["default"] = PortfolioStructure;

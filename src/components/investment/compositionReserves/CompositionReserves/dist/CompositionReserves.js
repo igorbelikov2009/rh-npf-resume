@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var investData_1 = require("../../../../data/investData");
+var investmentTablesAPI_1 = require("../../../../store/services/investmentTablesAPI");
 var Selector_1 = require("../../../ui/select/Selector/Selector");
 var CompositionReservesItem_1 = require("../CompositionReservesItem/CompositionReservesItem");
 var CompositionReserves_module_scss_1 = require("./CompositionReserves.module.scss");
@@ -11,6 +11,8 @@ var CompositionReserves = function (_a) {
     var _c = react_1.useState(0), bottom = _c[0], setBottom = _c[1];
     var _d = react_1.useState(0), left = _d[0], setLeft = _d[1];
     var _e = react_1.useState(0), width = _e[0], setWidth = _e[1];
+    // Получаем данные с сервера
+    var investmentTables = investmentTablesAPI_1.investmentTablesAPI.useGetInvestmentTablesQuery().data;
     var selectorRef = react_1.useRef(null);
     var getselectorRefCoords = function () {
         if (selectorRef.current) {
@@ -40,7 +42,7 @@ var CompositionReserves = function (_a) {
         react_1["default"].createElement("h1", { className: CompositionReserves_module_scss_1["default"]["composition-of-funds__heading"] }, "\u0421\u043E\u0441\u0442\u0430\u0432 \u0441\u0440\u0435\u0434\u0441\u0442\u0432 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0445 \u0440\u0435\u0437\u0435\u0440\u0432\u043E\u0432 \u0424\u043E\u043D\u0434\u0430"),
         react_1["default"].createElement("div", { className: CompositionReserves_module_scss_1["default"]["composition-of-funds__selection"], ref: selectorRef },
             react_1["default"].createElement(Selector_1["default"], { isVisible: isVisible, value: selectorValue, onClickSelector: onClickSelector })),
-        investData_1.investmentTables &&
-            investData_1.investmentTables.map(function (arrayOfExpanderTables, index) { return (react_1["default"].createElement(CompositionReservesItem_1["default"], { key: index, arrayOfExpanderTables: arrayOfExpanderTables, isVisible: index === Number(idOption) })); })));
+        investmentTables &&
+            investmentTables.map(function (arrayOfExpanderTables, index) { return (react_1["default"].createElement(CompositionReservesItem_1["default"], { key: index, arrayOfExpanderTables: arrayOfExpanderTables, isVisible: index === Number(idOption) })); })));
 };
 exports["default"] = CompositionReserves;

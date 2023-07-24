@@ -1,17 +1,19 @@
 "use strict";
 exports.__esModule = true;
-/* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
 var UserDate_1 = require("../api/UserDate/UserDate");
 var InvestTop_jpg_1 = require("../assets/images/invest/InvestTop.jpg");
 var Cards_1 = require("../components/general/cards/Cards/Cards");
+var ServerError_1 = require("../components/general/ServerError/ServerError");
+var ServerIsLoading_1 = require("../components/general/ServerIsLoading/ServerIsLoading");
 var TopBlock_1 = require("../components/general/TopBlock/TopBlock");
 var CompositionReserves_1 = require("../components/investment/compositionReserves/CompositionReserves/CompositionReserves");
 var InvestmentArchive_1 = require("../components/investment/InvestmentArchive/InvestmentArchive");
 var InvestmentDescription_1 = require("../components/investment/InvestmentDescription/InvestmentDescription");
 var PortfolioStructure_1 = require("../components/investment/portfolioStructure/PortfolioStructure/PortfolioStructure");
 var OptionBlockForSelector_1 = require("../components/ui/select/OptionBlockForSelector/OptionBlockForSelector");
-var investData_1 = require("../data/investData");
+var investmentCardsAPI_1 = require("../store/services/investmentCardsAPI");
+var investmentOptionsAPI_1 = require("../store/services/investmentOptionsAPI");
 require("../styles/investment.scss");
 var InvestmentPage = function () {
     var _a = react_1.useState(0), clientHeight = _a[0], setClientHeight = _a[1];
@@ -38,17 +40,11 @@ var InvestmentPage = function () {
     var _t = react_1.useState(0), secondBlockTop = _t[0], setSecondBlockTop = _t[1];
     var _u = react_1.useState(false), secondBlockVisible = _u[0], setSecondBlockVisible = _u[1];
     // Получаем данные с сервера
-    // const { data, isLoading, isError } = investmentCardsAPI.useGetInvestmentCardsQuery();
-    // let investmentCards: ICard[] = [];
-    // if (data) {
-    //   investmentCards = data;
-    // }
-    // const { data: investmentOptions } = investmentOptionsAPI.useGetInvestmentOptionsQuery();
-    var data1 = investData_1.investmentCards;
-    var data2 = investData_1.investmentOptions;
+    var _v = investmentCardsAPI_1.investmentCardsAPI.useGetInvestmentCardsQuery(), investmentCards = _v.data, isLoading = _v.isLoading, isError = _v.isError;
+    var investmentOptions = investmentOptionsAPI_1.investmentOptionsAPI.useGetInvestmentOptionsQuery().data;
     var formattedOptionsItems = [];
-    if (investData_1.investmentOptions) {
-        formattedOptionsItems = investData_1.investmentOptions.map(function (item) { return ({
+    if (investmentOptions) {
+        formattedOptionsItems = investmentOptions.map(function (item) { return ({
             date: String(UserDate_1["default"].format(new Date(item.date))),
             value: String(UserDate_1["default"].format(new Date(item.date))),
             id: String(item.id)
@@ -161,7 +157,9 @@ var InvestmentPage = function () {
     };
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement(TopBlock_1["default"], { heading: "\u0418\u043D\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u043E\u043D\u043D\u0430\u044F", headingSpan: "\u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C", subheading: "\u0410\u041E \u041D\u041F\u0424 \u00AB\u0420\u0435\u043D\u0435\u0441\u0441\u0430\u043D\u0441 \u043F\u0435\u043D\u0441\u0438\u0438\u00BB \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442 \u0438\u043D\u0432\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0445 \u0440\u0435\u0437\u0435\u0440\u0432\u043E\u0432 \u0432 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u0430\u0445 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432 \u0424\u043E\u043D\u0434\u0430 \u043D\u0430 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u0430\u0445 \u0441\u043E\u0445\u0440\u0430\u043D\u043D\u043E\u0441\u0442\u0438 \u0438 \u043D\u0430\u0434\u0435\u0436\u043D\u043E\u0441\u0442\u0438, \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0449\u0438\u043C \u0437\u0430\u043A\u043E\u043D\u043E\u0434\u0430\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E\u043C \u0420\u0424 \u0438 \u043A\u043E\u0440\u043F\u043E\u0440\u0430\u0442\u0438\u0432\u043D\u043E\u0439 \u0438\u043D\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u043E\u043D\u043D\u043E\u0439 \u043F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439", image: InvestTop_jpg_1["default"] }),
-        investData_1.investmentCards && react_1["default"].createElement(Cards_1["default"], { cards: investData_1.investmentCards }),
+        isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
+        isError && react_1["default"].createElement(ServerError_1["default"], null),
+        investmentCards && react_1["default"].createElement(Cards_1["default"], { cards: investmentCards }),
         react_1["default"].createElement("div", { id: "portfolioStructure" },
             react_1["default"].createElement(PortfolioStructure_1["default"], { isVisible: firstBlockVisible, selectorValue: firstCurrentValue, idOption: firstBlockIdOption, onClickSelector: onClickFirstSelectController, emitCoords: onScrollPortfolioStructure, emitSelectorBottomLeft: getFirstSelectorBottomLeft })),
         react_1["default"].createElement(CompositionReserves_1["default"], { isVisible: secondBlockVisible, selectorValue: secondCurrentValue, idOption: secondBlockIdOption, onClickSelector: onClickSecondSelectController, emitCoords: onScrollCompositionReserves, emitSelectorBottomLeft: getSecondSelectorBottomLeft }),

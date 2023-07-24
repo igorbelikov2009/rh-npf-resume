@@ -1,17 +1,18 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ICard } from "../../models/types";
+import { IOptionItem } from "../../models/types";
 
-export const investmentCardsAPI = createApi({
-  reducerPath: "investmentCardsAPI",
+export const investmentOptionsAPI = createApi({
+  reducerPath: "investmentOptionsAPI",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000",
   }),
   endpoints: (builder) => ({
-    getInvestmentCards: builder.query<ICard[], void>({
+    getInvestmentOptions: builder.query<IOptionItem[], void>({
       query: () => ({
-        url: "investmentCards",
+        url: "investmentOptions",
       }),
     }),
   }),
 });
+
 //  регистрируем в store/store.ts

@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { IColumn } from "../../models/types";
 
 export const aboutFundAPI = createApi({
+  reducerPath: "aboutFundAPI",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000",
   }),

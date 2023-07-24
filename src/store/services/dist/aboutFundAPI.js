@@ -3,6 +3,7 @@ exports.__esModule = true;
 exports.useGetAboutFundColumnsQuery = exports.aboutFundAPI = void 0;
 var react_1 = require("@reduxjs/toolkit/dist/query/react");
 exports.aboutFundAPI = react_1.createApi({
+    reducerPath: "aboutFundAPI",
     baseQuery: react_1.fetchBaseQuery({
         baseUrl: "http://localhost:5000"
     }),

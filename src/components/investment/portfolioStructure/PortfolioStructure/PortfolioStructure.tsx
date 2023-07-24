@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { investPercent } from "../../../../data/investData";
+import { investPercentAPI } from "../../../../store/services/investPercentAPI";
 import Selector from "../../../ui/select/Selector/Selector";
 import Graph from "../Graph/Graph";
 import Percents from "../Percents/Percents";
@@ -26,6 +26,9 @@ const PortfolioStructure: FC<PortfolioStructureProps> = ({
   const [bottom, setBottom] = useState(0);
   const [left, setLeft] = useState(0);
   const [width, setWidth] = useState(0);
+
+  // Получаем данные с сервера
+  const { data: investPercent } = investPercentAPI.useGetInvestPercentQuery();
 
   const selectorRef = useRef<HTMLDivElement>(null);
 

@@ -15,7 +15,7 @@ import "../styles/NewsPage.scss";
 const NewsPage = () => {
   const { id } = useParams();
   const prevID = Number(id) - 1;
-  const nextID = Number(id);
+  const nextID = Number(id) + 1;
   const [isHovered, setHovered] = useState(false);
 
   // Получаем данные с newsReducer,

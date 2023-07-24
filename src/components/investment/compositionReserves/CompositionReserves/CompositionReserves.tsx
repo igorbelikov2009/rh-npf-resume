@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { investmentTables } from "../../../../data/investData";
+import { investmentTablesAPI } from "../../../../store/services/investmentTablesAPI";
 import Selector from "../../../ui/select/Selector/Selector";
 import CompositionReservesItem from "../CompositionReservesItem/CompositionReservesItem";
 import styles from "./CompositionReserves.module.scss";
@@ -25,6 +25,9 @@ const CompositionReserves: FC<CompositionReservesProps> = ({
   const [bottom, setBottom] = useState(0);
   const [left, setLeft] = useState(0);
   const [width, setWidth] = useState(0);
+
+  // Получаем данные с сервера
+  const { data: investmentTables } = investmentTablesAPI.useGetInvestmentTablesQuery();
 
   const selectorRef = useRef<HTMLDivElement>(null);
 
