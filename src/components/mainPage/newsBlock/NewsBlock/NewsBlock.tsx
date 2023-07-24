@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
 import UserDate from "../../../../api/UserDate/UserDate";
-import { news } from "../../../../data/newsData";
-
+// import { news } from "../../../../data/newsData";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { INews } from "../../../../models/types";
+import { getNews } from "../../../../store/reducers/newsReducer";
 import CarouselHeader from "../../../general/carousel/CarouselHeader/CarouselHeader";
+import ServerError from "../../../general/ServerError/ServerError";
+import ServerIsLoading from "../../../general/ServerIsLoading/ServerIsLoading";
 import MainCarousel from "../MainCarousel/MainCarousel";
 import styles from "./NewsBlock.module.scss";
 
@@ -30,7 +33,15 @@ const NewsBlock = () => {
   //  columns[q] и columns[j]
 
   // ===================================================================================
-  // Получаем данные с newsReducer, сортируем данные:
+  // Получаем данные с newsReducer,
+  const dispatch = useAppDispatch();
+  const { news, isLoading, error } = useAppSelector((state) => state.newsReducer);
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
+
+  // Сортируем полученные данные:
   const sortedNews = [...news].sort((a, b) => (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1));
 
   // Полученный массив форматируем по дате
@@ -53,7 +64,7 @@ const NewsBlock = () => {
     setAmountChildren(news.length);
     // высчитываем общую длину карусельной ленты (carousel-tape)
     setOverallWidth(widthLink * amountChildren);
-  }, [amountChildren, widthLink]);
+  }, [amountChildren, news.length, widthLink]);
   // console.log("amountChildren :" + amountChildren);
   // console.log("overallWidth:" + overallWidth);
   // =================================
@@ -156,23 +167,30 @@ const NewsBlock = () => {
   };
 
   return (
-    <div>
-      <CarouselHeader
-        headerTitle="Новости"
-        isBlurredLeft={isBlurredLeft}
-        isBlurredRight={isBlurredRight}
-        isHoveredLeft={isHoveredLeft}
-        isHoveredRight={isHoveredRight}
-        onClickLeft={onClickLeftArrow}
-        onClickRight={onClickRightArrow}
-      />
+    <>
+      <>
+        {isLoading && <ServerIsLoading />}
+        {error && <ServerError />}
+      </>
 
-      <div className={styles["carousel"]}>
-        <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
-          <MainCarousel qq={q} jj={j} carouselLinks={formatedDateNews} emitWidthColumn={getWidthColumn} />
+      <div>
+        <CarouselHeader
+          headerTitle="Новости"
+          isBlurredLeft={isBlurredLeft}
+          isBlurredRight={isBlurredRight}
+          isHoveredLeft={isHoveredLeft}
+          isHoveredRight={isHoveredRight}
+          onClickLeft={onClickLeftArrow}
+          onClickRight={onClickRightArrow}
+        />
+
+        <div className={styles["carousel"]}>
+          <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
+            <MainCarousel qq={q} jj={j} carouselLinks={formatedDateNews} emitWidthColumn={getWidthColumn} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

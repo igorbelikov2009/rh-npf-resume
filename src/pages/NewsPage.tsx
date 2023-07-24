@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import UserDate from "../api/UserDate/UserDate";
+import ServerError from "../components/general/ServerError/ServerError";
+import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
 import TripleIcon from "../components/general/TripleIcon/TripleIcon";
 import NewsLink from "../components/news/NewsLink/NewsLink";
 import Article from "../components/newsPage/Article/Article";
-import { news } from "../data/newsData";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+// import { news } from "../data/newsData";
 import { INews } from "../models/types";
+import { getNews } from "../store/reducers/newsReducer";
 import "../styles/NewsPage.scss";
 
 const NewsPage = () => {
@@ -13,6 +17,14 @@ const NewsPage = () => {
   const prevID = Number(id) - 1;
   const nextID = Number(id);
   const [isHovered, setHovered] = useState(false);
+
+  // Получаем данные с newsReducer,
+  const dispatch = useAppDispatch();
+  const { news, isLoading, error } = useAppSelector((state) => state.newsReducer);
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
 
   // Фильтруем массив всех отсортированных новостей, с упорядоченным id, с отформатированной датой
   // Оставляем в массиве только те новости, ID которых соответствуют prevID и nextID.
@@ -44,6 +56,10 @@ const NewsPage = () => {
   return (
     <div className="news-page">
       <div className="news-page__head">
+        <div>
+          {isLoading && <ServerIsLoading />}
+          {error && <ServerError />}
+        </div>
         <div className="news-page__container">
           <Link
             to="/news"

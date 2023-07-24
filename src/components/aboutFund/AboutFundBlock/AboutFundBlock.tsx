@@ -1,46 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
+// import { aboutFundColumns } from "../../../data/aboutFundData";
 import { IColumn } from "../../../models/types";
+import { aboutFundAPI } from "../../../store/services/aboutFundAPI";
 import CarouselHeader from "../../general/carousel/CarouselHeader/CarouselHeader";
+import ServerError from "../../general/ServerError/ServerError";
+import ServerIsLoading from "../../general/ServerIsLoading/ServerIsLoading";
 import FundCarousel from "../FundCarousel/FundCarousel";
 import styles from "./AboutFundBlock.module.scss";
 
 const AboutFundBlock = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const aboutFundColumns: IColumn[] = [
-    {
-      title: "2002",
-      description:
-        "Дата основания Фонда как части финансовой группы ING в России. Уже в 2003 году в Фонд приходят первые крупные клиенты, что дало Фонду существенный толчок к развитию и сделало его привлекательным в глазах будущих партнеров.",
-    },
-    {
-      title: "2003",
-      description: "В Фонд приходят первые крупные клиенты.",
-    },
-    {
-      title: "2008",
-      description: "Клиентами Фонда стали более 70 наших текущих партнеров.",
-    },
-    {
-      title: "2009",
-      description:
-        "В связи с изменением бизнес стратегии компании ING в России, Фонд был выкуплен крупнейшей Британской страховой компанией AVIVA, что только лишь усилило позиции Фонда.",
-    },
-    {
-      title: "2013",
-      description: "Фонд перешел под управление компании WELBI на 100% контролировавшейся НПФ “Благосостояние”.",
-    },
-    {
-      title: "2017",
-      description:
-        "В результате сделки Фонд вошел в объединенную группу компаний под управлением ООО “Группа Ренессанс Страхование”, одного из крупнейших провайдеров добровольного страхования в России.",
-    },
-    {
-      title: "2018",
-      description:
-        "Состоялась реорганизация в акционерное общество с одновременным переименованием Фонда в АО НПФ «Ренессанс пенсии».",
-    },
-  ];
 
   // для CarouselHeader
   // меняем цвет у стрелок и свойства курсора на "cursor: default;"
@@ -68,13 +38,15 @@ const AboutFundBlock = () => {
   };
   // console.log(widthLink);
 
+  const { data: aboutFundColumns, isLoading, isError } = aboutFundAPI.useGetAboutFundColumnsQuery(10);
+
   useEffect(() => {
     if (aboutFundColumns)
       // получаем количество детей массива, новостных колонок (NewsLinkContainer)
       setAmountChildren(aboutFundColumns.length);
     // высчитываем общую длину карусельной ленты (carousel-tape)
     setOverallWidth(widthLink * amountChildren);
-  }, [amountChildren, widthLink, aboutFundColumns]);
+  }, [aboutFundColumns, amountChildren, widthLink]);
   // console.log("amountChildren :" + amountChildren);
   // console.log("overallWidth:" + overallWidth);
   // =================================
@@ -181,23 +153,28 @@ const AboutFundBlock = () => {
   };
 
   return (
-    <div>
-      <CarouselHeader
-        headerTitle="История Фонда"
-        isBlurredLeft={isBlurredLeft}
-        isBlurredRight={isBlurredRight}
-        isHoveredLeft={isHoveredLeft}
-        isHoveredRight={isHoveredRight}
-        onClickLeft={onClickLeftArrow}
-        onClickRight={onClickRightArrow}
-      />
+    <>
+      {isLoading && <ServerIsLoading />}
+      {isError && <ServerError />}
 
-      <div className={styles["carousel"]}>
-        <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
-          <FundCarousel columns={aboutFundColumns} jj={j} qq={q} emitWidthColumn={getLinkContainerWidth} />
+      <div>
+        <CarouselHeader
+          headerTitle="История Фонда"
+          isBlurredLeft={isBlurredLeft}
+          isBlurredRight={isBlurredRight}
+          isHoveredLeft={isHoveredLeft}
+          isHoveredRight={isHoveredRight}
+          onClickLeft={onClickLeftArrow}
+          onClickRight={onClickRightArrow}
+        />
+
+        <div className={styles["carousel"]}>
+          <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
+            <FundCarousel columns={aboutFundColumns} jj={j} qq={q} emitWidthColumn={getLinkContainerWidth} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

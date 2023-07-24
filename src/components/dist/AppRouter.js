@@ -15,7 +15,7 @@ var NewsPage_1 = require("../pages/NewsPage");
 var NotFoundPage_1 = require("../pages/NotFoundPage");
 var ServiceSupportPage_1 = require("../pages/ServiceSupportPage");
 var TaxationPage_1 = require("../pages/TaxationPage");
-var AdminPanel_1 = require("../pages/AdminPanel");
+var AdminPanelPage_1 = require("../pages/AdminPanelPage");
 var AppRouter = function () {
     return (react_1["default"].createElement(react_router_dom_1.Routes, null,
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/", element: react_1["default"].createElement(Layout_1["default"], null) },
@@ -31,6 +31,6 @@ var AppRouter = function () {
             react_1["default"].createElement(react_router_dom_1.Route, { path: "*", element: react_1["default"].createElement(NotFoundPage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "support", element: react_1["default"].createElement(ServiceSupportPage_1["default"], null) }),
             react_1["default"].createElement(react_router_dom_1.Route, { path: "taxation", element: react_1["default"].createElement(TaxationPage_1["default"], null) }),
-            react_1["default"].createElement(react_router_dom_1.Route, { path: "adminpanel", element: react_1["default"].createElement(AdminPanel_1["default"], null) }))));
+            react_1["default"].createElement(react_router_dom_1.Route, { path: "adminpanel", element: react_1["default"].createElement(AdminPanelPage_1["default"], null) }))));
 };
 exports["default"] = AppRouter;

@@ -2,41 +2,14 @@
 exports.__esModule = true;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
+var aboutFundAPI_1 = require("../../../store/services/aboutFundAPI");
 var CarouselHeader_1 = require("../../general/carousel/CarouselHeader/CarouselHeader");
+var ServerError_1 = require("../../general/ServerError/ServerError");
+var ServerIsLoading_1 = require("../../general/ServerIsLoading/ServerIsLoading");
 var FundCarousel_1 = require("../FundCarousel/FundCarousel");
 var AboutFundBlock_module_scss_1 = require("./AboutFundBlock.module.scss");
 var AboutFundBlock = function () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    var aboutFundColumns = [
-        {
-            title: "2002",
-            description: "Дата основания Фонда как части финансовой группы ING в России. Уже в 2003 году в Фонд приходят первые крупные клиенты, что дало Фонду существенный толчок к развитию и сделало его привлекательным в глазах будущих партнеров."
-        },
-        {
-            title: "2003",
-            description: "В Фонд приходят первые крупные клиенты."
-        },
-        {
-            title: "2008",
-            description: "Клиентами Фонда стали более 70 наших текущих партнеров."
-        },
-        {
-            title: "2009",
-            description: "В связи с изменением бизнес стратегии компании ING в России, Фонд был выкуплен крупнейшей Британской страховой компанией AVIVA, что только лишь усилило позиции Фонда."
-        },
-        {
-            title: "2013",
-            description: "Фонд перешел под управление компании WELBI на 100% контролировавшейся НПФ “Благосостояние”."
-        },
-        {
-            title: "2017",
-            description: "В результате сделки Фонд вошел в объединенную группу компаний под управлением ООО “Группа Ренессанс Страхование”, одного из крупнейших провайдеров добровольного страхования в России."
-        },
-        {
-            title: "2018",
-            description: "Состоялась реорганизация в акционерное общество с одновременным переименованием Фонда в АО НПФ «Ренессанс пенсии»."
-        },
-    ];
     // для CarouselHeader
     // меняем цвет у стрелок и свойства курсора на "cursor: default;"
     var _a = react_1.useState(false), isHoveredLeft = _a[0], setIsHoveredLeft = _a[1];
@@ -59,13 +32,14 @@ var AboutFundBlock = function () {
         setWidthLink(width);
     };
     // console.log(widthLink);
+    var _m = aboutFundAPI_1.aboutFundAPI.useGetAboutFundColumnsQuery(10), aboutFundColumns = _m.data, isLoading = _m.isLoading, isError = _m.isError;
     react_1.useEffect(function () {
         if (aboutFundColumns)
             // получаем количество детей массива, новостных колонок (NewsLinkContainer)
             setAmountChildren(aboutFundColumns.length);
         // высчитываем общую длину карусельной ленты (carousel-tape)
         setOverallWidth(widthLink * amountChildren);
-    }, [amountChildren, widthLink, aboutFundColumns]);
+    }, [aboutFundColumns, amountChildren, widthLink]);
     // console.log("amountChildren :" + amountChildren);
     // console.log("overallWidth:" + overallWidth);
     // =================================
@@ -161,10 +135,13 @@ var AboutFundBlock = function () {
         getValueQOnClickArrowRight();
         changeColorArrowOnClickArrowRight();
     };
-    return (react_1["default"].createElement("div", null,
-        react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u0424\u043E\u043D\u0434\u0430", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
-        react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["carousel"] },
-            react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
-                react_1["default"].createElement(FundCarousel_1["default"], { columns: aboutFundColumns, jj: j, qq: q, emitWidthColumn: getLinkContainerWidth })))));
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+        isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
+        isError && react_1["default"].createElement(ServerError_1["default"], null),
+        react_1["default"].createElement("div", null,
+            react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u0424\u043E\u043D\u0434\u0430", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
+            react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["carousel"] },
+                react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
+                    react_1["default"].createElement(FundCarousel_1["default"], { columns: aboutFundColumns, jj: j, qq: q, emitWidthColumn: getLinkContainerWidth }))))));
 };
 exports["default"] = AboutFundBlock;

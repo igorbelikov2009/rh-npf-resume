@@ -1,9 +1,19 @@
 import React from "react";
-import { businessCards } from "../../../data/businessPageData";
 import DarkIcon from "../../general/DarkIcon/DarkIcon";
 import styles from "./BusinessProgramm.module.scss";
+import { IBusinessCard } from "../../../models/types";
+import { businessCardsAPI } from "../../../store/services/businessCardsAPI";
+import ServerIsLoading from "../../general/ServerIsLoading/ServerIsLoading";
+import ServerError from "../../general/ServerError/ServerError";
 
 const BusinessProgramm = () => {
+  const { data, isLoading, isError } = businessCardsAPI.useGetBusinessCardsAPIQuery();
+
+  let businessCards: IBusinessCard[] = [];
+  if (data) {
+    businessCards = data;
+  }
+
   return (
     <section className={styles["business-programm"]}>
       <div className={styles["business-programm__container"]}>
@@ -12,6 +22,9 @@ const BusinessProgramm = () => {
         </div>
 
         <div className={styles["business-programm__block"]}>
+          {isLoading && <ServerIsLoading />}
+          {isError && <ServerError />}
+
           {businessCards &&
             businessCards.map((card, index) => (
               <div key={index} className={styles["card"]}>

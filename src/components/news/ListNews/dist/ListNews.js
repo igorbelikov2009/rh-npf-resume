@@ -7,20 +7,28 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
     return r;
 };
 exports.__esModule = true;
-/* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
 var UserDate_1 = require("../../../api/UserDate/UserDate");
-var newsData_1 = require("../../../data/newsData");
+var redux_1 = require("../../../hooks/redux");
+var newsReducer_1 = require("../../../store/reducers/newsReducer");
+var ServerError_1 = require("../../general/ServerError/ServerError");
+var ServerIsLoading_1 = require("../../general/ServerIsLoading/ServerIsLoading");
 var AdaptiveRadio_1 = require("../../ui/radios/AdaptiveRadio/AdaptiveRadio");
 var SelectorAndOptionBlock_1 = require("../../ui/select/SelectorAndOptionBlock/SelectorAndOptionBlock");
 var NewsLink_1 = require("../NewsLink/NewsLink");
 var ListNews_module_scss_1 = require("./ListNews.module.scss");
 var ListNews = function () {
     var _a = react_1.useState("2021"), selectedYear = _a[0], setSelectedYear = _a[1];
-    var _b = react_1.useState("0"), id = _b[0], setId = _b[1];
+    var _b = react_1.useState("0"), setId = _b[1];
     var _c = react_1.useState(false), isRadioListVisible = _c[0], setRadioListVisible = _c[1];
-    // получаем radioYears (optionsItems)
-    var optionsItems = __spreadArrays(newsData_1.news).map(function (item) { return new Date(item.date).getFullYear(); })
+    // Получаем данные с newsReducer,
+    var dispatch = redux_1.useAppDispatch();
+    var _d = redux_1.useAppSelector(function (state) { return state.newsReducer; }), news = _d.news, isLoading = _d.isLoading, error = _d.error;
+    react_1.useEffect(function () {
+        dispatch(newsReducer_1.getNews());
+    }, [dispatch]);
+    // Из полученных данных создаём radioYears (optionsItems)
+    var optionsItems = __spreadArrays(news).map(function (item) { return new Date(item.date).getFullYear(); })
         // Сортируем массив по возрастанию
         .sort(function (a, b) { return b - a; })
         // Фильтруем массив, оставляем только уникальные значения.
@@ -33,10 +41,10 @@ var ListNews = function () {
     }); });
     // новости, отфильтрованные по годам
     var newsFilteredByYear = react_1.useMemo(function () {
-        return __spreadArrays(newsData_1.news).filter(function (item) {
+        return __spreadArrays(news).filter(function (item) {
             return new Date(item.date).getFullYear() === Number(selectedYear);
         });
-    }, [selectedYear]);
+    }, [news, selectedYear]);
     // форматируем дату у новостей, отфильтрованных по годам
     var formatedFilteredByYear = react_1.useMemo(function () {
         return __spreadArrays(newsFilteredByYear).map(function (item) { return ({
@@ -61,6 +69,9 @@ var ListNews = function () {
         setId(id);
     };
     return (react_1["default"].createElement("section", { className: ListNews_module_scss_1["default"]["news__section"] },
+        react_1["default"].createElement(react_1["default"].Fragment, null,
+            isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
+            error && react_1["default"].createElement(ServerError_1["default"], null)),
         react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__container-select-radio"] },
             react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__select"] },
                 react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, isRadioListVisible: isRadioListVisible, onClickSelector: onClickSelector, emitOnChangeRadioListBlock: onChangeRadioListBlock, emitOnClickRadioListBlock: onClickRadioListBlock })),

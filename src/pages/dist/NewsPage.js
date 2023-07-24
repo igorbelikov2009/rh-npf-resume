@@ -10,19 +10,28 @@ exports.__esModule = true;
 var react_1 = require("react");
 var react_router_dom_1 = require("react-router-dom");
 var UserDate_1 = require("../api/UserDate/UserDate");
+var ServerError_1 = require("../components/general/ServerError/ServerError");
+var ServerIsLoading_1 = require("../components/general/ServerIsLoading/ServerIsLoading");
 var TripleIcon_1 = require("../components/general/TripleIcon/TripleIcon");
 var NewsLink_1 = require("../components/news/NewsLink/NewsLink");
 var Article_1 = require("../components/newsPage/Article/Article");
-var newsData_1 = require("../data/newsData");
+var redux_1 = require("../hooks/redux");
+var newsReducer_1 = require("../store/reducers/newsReducer");
 require("../styles/NewsPage.scss");
 var NewsPage = function () {
     var id = react_router_dom_1.useParams().id;
     var prevID = Number(id) - 1;
     var nextID = Number(id);
     var _a = react_1.useState(false), isHovered = _a[0], setHovered = _a[1];
+    // Получаем данные с newsReducer,
+    var dispatch = redux_1.useAppDispatch();
+    var _b = redux_1.useAppSelector(function (state) { return state.newsReducer; }), news = _b.news, isLoading = _b.isLoading, error = _b.error;
+    react_1.useEffect(function () {
+        dispatch(newsReducer_1.getNews());
+    }, [dispatch]);
     // Фильтруем массив всех отсортированных новостей, с упорядоченным id, с отформатированной датой
     // Оставляем в массиве только те новости, ID которых соответствуют prevID и nextID.
-    var anotherNews = __spreadArrays(newsData_1.news).filter(function (item) {
+    var anotherNews = __spreadArrays(news).filter(function (item) {
         return item.id === prevID || item.id === nextID;
     });
     // Форматируем дату других новостей:
@@ -33,7 +42,7 @@ var NewsPage = function () {
         paragraphs: item.paragraphs
     }); });
     // Оставляем в массиве только те новости, ID которых соответствуют id.
-    var currentNews = __spreadArrays(newsData_1.news).filter(function (item) {
+    var currentNews = __spreadArrays(news).filter(function (item) {
         return item.id === Number(id);
     });
     // форматируем дату текущих новостей:
@@ -45,6 +54,9 @@ var NewsPage = function () {
     }); });
     return (react_1["default"].createElement("div", { className: "news-page" },
         react_1["default"].createElement("div", { className: "news-page__head" },
+            react_1["default"].createElement("div", null,
+                isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
+                error && react_1["default"].createElement(ServerError_1["default"], null)),
             react_1["default"].createElement("div", { className: "news-page__container" },
                 react_1["default"].createElement(react_router_dom_1.Link, { to: "/news", className: "news-page__link-to-news", onMouseOver: function () { return setHovered(true); }, onMouseOut: function () { return setHovered(false); } },
                     react_1["default"].createElement("div", { className: "news-page__icons" },

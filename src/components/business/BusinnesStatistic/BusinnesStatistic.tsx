@@ -1,9 +1,16 @@
 import React from "react";
-import { cardsBusinnesStatistic } from "../../../data/businessPageData";
+import { ICard } from "../../../models/types";
+import { cardsBusinnesStatisticAPI } from "../../../store/services/getCardsBusinnesStatisticAPI";
 import DarkIcon from "../../general/DarkIcon/DarkIcon";
 import styles from "./BusinnesStatistic.module.scss";
 
 const BusinnesStatistic = () => {
+  const { data } = cardsBusinnesStatisticAPI.useGetcardsBusinnesStatisticQuery();
+  let cardsBusinnesStatistic: ICard[] = [];
+  if (data) {
+    cardsBusinnesStatistic = data;
+  }
+
   return (
     <section className={styles["businnes-statistic"]}>
       <h2 className={styles["businnes-statistic__heading"]}>

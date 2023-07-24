@@ -1,8 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import UserDate from "../../../api/UserDate/UserDate";
-import { news } from "../../../data/newsData";
-import { INews, IOptionItem } from "../../../models/types";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { INews } from "../../../models/types";
+import { getNews } from "../../../store/reducers/newsReducer";
+import ServerError from "../../general/ServerError/ServerError";
+import ServerIsLoading from "../../general/ServerIsLoading/ServerIsLoading";
 import AdaptiveRadio from "../../ui/radios/AdaptiveRadio/AdaptiveRadio";
 import SelectorAndOptionBlock from "../../ui/select/SelectorAndOptionBlock/SelectorAndOptionBlock";
 import NewsLink from "../NewsLink/NewsLink";
@@ -10,10 +12,18 @@ import styles from "./ListNews.module.scss";
 
 const ListNews = () => {
   const [selectedYear, setSelectedYear] = useState("2021");
-  const [id, setId] = useState("0");
+  const [, setId] = useState("0");
   const [isRadioListVisible, setRadioListVisible] = useState(false);
 
-  // получаем radioYears (optionsItems)
+  // Получаем данные с newsReducer,
+  const dispatch = useAppDispatch();
+  const { news, isLoading, error } = useAppSelector((state) => state.newsReducer);
+
+  useEffect(() => {
+    dispatch(getNews());
+  }, [dispatch]);
+
+  // Из полученных данных создаём radioYears (optionsItems)
   const optionsItems = [...news]
     // Создаём массив из дат новостей, предварительно форматируя их в года
     .map((item) => new Date(item.date).getFullYear())
@@ -33,7 +43,7 @@ const ListNews = () => {
     return [...news].filter((item) => {
       return new Date(item.date).getFullYear() === Number(selectedYear);
     });
-  }, [selectedYear]);
+  }, [news, selectedYear]);
 
   // форматируем дату у новостей, отфильтрованных по годам
   const formatedFilteredByYear: INews[] = useMemo(() => {
@@ -62,6 +72,11 @@ const ListNews = () => {
 
   return (
     <section className={styles["news__section"]}>
+      <>
+        {isLoading && <ServerIsLoading />}
+        {error && <ServerError />}
+      </>
+
       <div className={styles["news__container-select-radio"]}>
         <div className={styles["news__select"]}>
           <SelectorAndOptionBlock

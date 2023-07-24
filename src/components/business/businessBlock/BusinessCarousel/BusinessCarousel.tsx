@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from "react";
-import { cardsBusinessCarousel } from "../../../../data/businessPageData";
+import { ICarouselCard } from "../../../../models/types";
+import { cardsBusinessCarouselAPI } from "../../../../store/services/getCardsBusinessCarouselAPI";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import styles from "./BusinessCarousel.module.scss";
 
@@ -10,9 +11,15 @@ interface BusinessCarouselProps {
 }
 
 const BusinessCarousel: FC<BusinessCarouselProps> = ({ currentValue, emitAmountChildren, emitValue }) => {
+  const { data } = cardsBusinessCarouselAPI.useGetCardsBusinessCarouselQuery();
+  let cardsBusinessCarousel: ICarouselCard[] = [];
+  if (data) {
+    cardsBusinessCarousel = data;
+  }
+
   useEffect(() => {
     emitAmountChildren(cardsBusinessCarousel.length);
-  }, [emitAmountChildren]);
+  }, [cardsBusinessCarousel.length, emitAmountChildren]);
 
   const onChangeCarouselRadio = (value: string) => {
     emitValue(value);

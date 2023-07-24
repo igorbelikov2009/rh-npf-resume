@@ -13,7 +13,7 @@ import NewsPage from "../pages/NewsPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ServiceSupport from "../pages/ServiceSupportPage";
 import Taxation from "../pages/TaxationPage";
-import AdminPanel from "../pages/AdminPanel";
+import AdminPanel from "../pages/AdminPanelPage";
 
 const AppRouter = () => {
   return (

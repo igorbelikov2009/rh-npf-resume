@@ -10,8 +10,12 @@ exports.__esModule = true;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
 var UserDate_1 = require("../../../../api/UserDate/UserDate");
-var newsData_1 = require("../../../../data/newsData");
+// import { news } from "../../../../data/newsData";
+var redux_1 = require("../../../../hooks/redux");
+var newsReducer_1 = require("../../../../store/reducers/newsReducer");
 var CarouselHeader_1 = require("../../../general/carousel/CarouselHeader/CarouselHeader");
+var ServerError_1 = require("../../../general/ServerError/ServerError");
+var ServerIsLoading_1 = require("../../../general/ServerIsLoading/ServerIsLoading");
 var MainCarousel_1 = require("../MainCarousel/MainCarousel");
 var NewsBlock_module_scss_1 = require("./NewsBlock.module.scss");
 var NewsBlock = function () {
@@ -33,8 +37,14 @@ var NewsBlock = function () {
     var _l = react_1.useState(0), j = _l[0], setJ = _l[1]; // если (screenWidth > 855), то по центру экрана два элемента:
     //  columns[q] и columns[j]
     // ===================================================================================
-    // Получаем данные с newsReducer, сортируем данные:
-    var sortedNews = __spreadArrays(newsData_1.news).sort(function (a, b) { return (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1); });
+    // Получаем данные с newsReducer,
+    var dispatch = redux_1.useAppDispatch();
+    var _m = redux_1.useAppSelector(function (state) { return state.newsReducer; }), news = _m.news, isLoading = _m.isLoading, error = _m.error;
+    react_1.useEffect(function () {
+        dispatch(newsReducer_1.getNews());
+    }, [dispatch]);
+    // Сортируем полученные данные:
+    var sortedNews = __spreadArrays(news).sort(function (a, b) { return (new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1); });
     // Полученный массив форматируем по дате
     var formatedDateNews = __spreadArrays(sortedNews).map(function (item) { return ({
         id: Number(item.id),
@@ -49,10 +59,10 @@ var NewsBlock = function () {
     // console.log(widthLink);
     react_1.useEffect(function () {
         // получаем количество детей массива, новостных колонок (NewsLinkContainer)
-        setAmountChildren(newsData_1.news.length);
+        setAmountChildren(news.length);
         // высчитываем общую длину карусельной ленты (carousel-tape)
         setOverallWidth(widthLink * amountChildren);
-    }, [amountChildren, widthLink]);
+    }, [amountChildren, news.length, widthLink]);
     // console.log("amountChildren :" + amountChildren);
     // console.log("overallWidth:" + overallWidth);
     // =================================
@@ -147,10 +157,14 @@ var NewsBlock = function () {
         getValueQOnClickArrowRight();
         changeColorArrowOnClickArrowRight();
     };
-    return (react_1["default"].createElement("div", null,
-        react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u041D\u043E\u0432\u043E\u0441\u0442\u0438", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
-        react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["carousel"] },
-            react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
-                react_1["default"].createElement(MainCarousel_1["default"], { qq: q, jj: j, carouselLinks: formatedDateNews, emitWidthColumn: getWidthColumn })))));
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+        react_1["default"].createElement(react_1["default"].Fragment, null,
+            isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
+            error && react_1["default"].createElement(ServerError_1["default"], null)),
+        react_1["default"].createElement("div", null,
+            react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u041D\u043E\u0432\u043E\u0441\u0442\u0438", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
+            react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["carousel"] },
+                react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
+                    react_1["default"].createElement(MainCarousel_1["default"], { qq: q, jj: j, carouselLinks: formatedDateNews, emitWidthColumn: getWidthColumn }))))));
 };
 exports["default"] = NewsBlock;

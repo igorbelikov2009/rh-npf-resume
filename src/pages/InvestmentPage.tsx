@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import UserDate from "../api/UserDate/UserDate";
 import investImage from "../assets/images/invest/InvestTop.jpg";
 import Cards from "../components/general/cards/Cards/Cards";
+import ServerError from "../components/general/ServerError/ServerError";
+import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
 import TopBlock from "../components/general/TopBlock/TopBlock";
 import CompositionReserves from "../components/investment/compositionReserves/CompositionReserves/CompositionReserves";
 import InvestmentArchive from "../components/investment/InvestmentArchive/InvestmentArchive";
@@ -10,7 +12,8 @@ import InvestmentDescription from "../components/investment/InvestmentDescriptio
 import PortfolioStructure from "../components/investment/portfolioStructure/PortfolioStructure/PortfolioStructure";
 import OptionBlockForSelector from "../components/ui/select/OptionBlockForSelector/OptionBlockForSelector";
 import { investmentCards, investmentOptions } from "../data/investData";
-import { IOptionItem } from "../models/types";
+import { ICard, IOptionItem } from "../models/types";
+import { investmentCardsAPI } from "../store/services/investmentCardsAPI";
 import "../styles/investment.scss";
 
 const InvestmentPage = () => {
@@ -43,7 +46,11 @@ const InvestmentPage = () => {
   const [secondBlockVisible, setSecondBlockVisible] = useState(false);
 
   // Получаем данные с сервера
-  // const { data: investmentCards, isError } = investmentCardsApi.useGetInvestmentCardsQuery();
+  // const { data, isLoading, isError } = investmentCardsAPI.useGetInvestmentCardsQuery();
+  // let investmentCards: ICard[] = [];
+  // if (data) {
+  //   investmentCards = data;
+  // }
   // const { data: investmentOptions } = investmentOptionsAPI.useGetInvestmentOptionsQuery();
 
   const data1 = investmentCards;
@@ -195,6 +202,8 @@ const InvestmentPage = () => {
         image={investImage}
       />
 
+      {/* {isLoading && <ServerIsLoading />} */}
+      {/* {isError && <ServerError />} */}
       {investmentCards && <Cards cards={investmentCards} />}
 
       <div id="portfolioStructure">

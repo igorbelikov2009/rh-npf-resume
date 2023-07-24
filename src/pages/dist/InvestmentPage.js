@@ -38,7 +38,11 @@ var InvestmentPage = function () {
     var _t = react_1.useState(0), secondBlockTop = _t[0], setSecondBlockTop = _t[1];
     var _u = react_1.useState(false), secondBlockVisible = _u[0], setSecondBlockVisible = _u[1];
     // Получаем данные с сервера
-    // const { data: investmentCards, isError } = investmentCardsApi.useGetInvestmentCardsQuery();
+    // const { data, isLoading, isError } = investmentCardsAPI.useGetInvestmentCardsQuery();
+    // let investmentCards: ICard[] = [];
+    // if (data) {
+    //   investmentCards = data;
+    // }
     // const { data: investmentOptions } = investmentOptionsAPI.useGetInvestmentOptionsQuery();
     var data1 = investData_1.investmentCards;
     var data2 = investData_1.investmentOptions;

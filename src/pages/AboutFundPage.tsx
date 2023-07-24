@@ -5,9 +5,18 @@ import aboutImage from "../assets/images/aboutFund/aboutFundTop.jpg";
 import AboutUs from "../components/aboutFund/AboutUs/AboutUs";
 import AboutFundBlock from "../components/aboutFund/AboutFundBlock/AboutFundBlock";
 import Cards from "../components/general/cards/Cards/Cards";
-import { aboutFundCards } from "../data/aboutFundData";
+import { aboutFundCardsAPI } from "../store/services/aboutFundCardAPI";
+import ServerError from "../components/general/ServerError/ServerError";
+import { ICard } from "../models/types";
+import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
 
 const AboutFundPage = () => {
+  const { data, isLoading, isError } = aboutFundCardsAPI.useGetAboutFundCardsQuery(20);
+  let aboutFundCards: ICard[] = [];
+  if (data) {
+    aboutFundCards = data;
+  }
+
   return (
     <>
       <TopBlock
@@ -18,7 +27,8 @@ const AboutFundPage = () => {
 
       <AboutUs />
       <AboutFundBlock />
-      {aboutFundCards && <Cards cards={aboutFundCards} />}
+      {isLoading && <ServerIsLoading />}
+      {isError ? <ServerError /> : <Cards cards={aboutFundCards} />}
     </>
   );
 };
