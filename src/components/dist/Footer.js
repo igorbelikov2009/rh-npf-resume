@@ -7,7 +7,7 @@ require("../styles/Footer.scss");
 var react_router_dom_1 = require("react-router-dom");
 var context_1 = require("../context");
 var Footer = function () {
-    var _a = react_1.useContext(context_1.AuthContext), isAuth = _a.isAuth, setAdminLoginVisible = _a.setAdminLoginVisible;
+    var _a = react_1.useContext(context_1.AuthContext), isAuth = _a.isAuth, setAuth = _a.setAuth;
     var navigate = react_router_dom_1.useNavigate();
     var FirstBlock = [
         {
@@ -54,7 +54,7 @@ var Footer = function () {
             return;
         }
         else {
-            setAdminLoginVisible(true);
+            setAuth(true);
         }
     };
     return (react_1["default"].createElement("footer", { className: "footer" },
@@ -69,7 +69,7 @@ var Footer = function () {
             react_1["default"].createElement("h2", { className: "footer__phone-number" }, "8 800 200-47-66")),
         react_1["default"].createElement("div", { className: "footer__content" },
             react_1["default"].createElement("div", { className: "footer__nav" },
-                react_1["default"].createElement("div", { className: "footer__column" }, FirstBlock.map(function (link) { return (react_1["default"].createElement(FooterLink_1["default"], { key: link.children, to: link.to }, link.children)); })),
+                react_1["default"].createElement("div", { className: "footer__column" }, FirstBlock.map(function (link) { return (react_1["default"].createElement(FooterLink_1["default"], { key: link.to, to: link.to }, link.children)); })),
                 react_1["default"].createElement("div", { className: "footer__column" }, SecondBlock.map(function (link) { return (react_1["default"].createElement(FooterLink_1["default"], { key: link.to, to: link.to }, link.children)); })),
                 react_1["default"].createElement("div", { className: "footer__column" },
                     ThirdBlock.map(function (link) { return (react_1["default"].createElement(FooterLink_1["default"], { key: link.to, to: link.to }, link.children)); }),

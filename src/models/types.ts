@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface IRoute {
   path: string;
   element?: React.FC<{}>;
@@ -10,18 +12,8 @@ export interface MenuLinkProps {
 }
 
 export interface FooterLinkProps {
-  children: string;
+  children: React.ReactNode;
   to: string;
-}
-
-export interface DarkIconProps {
-  icon: string;
-  isDecreased?: boolean;
-}
-
-export interface IColumn {
-  title: string;
-  description: string;
 }
 
 export interface IColumn {

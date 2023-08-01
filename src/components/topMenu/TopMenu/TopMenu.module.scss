@@ -76,7 +76,7 @@
     }
   }
 
-  &__phone {
+  &__contacts-container {
     min-width: 124px;
     margin-right: 32px;
     position: relative;
@@ -86,35 +86,7 @@
     }
   }
 
-  &__call-back {
-    cursor: pointer;
-    position: absolute;
-    top: 24px;
-    left: 20px;
-    font-size: 11px;
-    color: #b5bdc8;
-
-    &:hover {
-      color: white;
-    }
-  }
-
-  // top-menu__call-back_news
-  &__call-back_news {
-    cursor: pointer;
-    position: absolute;
-    top: 24px;
-    left: 20px;
-    font-size: 11px;
-
-    color: #78828c;
-
-    &:hover {
-      color: #000;
-    }
-  }
-
-  &__link {
+  &__phone {
     text-decoration: none;
     outline: none;
     cursor: pointer;
@@ -133,7 +105,7 @@
     }
   }
 
-  &__link_news {
+  &__phone_news {
     text-decoration: none;
     outline: none;
     cursor: pointer;
@@ -149,6 +121,35 @@
 
     @media (min-width: 768px) {
       font-size: 16px;
+    }
+  }
+
+  &__admin {
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    font-size: 11px;
+
+    color: #b5bdc8;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  // top-menu__admin_news
+  &__admin_news {
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    font-size: 11px;
+
+    color: #78828c;
+
+    &:hover {
+      color: #000;
     }
   }
 

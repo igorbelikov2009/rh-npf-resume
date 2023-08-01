@@ -5,15 +5,12 @@
   font-size: 13px;
   line-height: 24px;
   margin-bottom: 0;
-  color: #78828c;
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
-}
-.link:hover {
-  color: #28323c;
+  color: #78828c;
 }
 .link:last-of-type {
   margin-right: 0;
@@ -26,6 +23,9 @@
     line-height: 24px;
   }
 }
+.link:hover {
+  color: #28323c;
+}
 
 .link-active {
   text-decoration: none;
@@ -33,14 +33,14 @@
   cursor: pointer;
   font-size: 13px;
   line-height: 24px;
-  font-weight: 500;
   margin-bottom: 0;
-  color: #28323c;
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
+  font-weight: 500;
+  color: #28323c;
 }
 .link-active:last-of-type {
   margin-right: 0;
@@ -52,4 +52,7 @@
     line-height: 24px;
     margin-bottom: 16px;
   }
+}
+.link-active:hover {
+  color: blueviolet;
 }

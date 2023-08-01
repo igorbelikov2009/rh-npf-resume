@@ -2,21 +2,14 @@
   text-decoration: none;
   outline: none;
   cursor: pointer;
-
   font-size: 13px;
   line-height: 24px;
   margin-bottom: 0;
-  color: #78828c;
-
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
-
-  &:hover {
-    color: #28323c;
-  }
 
   &:last-of-type {
     margin-right: 0;
@@ -27,6 +20,11 @@
     margin-bottom: 16px;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  color: #78828c;
+  &:hover {
+    color: #28323c;
   }
 }
 
@@ -34,13 +32,9 @@
   text-decoration: none;
   outline: none;
   cursor: pointer;
-
   font-size: 13px;
   line-height: 24px;
-  font-weight: 500;
   margin-bottom: 0;
-  color: #28323c;
-
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
@@ -56,5 +50,11 @@
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px;
+  }
+
+  font-weight: 500;
+  color: #28323c;
+  &:hover {
+    color: blueviolet;
   }
 }

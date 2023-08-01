@@ -7,7 +7,7 @@ import { AuthContext } from "../context";
 import { FooterLinkProps } from "../models/types";
 
 const Footer: FC = () => {
-  const { isAuth, setAdminLoginVisible } = useContext(AuthContext);
+  const { isAuth, setAuth } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const FirstBlock: FooterLinkProps[] = [
@@ -57,7 +57,7 @@ const Footer: FC = () => {
     if (isAuth) {
       return;
     } else {
-      setAdminLoginVisible(true);
+      setAuth(true);
     }
   };
 
@@ -85,7 +85,7 @@ const Footer: FC = () => {
         <div className="footer__nav">
           <div className="footer__column">
             {FirstBlock.map((link) => (
-              <FooterLink key={link.children} to={link.to}>
+              <FooterLink key={link.to} to={link.to}>
                 {link.children}
               </FooterLink>
             ))}

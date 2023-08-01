@@ -92,10 +92,10 @@ const TopMenu: FC = () => {
       <div className={styles["top-menu__container"]}>
         <div className={styles["top-menu__left-block"]}>
           <div
+            className={styles["top-menu__hamburger"]}
             onMouseOver={() => setHamburgerHovered(true)}
             onMouseOut={() => setHamburgerHovered(false)}
             onClick={openMenuMobil}
-            className={styles["top-menu__hamburger"]}
           >
             <TripleIcon icon="Hamburger" light={!isBackgroundWhite} hovered={isHamburgerHovered} />
           </div>
@@ -115,9 +115,9 @@ const TopMenu: FC = () => {
 
         <div className={styles["top-menu__right-block"]}>
           <div className={styles["top-menu__contacts"]}>
-            <div className={styles["top-menu__phone"]}>
+            <div className={styles["top-menu__contacts-container"]}>
               <a
-                className={isBackgroundWhite ? styles["top-menu__link_news"] : styles["top-menu__link"]}
+                className={isBackgroundWhite ? styles["top-menu__phone_news"] : styles["top-menu__phone"]}
                 href="tel:+78002004766"
               >
                 8 800 200-47-66
@@ -125,7 +125,7 @@ const TopMenu: FC = () => {
 
               <button
                 onClick={openAdminLogin}
-                className={isBackgroundWhite ? styles["top-menu__call-back_news"] : styles["top-menu__call-back"]}
+                className={isBackgroundWhite ? styles["top-menu__admin_news"] : styles["top-menu__admin"]}
               >
                 администратор
               </button>
@@ -133,10 +133,10 @@ const TopMenu: FC = () => {
           </div>
 
           <div
+            className={styles["top-menu__private-office"]}
             onMouseOver={() => setPrivateOfficeHovered(true)}
             onMouseOut={() => setPrivateOfficeHovered(false)}
             onClick={openLoginForm}
-            className={styles["top-menu__private-office"]}
           >
             <TripleIcon icon="User" light={!isBackgroundWhite} hovered={isPrivateOfficeHovered} />
 

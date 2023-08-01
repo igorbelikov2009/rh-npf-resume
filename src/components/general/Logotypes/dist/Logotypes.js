@@ -9,7 +9,7 @@ var logoColoredSmall_svg_1 = require("../../../assets/logotype/logoColoredSmall.
 var logoWhiteSmall_svg_1 = require("../../../assets/logotype/logoWhiteSmall.svg");
 var Logotypes = function (_a) {
     var isBackgroundWhite = _a.isBackgroundWhite;
-    return (react_1["default"].createElement("a", { href: "#", className: Logotypes_module_scss_1["default"].logotype },
+    return (react_1["default"].createElement("a", { href: "#", className: Logotypes_module_scss_1["default"]["logotype"] },
         react_1["default"].createElement("div", { className: Logotypes_module_scss_1["default"]["logotype__large"] },
             react_1["default"].createElement("img", { src: isBackgroundWhite ? logoColored_svg_1["default"] : logoWhite_svg_1["default"], alt: "logotype" })),
         react_1["default"].createElement("div", { className: Logotypes_module_scss_1["default"]["logotype__small"] },

@@ -1,6 +1,10 @@
 import React, { FC } from "react";
-import { DarkIconProps } from "../../../models/types";
 import styles from "./DarkIcon.module.scss";
+
+interface DarkIconProps {
+  icon: string;
+  isDecreased?: boolean;
+}
 
 const DarkIcon: FC<DarkIconProps> = ({ icon, isDecreased }) => {
   if (isDecreased) {
