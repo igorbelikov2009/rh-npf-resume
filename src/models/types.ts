@@ -6,7 +6,7 @@ export interface IRoute {
 }
 
 export interface MenuLinkProps {
-  children: string;
+  children: React.ReactNode;
   to: string;
   isBackgroundWhite?: boolean;
 }

@@ -18,7 +18,7 @@ const Info = () => {
         </p>
       </div>
 
-      <div className={styles["info__row"]}>
+      <div className={styles["info__content"]}>
         <div className={styles["info__block"]}>
           <img src={imageGirl} alt="girl" className={styles["info__image"]} />
 
