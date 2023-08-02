@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ICard } from "../../../../models/types";
-import CardsCard from "../CardsCard/CardsCard";
+import CardsItem from "../CardsItem/CardsItem";
 import styles from "./Cards.module.scss";
 
 interface CardsProps {
@@ -14,7 +14,7 @@ const Cards: FC<CardsProps> = ({ cards }) => {
 
       <div className={styles["cards__cards"]}>
         {cards.map((card) => (
-          <CardsCard key={card.icon} icon={card.icon} span={card.span} title={card.title} subtitle={card.subtitle} />
+          <CardsItem key={card.icon} icon={card.icon} span={card.span} title={card.title} subtitle={card.subtitle} />
         ))}
       </div>
     </section>

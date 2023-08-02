@@ -39,13 +39,14 @@ const Graph = () => {
         <p className={styles["graph__year"]}>2040</p>
         <p className={styles["graph__year"]}>2043</p>
       </div>
-      <div className={styles["graph__sub"]}>
-        <div className={styles["graph__subheading"]}>
+
+      <div className={styles["graph__subgraph"]}>
+        <div className={styles["graph__container-titles"]}>
           <div className={styles["graph__point-purple"]}></div>
           <p className={styles["graph__title"]}>Инвестиционный доход</p>
         </div>
 
-        <div className={styles["graph__subheading"]}>
+        <div className={styles["graph__container-titles"]}>
           <div className={styles["graph__point-yellow"]}></div>
           <p className={styles["graph__title"]}>Ежемесячные взносы</p>
         </div>

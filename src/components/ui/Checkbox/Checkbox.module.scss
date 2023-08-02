@@ -1,5 +1,5 @@
-// r-checkbox *
-.r-checkbox {
+// checkbox *
+.checkbox {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -34,7 +34,7 @@
       background-color: transparent;
     }
   }
-  // r-checkbox__switch_invisible
+  // checkbox__switch_invisible
   &__switch_invisible {
     content: "";
     width: 10px;
@@ -50,7 +50,7 @@
     display: none;
   }
 
-  // r-checkbox__switch_visible
+  // checkbox__switch_visible
   &__switch_visible {
     content: "";
     width: 10px;
@@ -88,12 +88,5 @@
     line-height: 16px;
     color: #666e76;
   }
-
-  &__link {
-    color: #50287d;
-    cursor: pointer;
-    outline: 0;
-    text-decoration: none;
-  }
 }
-// r-checkbox *
+// checkbox *

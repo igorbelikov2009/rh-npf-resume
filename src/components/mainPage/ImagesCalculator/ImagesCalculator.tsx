@@ -5,12 +5,12 @@ const ImagesCalculator = () => {
   return (
     <section className={styles["calculator-image"]}>
       <div className={styles["calculator-image__container"]}>
-        <div className={styles["calculator-image__bloc-images"]}>
-          <img className={styles["calculator-image__image"]} src="/images/main/manBackground.jpg" alt="manBackground" />
+        <div className={styles["calculator-image__block"]}>
+          <img className={styles["calculator-image__img"]} src="/images/main/manBackground.jpg" alt="manBackground" />
 
-          <img className={styles["calculator-image__image"]} src="/images/main/man.png" alt="man" />
+          <img className={styles["calculator-image__img"]} src="/images/main/man.png" alt="man" />
 
-          <img className={styles["calculator-image__image"]} src="/images/main/businessWork.jpg" alt="businessWork" />
+          <img className={styles["calculator-image__img"]} src="/images/main/businessWork.jpg" alt="businessWork" />
 
           <div className={styles["calculator-image__attention"]}>
             <img className={styles["calculator-image__icon"]} src="/icons/attention.svg" alt="attention" />

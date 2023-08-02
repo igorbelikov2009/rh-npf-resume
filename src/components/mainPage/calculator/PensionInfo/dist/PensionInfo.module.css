@@ -1,0 +1,148 @@
+.pension-info {
+  width: 100%;
+  margin-bottom: 24px;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 576px) {
+  .pension-info {
+    width: 29.41%;
+    border-top: none;
+    border-bottom: none;
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info {
+    display: flex;
+    width: 47.92%;
+  }
+}
+.pension-info__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__container {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info__container {
+    display: flex;
+  }
+}
+.pension-info__in-future {
+  padding: 24px;
+  width: 46.25%;
+  margin-right: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__in-future {
+    width: 100%;
+    margin-bottom: 24px;
+    border: 1px solid #e4e4e4;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info__in-future {
+    width: 35.85%;
+    margin-right: 24px;
+    margin-bottom: 0;
+  }
+}
+.pension-info__in-future-container {
+  width: 100%;
+  border-right: 1px solid #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__in-future-container {
+    border-right: none;
+  }
+}
+.pension-info__pension {
+  color: #28323c;
+  margin-bottom: 96px;
+  font-size: 34px;
+  line-height: 48px;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__pension {
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info__pension {
+    margin-bottom: 96px;
+    font-size: 28px;
+    line-height: 48px;
+  }
+}
+.pension-info__title {
+  font-size: 13px;
+  color: #5a646e;
+}
+.pension-info__span {
+  display: block;
+  font-size: inherit;
+  color: inherit;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__span {
+    display: inline;
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info__span {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+.pension-info__storage {
+  display: block;
+  width: 53.43%;
+  border: none;
+}
+@media screen and (min-width: 576px) {
+  .pension-info__storage {
+    width: 100%;
+    border: 1px solid #e4e4e4;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pension-info__storage {
+    width: 58.75%;
+  }
+}
+.pension-info__calculation {
+  width: 100%;
+  padding: 24px;
+}
+.pension-info__calculation:last-of-type {
+  padding-top: 0;
+  margin-top: 24px;
+}
+.pension-info__calculation-container {
+  border-top: 1px solid #e4e4e4;
+}
+.pension-info__sum {
+  font-size: 18px;
+  line-height: 24px;
+  color: #0a0a0a;
+}
+.pension-info__social {
+  font-size: 18px;
+  line-height: 24px;
+  color: #0a0a0a;
+  margin-top: 24px;
+}

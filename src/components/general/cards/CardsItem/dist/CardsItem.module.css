@@ -1,11 +1,11 @@
-.cards-card {
+.cards-item {
   width: 100%;
   padding: 24px;
   border-top: 1px solid #e4e4e4;
   display: flex;
 }
 @media screen and (min-width: 576px) {
-  .cards-card {
+  .cards-item {
     display: block;
     width: 33.33%;
     border-right: 1px solid #e4e4e4;
@@ -13,45 +13,45 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .cards-card {
+  .cards-item {
     width: 25%;
   }
 }
 @media screen and (min-width: 1160px) {
-  .cards-card {
+  .cards-item {
     width: 20%;
   }
 }
-.cards-card__icon {
+.cards-item__icon {
   width: 24px;
   height: 24px;
   margin-bottom: 0;
   margin-right: 24px;
 }
 @media screen and (min-width: 576px) {
-  .cards-card__icon {
+  .cards-item__icon {
     margin-bottom: 72px;
     margin-right: 0;
   }
 }
-.cards-card__title {
+.cards-item__title {
   font-size: 18px;
   line-height: 24px;
   color: #28323c;
   margin-bottom: 12px;
 }
 @media screen and (min-width: 576px) {
-  .cards-card__title {
+  .cards-item__title {
     margin-bottom: 24px;
   }
 }
-.cards-card__span {
+.cards-item__span {
   display: block;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
 }
-.cards-card__subtitle {
+.cards-item__subtitle {
   font-size: 13px;
   line-height: 24px;
   color: #5a646e;

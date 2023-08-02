@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import CheckboxRetirement from "../checkbox/CheckboxRetirement";
+import Checkbox from "../../../ui/Checkbox/Checkbox";
 import Graph from "../Graph/Graph";
 import PensionInfo from "../PensionInfo/PensionInfo";
 import GenderRadio from "../radios/GenderRadio";
@@ -150,7 +150,7 @@ const Calculator: FC = () => {
                 </div>
 
                 <div className={styles["slider-block__checkbox"]}>
-                  <CheckboxRetirement earlyRretirement={earlyRretirement} toogleChecked={toogleChecked} />
+                  <Checkbox checkedValue={earlyRretirement} toogleChecked={toogleChecked} />
                 </div>
 
                 {!earlyRretirement && (

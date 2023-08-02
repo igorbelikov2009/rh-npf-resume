@@ -33,7 +33,7 @@
     }
   }
 
-  &__v-budushchem {
+  &__in-future {
     padding: 24px;
     width: 46.25%;
     margin-right: 0;
@@ -51,21 +51,21 @@
       margin-right: 24px;
       margin-bottom: 0;
     }
+  }
 
-    &_wrapper {
-      width: 100%;
-      border-right: 1px solid #e4e4e4;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+  &__in-future-container {
+    width: 100%;
+    border-right: 1px solid #e4e4e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-      @media screen and (min-width: 576px) {
-        border-right: none;
-      }
+    @media screen and (min-width: 576px) {
+      border-right: none;
     }
   }
 
-  &__output-pension {
+  &__pension {
     color: #28323c;
     margin-bottom: 96px;
     font-size: 34px;
@@ -82,28 +82,28 @@
     }
   }
 
-  &__description {
+  &__title {
     font-size: 13px;
     color: #5a646e;
+  }
 
-    &_span {
+  &__span {
+    display: block;
+    font-size: inherit;
+    color: inherit;
+
+    @media screen and (min-width: 576px) {
+      display: inline;
+      margin-bottom: 48px;
+    }
+
+    @media screen and (min-width: 1024px) {
       display: block;
-      font-size: inherit;
-      color: inherit;
-
-      @media screen and (min-width: 576px) {
-        display: inline;
-        margin-bottom: 48px;
-      }
-
-      @media screen and (min-width: 1024px) {
-        display: block;
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
     }
   }
 
-  &__box {
+  &__storage {
     display: block;
     width: 53.43%;
     border: none;
@@ -122,24 +122,23 @@
     width: 100%;
     padding: 24px;
 
-    &_wrapper {
-      border-top: 1px solid #e4e4e4;
-    }
-
     &:last-of-type {
-      // background-color: red;
       padding-top: 0;
       margin-top: 24px;
     }
   }
 
-  &__output-sum-nakoplen {
+  &__calculation-container {
+    border-top: 1px solid #e4e4e4;
+  }
+
+  &__sum {
     font-size: 18px;
     line-height: 24px;
     color: #0a0a0a;
   }
 
-  &__output-social {
+  &__social {
     font-size: 18px;
     line-height: 24px;
     color: #0a0a0a;
