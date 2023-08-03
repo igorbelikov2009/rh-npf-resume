@@ -1,4 +1,4 @@
-.radio-secondary-label {
+.item {
   cursor: pointer;
   padding: 12px 24px;
   box-sizing: border-box;
@@ -8,24 +8,21 @@
   background-color: #b5bdc8;
   transition: background-color 0.5s;
 }
-.radio-secondary-label:hover {
+.item:hover {
   transition: all 0.5;
   opacity: 0.8;
 }
-.radio-secondary-label:hover .radio-secondary-label__title {
-  opacity: 1;
-}
-.radio-secondary-label__field {
+.item__field {
   display: none;
 }
-.radio-secondary-label__title {
+.item__title {
   opacity: 0.7;
   font-size: 16px;
   color: #ffffff;
   margin: auto;
 }
 
-.radio-secondary-label_active {
+.item__active {
   cursor: pointer;
   padding: 12px 24px;
   box-sizing: border-box;
@@ -35,10 +32,7 @@
   background-color: #50287d;
   transition: background-color 0.5s;
 }
-.radio-secondary-label_active:hover {
+.item__active:hover {
   transition: all 0.5;
   opacity: 0.8;
-}
-.radio-secondary-label_active:hover .radio-secondary-label__title {
-  opacity: 1;
 }

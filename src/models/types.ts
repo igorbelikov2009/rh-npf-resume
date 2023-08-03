@@ -31,12 +31,20 @@ export interface ICard {
 export interface RadioItemProps {
   value: string;
   title: string;
-  name: string;
+  name?: string;
 }
 
-export interface IRadioCircleItem {
+export interface RadioProps {
+  optionsItems: RadioItemProps[];
+  emitValue: (event: string) => void;
+  currentValue: string;
+}
+export interface RadioLabelProps {
   value: string;
   title: string;
+  name?: string;
+  isActive: boolean;
+  emitValue: (event: string) => void;
 }
 
 export interface INews {

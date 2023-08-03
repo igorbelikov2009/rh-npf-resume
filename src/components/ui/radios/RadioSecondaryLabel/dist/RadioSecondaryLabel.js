@@ -7,8 +7,8 @@ var RadioSecondaryLabel = function (_a) {
     var radioHandler = function (event) {
         emitValue(event.target.value);
     };
-    return (react_1["default"].createElement("label", { className: isActive ? RadioSecondaryLabel_module_scss_1["default"]["radio-secondary-label_active"] : RadioSecondaryLabel_module_scss_1["default"]["radio-secondary-label"] },
-        react_1["default"].createElement("input", { className: RadioSecondaryLabel_module_scss_1["default"]["radio-secondary-label__field"], type: "radio", value: value, name: name, onChange: radioHandler }),
-        react_1["default"].createElement("p", { className: RadioSecondaryLabel_module_scss_1["default"]["radio-secondary-label__title"] }, title)));
+    return (react_1["default"].createElement("label", { className: isActive ? RadioSecondaryLabel_module_scss_1["default"]["item__active"] : RadioSecondaryLabel_module_scss_1["default"]["item"] },
+        react_1["default"].createElement("input", { className: RadioSecondaryLabel_module_scss_1["default"]["item__field"], type: "radio", value: value, name: name, onChange: radioHandler }),
+        react_1["default"].createElement("p", { className: RadioSecondaryLabel_module_scss_1["default"]["item__title"] }, title)));
 };
 exports["default"] = RadioSecondaryLabel;

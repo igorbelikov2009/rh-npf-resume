@@ -1,22 +1,14 @@
 import React, { FC, useState } from "react";
-import { RadioItemProps } from "../../../../models/types";
+import { RadioProps } from "../../../../models/types";
 import RadioPrimaryLabel from "../RadioPrimaryLabel/RadioPrimaryLabel";
 import styles from "./RadioPrimary.module.scss";
 
-interface RadioPrimaryProps {
-  optionsItems: RadioItemProps[];
-  emitValue: (event: React.SetStateAction<string>) => void;
-  currentValue: string;
-}
-
-const RadioPrimary: FC<RadioPrimaryProps> = ({ optionsItems, currentValue, emitValue }) => {
+const RadioPrimary: FC<RadioProps> = ({ optionsItems, currentValue, emitValue }) => {
   const [valueRadio, setValueRadio] = useState(currentValue);
 
-  const onChangeRadio = (value: React.SetStateAction<string>) => {
+  const onChangeRadio = (value: string) => {
     setValueRadio(value);
-    if (valueRadio) {
-      emitValue(value);
-    }
+    emitValue(value);
   };
 
   return (

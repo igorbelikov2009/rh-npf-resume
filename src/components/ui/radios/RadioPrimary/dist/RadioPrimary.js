@@ -8,9 +8,7 @@ var RadioPrimary = function (_a) {
     var _b = react_1.useState(currentValue), valueRadio = _b[0], setValueRadio = _b[1];
     var onChangeRadio = function (value) {
         setValueRadio(value);
-        if (valueRadio) {
-            emitValue(value);
-        }
+        emitValue(value);
     };
     return (react_1["default"].createElement("div", { className: RadioPrimary_module_scss_1["default"]["radio-primary"] },
         react_1["default"].createElement("div", { className: RadioPrimary_module_scss_1["default"]["radio-primary__flex-container"] }, optionsItems.map(function (item) { return (react_1["default"].createElement(RadioPrimaryLabel_1["default"], { key: item.value, title: item.title, value: item.value, name: item.name, isActive: item.value === valueRadio, emitValue: onChangeRadio })); }))));

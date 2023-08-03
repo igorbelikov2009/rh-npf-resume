@@ -1,4 +1,4 @@
-.radio-primary-label {
+.item {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -7,8 +7,7 @@
   border-radius: 24px;
   box-sizing: border-box;
   opacity: 1;
-  background: #b5bdc8;
-  //
+
   transition: color 0.3s, background 0.4s;
   transition-property: color, background;
   transition-duration: 0.3s, 0.4s;
@@ -24,9 +23,12 @@
     opacity: 0.8;
     background: #959ba3;
   }
+
+  background: #b5bdc8;
+  //
 }
 
-.radio-primary-label_active {
+.item-active {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -35,8 +37,7 @@
   border-radius: 24px;
   box-sizing: border-box;
   opacity: 1;
-  background: #50287d;
-  //
+
   transition: color 0.3s, background 0.4s;
   transition-property: color, background;
   transition-duration: 0.3s, 0.4s;
@@ -51,13 +52,16 @@
   &:hover {
     opacity: 0.8;
   }
+
+  background: #50287d;
+  //
 }
 
-.radio-primary-label__field {
+.item__field {
   display: none;
 }
 
-.radio-primary-label__title {
+.item__title {
   opacity: 0.7;
   font-size: 13px;
   line-height: 24px;

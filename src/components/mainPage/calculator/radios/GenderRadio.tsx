@@ -10,12 +10,12 @@ interface GenderRadioProps {
 }
 
 const GenderRadio: FC<GenderRadioProps> = ({ ageMan, ageWoman, genderValue, onChangeGenderRadio }) => {
-  const radioItems: RadioItemProps[] = [
+  const optionsItems: RadioItemProps[] = [
     { value: ageMan, title: "М", name: "gender" },
     { value: ageWoman, title: "Ж", name: "gender" },
   ];
 
-  return <RadioSecondary radioItems={radioItems} emitValue={onChangeGenderRadio} currentValue={genderValue} />;
+  return <RadioSecondary optionsItems={optionsItems} emitValue={onChangeGenderRadio} currentValue={genderValue} />;
 };
 
 export default GenderRadio;

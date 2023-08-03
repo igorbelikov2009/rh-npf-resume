@@ -5,7 +5,7 @@
   align-items: center;
   padding: 24px 17px;
   border-radius: 50%;
-  background-color: #dfe6ec;
+
   opacity: 1;
   //
   transition: background 0.4s;
@@ -21,17 +21,19 @@
   &:hover .title {
     opacity: 1;
   }
+
+  background-color: #dfe6ec;
 }
 
 //  radio-item__chosen
-.radio-item_chosen {
+.radio-item_acive {
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px 17px;
   border-radius: 50%;
-  background-color: #50287d;
+
   opacity: 1;
   //
   transition: background 0.4s;
@@ -47,6 +49,8 @@
   &:hover .title {
     opacity: 1;
   }
+
+  background-color: #50287d;
 }
 
 .field {
@@ -56,16 +60,18 @@
 .title {
   color: rgb(70, 66, 66);
   opacity: 0.6;
-
-  //
   transition: color 0.3s;
   transition-property: color;
   transition-duration: 0.3s, 0.4s;
   transition-timing-function: ease, ease;
   transition-delay: 0s, 0s;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.title_chosen {
+.title-active {
   color: #fff;
   opacity: 0.6;
 

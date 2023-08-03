@@ -7,8 +7,13 @@ import Calculator from "../components/mainPage/calculator/Calculator/Calculator"
 import ImagesCalculator from "../components/mainPage/ImagesCalculator/ImagesCalculator";
 import NewsBlock from "../components/mainPage/newsBlock/NewsBlock/NewsBlock";
 import { cardsMainPage } from "../data/mainPageData";
+import SliderString from "../components/ui/SliderString/SliderString";
 
 const MainPage = () => {
+  const handlerSlider = (value: string) => {
+    console.log(value);
+  };
+
   return (
     <>
       <TopBlock
@@ -28,6 +33,15 @@ const MainPage = () => {
 
       <ImagesCalculator />
       <NewsBlock />
+      <SliderString
+        title="Возраст, лет"
+        name="ageSlider"
+        min="18"
+        max="60"
+        step="1"
+        value="30"
+        emitValue={handlerSlider}
+      />
     </>
   );
 };

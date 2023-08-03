@@ -7,8 +7,8 @@ var RadioCircleItem = function (_a) {
     var radioHandler = function (event) {
         emitValue(event.target.value);
     };
-    return (react_1["default"].createElement("label", { className: isActive ? RadioCircleItem_module_scss_1["default"]["radio-item_chosen"] : RadioCircleItem_module_scss_1["default"]["radio-item"] },
+    return (react_1["default"].createElement("label", { className: isActive ? RadioCircleItem_module_scss_1["default"]["radio-item_acive"] : RadioCircleItem_module_scss_1["default"]["radio-item"] },
         react_1["default"].createElement("input", { className: RadioCircleItem_module_scss_1["default"]["field"], type: "radio", name: "content", value: value, onChange: radioHandler }),
-        react_1["default"].createElement("p", { className: isActive ? RadioCircleItem_module_scss_1["default"]["title_chosen"] : RadioCircleItem_module_scss_1["default"]["title"] }, title)));
+        react_1["default"].createElement("p", { className: isActive ? RadioCircleItem_module_scss_1["default"]["title-active"] : RadioCircleItem_module_scss_1["default"]["title"] }, title)));
 };
 exports["default"] = RadioCircleItem;

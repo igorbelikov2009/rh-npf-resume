@@ -12,7 +12,7 @@ var Notifics = function () {
         date: String(UserDate_1["default"].format(new Date(item.date))),
         description: String(item.description)
     }); });
-    var radioItems = infoDisclosureData_1.contentsNotifics
+    var optionsItems = infoDisclosureData_1.contentsNotifics
         .map(function (item) { return new Date(item.date).getFullYear(); })
         .map(function (item, index) { return ({
         title: String(item),
@@ -25,7 +25,7 @@ var Notifics = function () {
         react_1["default"].createElement("div", { className: Notifics_module_scss_1["default"]["notifics__container"] },
             react_1["default"].createElement("h2", { className: Notifics_module_scss_1["default"]["notifics__heading"] }, "\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F"),
             react_1["default"].createElement("div", { className: Notifics_module_scss_1["default"]["notifics__triple-param-switch"] },
-                react_1["default"].createElement(RadioCircle_1["default"], { currentValue: currentValue, radioItems: radioItems, emitValue: onChangeRadio })),
+                react_1["default"].createElement(RadioCircle_1["default"], { currentValue: currentValue, optionsItems: optionsItems, emitValue: onChangeRadio })),
             react_1["default"].createElement("div", { className: Notifics_module_scss_1["default"]["notifics__content"] }, formattedContents.map(function (content, index) { return (react_1["default"].createElement(NotificsContent_1["default"], { key: index, content: content, isVisible: Number(currentValue) === index })); })))));
 };
 exports["default"] = Notifics;

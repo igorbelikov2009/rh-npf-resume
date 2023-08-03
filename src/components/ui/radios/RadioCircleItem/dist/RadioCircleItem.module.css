@@ -5,13 +5,13 @@
   align-items: center;
   padding: 24px 17px;
   border-radius: 50%;
-  background-color: #dfe6ec;
   opacity: 1;
   transition: background 0.4s;
   transition-property: background;
   transition-duration: 0.3s, 0.4s;
   transition-timing-function: ease, ease;
   transition-delay: 0s, 0s;
+  background-color: #dfe6ec;
 }
 .radio-item:hover {
   opacity: 0.8;
@@ -20,25 +20,25 @@
   opacity: 1;
 }
 
-.radio-item_chosen {
+.radio-item_acive {
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px 17px;
   border-radius: 50%;
-  background-color: #50287d;
   opacity: 1;
   transition: background 0.4s;
   transition-property: background;
   transition-duration: 0.3s, 0.4s;
   transition-timing-function: ease, ease;
   transition-delay: 0s, 0s;
+  background-color: #50287d;
 }
-.radio-item_chosen:hover {
+.radio-item_acive:hover {
   opacity: 0.8;
 }
-.radio-item_chosen:hover .title {
+.radio-item_acive:hover .title {
   opacity: 1;
 }
 
@@ -55,8 +55,11 @@
   transition-timing-function: ease, ease;
   transition-delay: 0s, 0s;
 }
+.title:hover {
+  opacity: 1;
+}
 
-.title_chosen {
+.title-active {
   color: #fff;
   opacity: 0.6;
   transition: color 0.3s;

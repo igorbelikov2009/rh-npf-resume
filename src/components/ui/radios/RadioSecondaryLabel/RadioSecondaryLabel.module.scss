@@ -1,20 +1,17 @@
-.radio-secondary-label {
+.item {
   cursor: pointer;
   padding: 12px 24px;
   box-sizing: border-box;
   border-radius: 24px;
   display: flex;
   opacity: 1;
+
   background-color: #b5bdc8;
   transition: background-color 0.5s;
 
   &:hover {
     transition: all 0.5;
     opacity: 0.8;
-  }
-
-  &:hover .radio-secondary-label__title {
-    opacity: 1;
   }
 
   &__field {
@@ -29,22 +26,19 @@
   }
 }
 
-.radio-secondary-label_active {
+.item__active {
   cursor: pointer;
   padding: 12px 24px;
   box-sizing: border-box;
   border-radius: 24px;
   display: flex;
   opacity: 1;
+
   background-color: #50287d;
   transition: background-color 0.5s;
 
   &:hover {
     transition: all 0.5;
     opacity: 0.8;
-  }
-
-  &:hover .radio-secondary-label__title {
-    opacity: 1;
   }
 }

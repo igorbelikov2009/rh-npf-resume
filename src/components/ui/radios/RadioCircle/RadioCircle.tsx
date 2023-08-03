@@ -1,15 +1,9 @@
 import React, { FC } from "react";
-import { IRadioCircleItem } from "../../../../models/types";
+import { RadioProps } from "../../../../models/types";
 import RadioCircleItem from "../RadioCircleItem/RadioCircleItem";
 import styles from "./RadioCircle.module.scss";
 
-interface RadioCircleProps {
-  radioItems: IRadioCircleItem[];
-  currentValue: string;
-  emitValue: (value: string) => void;
-}
-
-const RadioCircle: FC<RadioCircleProps> = ({ radioItems, currentValue, emitValue }) => {
+const RadioCircle: FC<RadioProps> = ({ optionsItems, currentValue, emitValue }) => {
   const onChangeRadio = (value: string) => {
     emitValue(value);
   };
@@ -17,7 +11,7 @@ const RadioCircle: FC<RadioCircleProps> = ({ radioItems, currentValue, emitValue
   return (
     <div className={styles["radio-circle"]}>
       <div className={styles["radio-circle__items-container"]}>
-        {radioItems.map((item) => (
+        {optionsItems.map((item) => (
           <RadioCircleItem
             key={item.value}
             value={item.value}
