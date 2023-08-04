@@ -5,27 +5,19 @@ interface AdaptiveRadioItemProps {
   value: string;
   id: string;
   title: string;
-  name?: string;
   isActive: boolean;
-  emitValue: (event: any, id: string) => void;
+  emitValue: (event: string, id: string) => void;
 }
 
-const AdaptiveRadioItem: FC<AdaptiveRadioItemProps> = ({ value, id, title, name, isActive, emitValue }) => {
-  const radioHandler = (event: any) => {
+const AdaptiveRadioItem: FC<AdaptiveRadioItemProps> = ({ value, id, title, isActive, emitValue }) => {
+  const radioHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     emitValue(event.target.value, id);
   };
 
   return (
-    <label className={isActive ? styles["adaptive-radio-item_active"] : styles["adaptive-radio-item"]}>
+    <label className={isActive ? styles["radio-item-active"] : styles["radio-item"]}>
       {title}
-      <input
-        className={styles["adaptive-radio-item__input"]}
-        type="radio"
-        name={name}
-        value={value}
-        id={id}
-        onClick={radioHandler}
-      />
+      <input className={styles["radio-item__input"]} type="radio" value={value} id={id} onChange={radioHandler} />
     </label>
   );
 };

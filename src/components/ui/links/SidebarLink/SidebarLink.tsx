@@ -5,10 +5,10 @@ interface SidebarLinkProps {
   itemName: string;
   isActive: boolean;
   id: string;
-  emitValueId: (id: string) => void;
+  emitID: (id: string) => void;
 }
 
-const SidebarLink: FC<SidebarLinkProps> = ({ itemName, isActive, id, emitValueId }) => {
+const SidebarLink: FC<SidebarLinkProps> = ({ itemName, isActive, id, emitID }) => {
   const [anchorTarget, setAnchorTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const SidebarLink: FC<SidebarLinkProps> = ({ itemName, isActive, id, emitValueId
     if (anchorTarget) {
       anchorTarget.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    emitValueId(id);
+    emitID(id);
   };
 
   return (

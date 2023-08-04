@@ -1,11 +1,10 @@
-.adaptive-radio-item {
+.radio-item {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   font-size: 13px;
   line-height: 24px;
-  color: #b5bdc8;
   padding: 12px 16px;
   border-radius: 24px;
   transition: color 0.3s, background 0.4s;
@@ -14,6 +13,8 @@
   text-align: center;
   cursor: pointer;
 
+  background: #f3f5f7;
+  color: #b5bdc8;
   &:hover {
     color: #50287d;
   }
@@ -23,14 +24,13 @@
   }
 }
 
-.adaptive-radio-item_active {
+.radio-item-active {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   font-size: 13px;
   line-height: 24px;
-
   padding: 12px 16px;
   border-radius: 24px;
   transition: color 0.3s, background 0.4s;
@@ -40,9 +40,8 @@
   cursor: pointer;
 
   background: #50287d;
-  color: #fff;
-
+  color: #b5bdc8;
   &:hover {
-    opacity: 0.8;
+    color: #ffffff;
   }
 }

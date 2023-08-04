@@ -5,12 +5,12 @@ import styles from "./AdaptiveRadio.module.scss";
 
 interface AdaptiveRadioProps {
   optionsItems: IAdaptiveRadioItem[];
-  emitValue: (event: any, id: string) => void;
+  emitValue: (event: string, id: string) => void;
   currentValue: string;
 }
 
 const AdaptiveRadio: FC<AdaptiveRadioProps> = ({ optionsItems, currentValue, emitValue }) => {
-  const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
+  const onChangeRadio = (value: string, id: string) => {
     emitValue(value, id);
   };
 
@@ -22,7 +22,6 @@ const AdaptiveRadio: FC<AdaptiveRadioProps> = ({ optionsItems, currentValue, emi
           title={item.date}
           value={item.value}
           id={item.id}
-          name={item.name}
           isActive={item.value === currentValue}
           emitValue={onChangeRadio}
         />

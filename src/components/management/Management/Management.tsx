@@ -196,7 +196,7 @@ const Management = () => {
                 itemName={link.itemName}
                 id={link.id}
                 isActive={index === Number(idSidebarLink)}
-                emitValueId={getValueId}
+                emitID={getValueId}
               />
             ))}
           </aside>

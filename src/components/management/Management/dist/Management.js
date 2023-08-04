@@ -156,6 +156,6 @@ var Management = function () {
                 react_1["default"].createElement("aside", { className: barNavAbsolute ? Management_module_scss_1["default"]["management__bar-nav_absolute"] : Management_module_scss_1["default"]["management__bar-nav_fixed"] },
                     react_1["default"].createElement("div", { className: Management_module_scss_1["default"]["management__bar-icon"], style: { top: iconTop * 48 + "px" } },
                         react_1["default"].createElement(DarkIcon_1["default"], { icon: "Arrow Down" })),
-                    sidebarLinks.map(function (link, index) { return (react_1["default"].createElement(SidebarLink_1["default"], { key: index, itemName: link.itemName, id: link.id, isActive: index === Number(idSidebarLink), emitValueId: getValueId })); }))))));
+                    sidebarLinks.map(function (link, index) { return (react_1["default"].createElement(SidebarLink_1["default"], { key: index, itemName: link.itemName, id: link.id, isActive: index === Number(idSidebarLink), emitID: getValueId })); }))))));
 };
 exports["default"] = Management;

@@ -8,12 +8,12 @@
   display: inline;
   margin-right: 24px;
   margin-bottom: 0;
-  color: #50287d;
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
+  color: #50287d;
 }
 .link:hover {
   color: black;
@@ -38,12 +38,15 @@
   display: inline;
   margin-right: 24px;
   margin-bottom: 0;
-  color: black;
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
+  color: black;
+}
+.link_active:hover {
+  color: black;
 }
 @media screen and (min-width: 944px) {
   .link_active {

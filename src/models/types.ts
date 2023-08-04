@@ -109,7 +109,6 @@ export interface IAdaptiveRadioItem {
   value: string;
   id: string;
   date: string;
-  name?: string;
 }
 
 export interface ISwitchItem {

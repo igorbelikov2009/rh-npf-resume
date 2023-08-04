@@ -9,17 +9,15 @@
   margin-right: 24px;
   margin-bottom: 0;
 
-  color: #50287d;
-  &:hover {
-    // color: #8967b1;
-    color: black;
-  }
-
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
+
+  &:hover {
+    color: black;
+  }
 
   @media screen and (min-width: 944px) {
     white-space: normal;
@@ -27,6 +25,8 @@
     margin-right: 0;
     margin-bottom: 24px;
   }
+
+  color: #50287d;
 }
 
 .link_active {
@@ -41,14 +41,15 @@
   margin-right: 24px;
   margin-bottom: 0;
 
-  // color: #8967b1;
-  color: black;
-
   transition: color 0.22s;
   transition-duration: 0.22s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: color;
+
+  &:hover {
+    color: black;
+  }
 
   @media screen and (min-width: 944px) {
     white-space: normal;
@@ -56,6 +57,8 @@
     margin-right: 0;
     margin-bottom: 24px;
   }
+
+  color: black;
 }
 
 .li {
