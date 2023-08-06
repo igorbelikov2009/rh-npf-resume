@@ -12,8 +12,8 @@ var FundCarouselColumn = function (_a) {
         }
     }, [emitWidthColumn]);
     //   console.log(refColumn.current?.offsetWidth);
-    return (react_1["default"].createElement("div", { className: isClear ? FundCarouselColumn_module_scss_1["default"].column_clear : FundCarouselColumn_module_scss_1["default"]["column"], ref: refColumn },
-        react_1["default"].createElement("div", { className: FundCarouselColumn_module_scss_1["default"]["title"] }, title),
+    return (react_1["default"].createElement("div", { className: isClear ? FundCarouselColumn_module_scss_1["default"]["column_clear"] : FundCarouselColumn_module_scss_1["default"]["column"], ref: refColumn },
+        react_1["default"].createElement("h1", { className: FundCarouselColumn_module_scss_1["default"]["title"] }, title),
         react_1["default"].createElement("div", { className: FundCarouselColumn_module_scss_1["default"]["line"] }),
         react_1["default"].createElement("p", { className: FundCarouselColumn_module_scss_1["default"]["description"] }, description)));
 };

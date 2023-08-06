@@ -8,12 +8,12 @@ const dateOptions: Intl.DateTimeFormatOptions = {
 };
 
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
-// Определяем UserDate как объект JS Intl.DateTimeFormat, который является
+// Определяем useDate как объект JS Intl.DateTimeFormat, который является
 // конструктором объектов, включающих языка-зависимое форматирование даты и времени.
-const UserDate = new Intl.DateTimeFormat(locale, dateOptions);
-// const UserDate = new Intl.DateTimeFormat("ru-RU", dateOptions);
+const useDate = new Intl.DateTimeFormat(locale, dateOptions);
+// const useDate = new Intl.DateTimeFormat("ru-RU", dateOptions);
 // То же самое, но locale определяем вручную.
 
-export default UserDate;
+export default useDate;
 // Форматирование дат под локаль пользователя Михаил Непомнящий
 // https://www.youtube.com/watch?v=Wh2zd2oZOmo&list=PLiZoB8JBsdzklPlprqQRwGQuyD92f-Wm8&index=4

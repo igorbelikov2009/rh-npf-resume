@@ -4,7 +4,6 @@
   padding-bottom: 24px;
   padding-right: 24px;
 
-  opacity: 0.4;
   transition: opacity 0.5s;
   transition-property: opacity;
   transition-duration: 0.5s;
@@ -20,6 +19,8 @@
     min-width: 500px;
     padding-right: 140px;
   }
+
+  opacity: 0.4;
 }
 
 .column_clear {
@@ -28,7 +29,6 @@
   padding-bottom: 24px;
   padding-right: 24px;
 
-  opacity: 1;
   transition: opacity 0.5s;
   transition-property: opacity;
   transition-duration: 0.5s;
@@ -44,6 +44,8 @@
     min-width: 500px;
     padding-right: 140px;
   }
+
+  opacity: 1;
 }
 
 .title {

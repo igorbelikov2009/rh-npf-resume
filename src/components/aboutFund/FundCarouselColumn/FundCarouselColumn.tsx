@@ -19,8 +19,8 @@ const FundCarouselColumn: FC<FundCarouselColumnProps> = ({ isClear, title, descr
   //   console.log(refColumn.current?.offsetWidth);
 
   return (
-    <div className={isClear ? styles.column_clear : styles["column"]} ref={refColumn}>
-      <div className={styles["title"]}>{title}</div>
+    <div className={isClear ? styles["column_clear"] : styles["column"]} ref={refColumn}>
+      <h1 className={styles["title"]}>{title}</h1>
 
       <div className={styles["line"]}></div>
 

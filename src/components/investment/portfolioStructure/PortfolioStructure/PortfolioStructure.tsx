@@ -58,7 +58,7 @@ const PortfolioStructure: FC<PortfolioStructureProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [top]);
 
-  const scrollHandler = (event: any) => {
+  const scrollHandler = () => {
     getSelectControllerCoords();
   };
 

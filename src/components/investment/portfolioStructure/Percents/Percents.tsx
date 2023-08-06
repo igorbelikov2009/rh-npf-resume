@@ -24,35 +24,35 @@ const Percents: FC<PercentProps> = ({
     <>
       {isVisible && (
         <div className={styles["percents-container"]}>
-          <div className={styles.percents}>
+          <div className={styles["percents"]}>
             <div className={styles["percent-block"]}>
               <p className={styles["percent-01"]}>{percent01}</p>
-              <p className={styles.title}>Облигации федерального займа</p>
+              <p className={styles["title"]}>Облигации федерального займа</p>
             </div>
 
             <div className={styles["percent-block"]}>
               <p className={styles["percent-02"]}>{percent02}</p>
-              <p className={styles.title}>Облигации хозяйствующих обществ</p>
+              <p className={styles["title"]}>Облигации хозяйствующих обществ</p>
             </div>
 
             <div className={styles["percent-block"]}>
               <p className={styles["percent-03"]}>{percent03}</p>
-              <p className={styles.title}>Акции</p>
+              <p className={styles["title"]}>Акции</p>
             </div>
 
             <div className={styles["percent-block"]}>
               <p className={styles["percent-04"]}>{percent04}</p>
-              <p className={styles.title}>Субфедеральные и муниципальные облигации</p>
+              <p className={styles["title"]}>Субфедеральные и муниципальные облигации</p>
             </div>
 
             <div className={styles["percent-block"]}>
               <p className={styles["percent-05"]}>{percent05}</p>
-              <p className={styles.title}>Депозиты / денежные средства на расчетных счетах</p>
+              <p className={styles["title"]}>Депозиты / денежные средства на расчетных счетах</p>
             </div>
 
             <div className={styles["percent-block"]}>
               <p className={styles["percent-06"]}>{percent06}</p>
-              <p className={styles.title}>Открытые паевые инвестиционные фонды</p>
+              <p className={styles["title"]}>Открытые паевые инвестиционные фонды</p>
             </div>
           </div>
         </div>

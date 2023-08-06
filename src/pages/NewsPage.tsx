@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import UserDate from "../api/UserDate/UserDate";
+import UserDate from "../api/useDate/useDate";
 import ServerError from "../components/general/ServerError/ServerError";
 import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
 import TripleIcon from "../components/general/TripleIcon/TripleIcon";

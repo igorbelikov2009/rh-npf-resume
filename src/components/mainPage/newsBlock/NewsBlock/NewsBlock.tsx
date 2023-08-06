@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
-import UserDate from "../../../../api/UserDate/UserDate";
+import UserDate from "../../../../api/useDate/useDate";
 // import { news } from "../../../../data/newsData";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { INews } from "../../../../models/types";

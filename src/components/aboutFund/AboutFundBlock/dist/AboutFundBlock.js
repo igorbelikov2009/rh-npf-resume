@@ -138,10 +138,9 @@ var AboutFundBlock = function () {
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
         isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
         isError && react_1["default"].createElement(ServerError_1["default"], null),
-        react_1["default"].createElement("div", null,
-            react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u0424\u043E\u043D\u0434\u0430", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
-            react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["carousel"] },
-                react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
-                    react_1["default"].createElement(FundCarousel_1["default"], { columns: aboutFundColumns, jj: j, qq: q, emitWidthColumn: getLinkContainerWidth }))))));
+        react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u0424\u043E\u043D\u0434\u0430", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
+        react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["carousel"] },
+            react_1["default"].createElement("div", { className: AboutFundBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },
+                react_1["default"].createElement(FundCarousel_1["default"], { columns: aboutFundColumns, jj: j, qq: q, emitWidthColumn: getLinkContainerWidth })))));
 };
 exports["default"] = AboutFundBlock;

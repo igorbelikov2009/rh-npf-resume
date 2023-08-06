@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion"; // анимация
 import React, { FC, useState, useEffect, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import UserDate from "../api/UserDate/UserDate";
+import UserDate from "../api/useDate/useDate";
 import NewsItem from "../components/adminPanel/NewsItem/NewsItem";
 import ServerError from "../components/general/ServerError/ServerError";
 import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";

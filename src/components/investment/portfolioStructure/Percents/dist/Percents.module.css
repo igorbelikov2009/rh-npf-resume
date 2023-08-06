@@ -44,6 +44,8 @@
   position: absolute;
   top: 8px;
   left: 0px;
+}
+.percent-01::before {
   background-color: #45c253;
 }
 

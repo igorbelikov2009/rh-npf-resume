@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import UserDate from "../api/UserDate/UserDate";
+import UserDate from "../api/useDate/useDate";
 import investImage from "../assets/images/invest/InvestTop.jpg";
 import Cards from "../components/general/cards/Cards/Cards";
 import ServerError from "../components/general/ServerError/ServerError";

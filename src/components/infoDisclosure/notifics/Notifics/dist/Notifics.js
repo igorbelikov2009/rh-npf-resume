@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var react_1 = require("react");
-var UserDate_1 = require("../../../../api/UserDate/UserDate");
+var useDate_1 = require("../../../../api/useDate/useDate");
 var infoDisclosureData_1 = require("../../../../data/infoDisclosureData");
 var RadioCircle_1 = require("../../../ui/radios/RadioCircle/RadioCircle");
 var NotificsContent_1 = require("../NotificsContent/NotificsContent");
@@ -9,7 +9,7 @@ var Notifics_module_scss_1 = require("./Notifics.module.scss");
 var Notifics = function () {
     var _a = react_1.useState("0"), currentValue = _a[0], setCurrentValue = _a[1];
     var formattedContents = infoDisclosureData_1.contentsNotifics.map(function (item) { return ({
-        date: String(UserDate_1["default"].format(new Date(item.date))),
+        date: String(useDate_1["default"].format(new Date(item.date))),
         description: String(item.description)
     }); });
     var optionsItems = infoDisclosureData_1.contentsNotifics

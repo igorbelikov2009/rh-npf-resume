@@ -8,7 +8,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 exports.__esModule = true;
 var react_1 = require("react");
-var UserDate_1 = require("../../../api/UserDate/UserDate");
+var useDate_1 = require("../../../api/useDate/useDate");
 var redux_1 = require("../../../hooks/redux");
 var newsReducer_1 = require("../../../store/reducers/newsReducer");
 var ServerError_1 = require("../../general/ServerError/ServerError");
@@ -50,7 +50,7 @@ var ListNews = function () {
         return __spreadArrays(newsFilteredByYear).map(function (item) { return ({
             id: Number(item.id),
             title: String(item.title),
-            date: String(UserDate_1["default"].format(new Date(item.date))),
+            date: String(useDate_1["default"].format(new Date(item.date))),
             paragraphs: item.paragraphs
         }); });
     }, [newsFilteredByYear]);

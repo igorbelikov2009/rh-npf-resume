@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UserDate from "../../../../api/UserDate/UserDate";
+import useDate from "../../../../api/useDate/useDate";
 import { contentsNotifics } from "../../../../data/infoDisclosureData";
 import { INotificsContent, RadioItemProps } from "../../../../models/types";
 import RadioCircle from "../../../ui/radios/RadioCircle/RadioCircle";
@@ -10,7 +10,7 @@ const Notifics = () => {
   const [currentValue, setCurrentValue] = useState("0");
 
   const formattedContents: INotificsContent[] = contentsNotifics.map((item) => ({
-    date: String(UserDate.format(new Date(item.date))),
+    date: String(useDate.format(new Date(item.date))),
     description: String(item.description),
   }));
 

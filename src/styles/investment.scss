@@ -3,8 +3,7 @@
   border-radius: 6px;
   position: fixed;
   margin: 0 auto;
-  visibility: hidden;
-  opacity: 0;
+
   transition: opacity 0.28s ease;
   // если сделать transition: all 0.28s ease;,
   // то этот блок будет дёргаться при скроле
@@ -17,16 +16,16 @@
     max-width: 210px;
     margin: 0;
   }
+
+  visibility: hidden;
+  opacity: 0;
 }
 
 .options-block-visible {
   max-width: 382px;
   border-radius: 6px;
   position: fixed;
-
   margin: 0 auto;
-  visibility: visible;
-  opacity: 1;
   transition: opacity 0.28s ease;
   // если сделать transition: all 0.28s ease;,
   // то этот блок будет дёргаться при скроле
@@ -39,4 +38,7 @@
     max-width: 210px;
     margin: 0;
   }
+
+  visibility: visible;
+  opacity: 1;
 }

@@ -9,22 +9,17 @@ export interface SelectorProps {
 
 const Selector: FC<SelectorProps> = ({ value, isVisible, onClickSelector }) => {
   return (
-    <div className={styles["select-controller"]}>
-      <div className={styles["changing-title"]}>
+    <div className={styles["selector"]}>
+      <div className={styles["container-title"]}>
         <div className={isVisible ? styles["border-gray"] : styles["border-white"]}>
-          <div
-            className={isVisible ? styles["container-backgr-gray"] : styles["container-backgr-white"]}
-            onClick={onClickSelector}
-          >
-            <div className={styles["controller-date"]}>
-              <div>
-                <p className={styles["select-controller-date"]}>{value}</p>
-              </div>
+          <div className={isVisible ? styles["container-gray"] : styles["container-white"]} onClick={onClickSelector}>
+            <div className={styles["selector-date"]}>
+              <p className={styles["selector-value"]}>{value}</p>
             </div>
 
-            <div className={styles.icon}>
+            <div className={styles["icon-container"]}>
               <img
-                className={isVisible ? styles["image-rotate-180"] : styles["image-rotate-0"]}
+                className={isVisible ? styles["icon-rotate-180"] : styles["icon-rotate-0"]}
                 src="/icons/triple/Arrow Down/Dark.svg"
                 alt="Arrow"
               />

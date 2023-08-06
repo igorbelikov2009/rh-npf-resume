@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import UserDate from "../../../api/UserDate/UserDate";
+import UserDate from "../../../api/useDate/useDate";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { INews } from "../../../models/types";
 import { getNews } from "../../../store/reducers/newsReducer";

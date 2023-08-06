@@ -36,7 +36,7 @@ var PortfolioStructure = function (_a) {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [top]);
-    var scrollHandler = function (event) {
+    var scrollHandler = function () {
         getSelectControllerCoords();
     };
     return (react_1["default"].createElement("section", { className: PortfolioStructure_module_scss_1["default"]["portfolie-structure"] },

@@ -1,0 +1,37 @@
+.about-fund__about-us {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 24px 24px 48px;
+}
+@media screen and (min-width: 768px) {
+  .about-fund__about-us {
+    padding: 48px 28px 72px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-fund__about-us {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .about-fund__about-us {
+    padding-top: 72px;
+  }
+}
+.about-fund__description {
+  color: #78828c;
+  font-size: 13px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .about-fund__description {
+    font-size: 16px;
+  }
+}
+.about-fund__description:first-of-type {
+  margin-bottom: 24px;
+}

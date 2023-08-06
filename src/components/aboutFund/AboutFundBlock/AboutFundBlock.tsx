@@ -157,21 +157,19 @@ const AboutFundBlock = () => {
       {isLoading && <ServerIsLoading />}
       {isError && <ServerError />}
 
-      <div>
-        <CarouselHeader
-          headerTitle="История Фонда"
-          isBlurredLeft={isBlurredLeft}
-          isBlurredRight={isBlurredRight}
-          isHoveredLeft={isHoveredLeft}
-          isHoveredRight={isHoveredRight}
-          onClickLeft={onClickLeftArrow}
-          onClickRight={onClickRightArrow}
-        />
+      <CarouselHeader
+        headerTitle="История Фонда"
+        isBlurredLeft={isBlurredLeft}
+        isBlurredRight={isBlurredRight}
+        isHoveredLeft={isHoveredLeft}
+        isHoveredRight={isHoveredRight}
+        onClickLeft={onClickLeftArrow}
+        onClickRight={onClickRightArrow}
+      />
 
-        <div className={styles["carousel"]}>
-          <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
-            <FundCarousel columns={aboutFundColumns} jj={j} qq={q} emitWidthColumn={getLinkContainerWidth} />
-          </div>
+      <div className={styles["carousel"]}>
+        <div className={styles["scrollableElement"]} style={{ right: `${right}px` }}>
+          <FundCarousel columns={aboutFundColumns} jj={j} qq={q} emitWidthColumn={getLinkContainerWidth} />
         </div>
       </div>
     </>

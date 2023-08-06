@@ -9,7 +9,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 exports.__esModule = true;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 var react_1 = require("react");
-var UserDate_1 = require("../../../../api/UserDate/UserDate");
+var useDate_1 = require("../../../../api/useDate/useDate");
 // import { news } from "../../../../data/newsData";
 var redux_1 = require("../../../../hooks/redux");
 var newsReducer_1 = require("../../../../store/reducers/newsReducer");
@@ -49,7 +49,7 @@ var NewsBlock = function () {
     var formatedDateNews = __spreadArrays(sortedNews).map(function (item) { return ({
         id: Number(item.id),
         title: String(item.title),
-        date: String(UserDate_1["default"].format(new Date(item.date))),
+        date: String(useDate_1["default"].format(new Date(item.date))),
         paragraphs: item.paragraphs
     }); });
     // ===================================================================================
