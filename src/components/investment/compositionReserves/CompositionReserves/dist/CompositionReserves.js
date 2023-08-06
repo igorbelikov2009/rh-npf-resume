@@ -35,7 +35,7 @@ var CompositionReserves = function (_a) {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [top]);
-    var scrollHandler = function (event) {
+    var scrollHandler = function () {
         getselectorRefCoords();
     };
     return (react_1["default"].createElement("section", { className: CompositionReserves_module_scss_1["default"]["composition-of-funds"] },

@@ -14,6 +14,6 @@ var InvestmentArchive = function () {
             title: "Информация о процессе размещения средств"
         },
     ];
-    return (react_1["default"].createElement("section", { className: InvestmentArchive_module_scss_1["default"].container }, links.map(function (link, index) { return (react_1["default"].createElement(ArchiveLink_1["default"], { key: index, href: link.href, title: link.title, subtitle: link.subtitle })); })));
+    return (react_1["default"].createElement("section", { className: InvestmentArchive_module_scss_1["default"]["container"] }, links.map(function (link, index) { return (react_1["default"].createElement(ArchiveLink_1["default"], { key: index, href: link.href, title: link.title, subtitle: link.subtitle })); })));
 };
 exports["default"] = InvestmentArchive;

@@ -13,13 +13,13 @@ const ExpandingPanel: FC<ExpandingPanelProps> = ({ isContentVisible, panelName, 
     <div className={styles["expanding__row"]} onClick={onClickExpanding}>
       <h2 className={styles["expanding__title"]}>{panelName}</h2>
 
-      <div className={styles["expanding__button"]}>
+      <div className={styles["expanding__icon-container"]}>
         <div className={isContentVisible ? styles["expanding__plus-rotate"] : styles["expanding__plus"]}>
           <DarkIcon isDecreased={true} icon="Plus Thin" />
         </div>
 
         <div className={isContentVisible ? styles["expanding__minus-rotate"] : styles["expanding__minus"]}>
-          <DarkIcon isDecreased={true} icon="Minus Thin" />
+          <DarkIcon isDecreased icon="Minus Thin" />
         </div>
       </div>
     </div>

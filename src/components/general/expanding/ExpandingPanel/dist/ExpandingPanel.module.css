@@ -18,7 +18,7 @@
 .expanding__title:hover {
   color: #000;
 }
-.expanding__button {
+.expanding__icon-container {
   width: 18px;
   height: 18px;
   position: relative;
@@ -26,10 +26,6 @@
   right: 0;
   margin-left: 12px;
   flex: none;
-}
-.expanding__image {
-  width: 18px;
-  height: 18px;
 }
 .expanding__plus {
   cursor: pointer;
@@ -39,9 +35,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 500ms;
   opacity: 1;
   transform: rotate(0deg);
-  transition: all 500ms;
 }
 .expanding__plus-rotate {
   cursor: pointer;
@@ -51,9 +47,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 500ms;
   opacity: 0;
   transform: rotate(180deg);
-  transition: all 500ms;
 }
 .expanding__minus {
   cursor: pointer;
@@ -62,8 +58,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(0deg);
   transition: all 500ms;
+  transform: rotate(0deg);
 }
 .expanding__minus-rotate {
   cursor: pointer;
@@ -72,6 +68,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(180deg);
   transition: all 500ms;
+  transform: rotate(180deg);
 }

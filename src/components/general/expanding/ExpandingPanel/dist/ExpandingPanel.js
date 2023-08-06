@@ -7,7 +7,7 @@ var ExpandingPanel = function (_a) {
     var isContentVisible = _a.isContentVisible, panelName = _a.panelName, onClickExpanding = _a.onClickExpanding;
     return (react_1["default"].createElement("div", { className: ExpandingPanel_module_scss_1["default"]["expanding__row"], onClick: onClickExpanding },
         react_1["default"].createElement("h2", { className: ExpandingPanel_module_scss_1["default"]["expanding__title"] }, panelName),
-        react_1["default"].createElement("div", { className: ExpandingPanel_module_scss_1["default"]["expanding__button"] },
+        react_1["default"].createElement("div", { className: ExpandingPanel_module_scss_1["default"]["expanding__icon-container"] },
             react_1["default"].createElement("div", { className: isContentVisible ? ExpandingPanel_module_scss_1["default"]["expanding__plus-rotate"] : ExpandingPanel_module_scss_1["default"]["expanding__plus"] },
                 react_1["default"].createElement(DarkIcon_1["default"], { isDecreased: true, icon: "Plus Thin" })),
             react_1["default"].createElement("div", { className: isContentVisible ? ExpandingPanel_module_scss_1["default"]["expanding__minus-rotate"] : ExpandingPanel_module_scss_1["default"]["expanding__minus"] },

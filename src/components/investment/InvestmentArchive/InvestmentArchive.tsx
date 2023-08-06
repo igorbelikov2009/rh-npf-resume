@@ -16,7 +16,7 @@ const InvestmentArchive = () => {
   ];
 
   return (
-    <section className={styles.container}>
+    <section className={styles["container"]}>
       {links.map((link, index) => (
         <ArchiveLink key={index} href={link.href} title={link.title} subtitle={link.subtitle} />
       ))}

@@ -33,9 +33,7 @@ const ExpandingTable: FC<ExpandingTableProps> = ({ oneExpandingTable }) => {
             exit={{ height: 0, opacity: 0 }}
             style={{ overflow: "hidden" }}
           >
-            <div>
-              <Table headings={oneExpandingTable.headings} arrayRows={oneExpandingTable.arrayRows} />
-            </div>
+            <Table headings={oneExpandingTable.headings} arrayRows={oneExpandingTable.arrayRows} />
           </motion.div>
         )}
       </AnimatePresence>

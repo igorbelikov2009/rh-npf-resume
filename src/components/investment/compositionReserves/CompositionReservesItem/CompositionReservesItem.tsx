@@ -19,11 +19,9 @@ const CompositionReservesItem: FC<CompositionReservesItemProps> = ({ isVisible, 
             exit={{ height: 0, opacity: 0 }}
             style={{ overflow: "hidden" }}
           >
-            <div>
-              {arrayOfExpanderTables.map((expander, index) => (
-                <ExpandingTable key={index} oneExpandingTable={expander} />
-              ))}
-            </div>
+            {arrayOfExpanderTables.map((expander, index) => (
+              <ExpandingTable key={index} oneExpandingTable={expander} />
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
