@@ -7,7 +7,7 @@ interface ChangingTitlesProps {
 }
 
 const ChangingTitles: FC<ChangingTitlesProps> = ({ isActive, title }) => {
-  return <div>{isActive && <h2 className={styles.heading}> {title} </h2>}</div>;
+  return <div>{isActive && <h2 className={styles["heading"]}> {title} </h2>}</div>;
 };
 
 export default ChangingTitles;

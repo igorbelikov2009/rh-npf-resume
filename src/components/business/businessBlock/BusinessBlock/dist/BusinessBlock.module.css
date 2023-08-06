@@ -21,7 +21,7 @@
     padding-left: 0;
   }
 }
-.carousel__carouselHeader {
+.carousel__carousel-header {
   width: 100%;
   padding: 48px 0;
   overflow: hidden;
@@ -36,7 +36,7 @@
   transition: all 600ms ease;
   position: relative;
 }
-.carousel__box-for-transmitted {
+.carousel__container-changing-titles {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;

@@ -12,7 +12,7 @@ const TaxPreferences = () => {
           <div className={styles["tax-preferences__selections"]}>
             <button
               onClick={() => setVisible(true)}
-              className={isVisible ? styles["tax-preferences__select_actived"] : styles["tax-preferences__select"]}
+              className={isVisible ? styles["tax-preferences__button_actived"] : styles["tax-preferences__button"]}
             >
               <TripleIcon hovered={isVisible} light={false} icon="Company" />
               <p className={styles["tax-preferences__title"]}>
@@ -23,7 +23,7 @@ const TaxPreferences = () => {
 
             <button
               onClick={() => setVisible(false)}
-              className={!isVisible ? styles["tax-preferences__select_actived"] : styles["tax-preferences__select"]}
+              className={!isVisible ? styles["tax-preferences__button_actived"] : styles["tax-preferences__button"]}
             >
               <TripleIcon hovered={!isVisible} light={false} icon="Users" />
               <p className={styles["tax-preferences__title"]}>

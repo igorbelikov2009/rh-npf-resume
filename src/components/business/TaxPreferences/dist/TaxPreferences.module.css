@@ -51,93 +51,93 @@
     max-width: 292px;
   }
 }
-.tax-preferences__select {
+.tax-preferences__button {
+  display: block;
+  border: 1px solid #e5e1e1;
+  background: #ffffff;
+  padding: 36px 24px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  transition-property: box-shadow, width, height, top, left;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s;
+  transition-timing-function: ease, ease, ease, ease, ease;
+  transition-delay: 0s, 0s, 0s, 0s, 0s;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  padding: 36px 24px;
+}
+.tax-preferences__button:first-of-type {
+  margin-right: 12px;
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 1160px) {
+  .tax-preferences__button:first-of-type {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+.tax-preferences__button:last-of-type {
+  margin-left: 12px;
+}
+@media screen and (min-width: 1160px) {
+  .tax-preferences__button:last-of-type {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 576px) {
+  .tax-preferences__button {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1160px) {
+  .tax-preferences__button {
+    width: 100%;
+  }
+}
+.tax-preferences__button_actived {
   display: block;
-  background: #ffffff;
   border: 1px solid #e5e1e1;
+  background: #ffffff;
+  padding: 36px 24px;
   cursor: pointer;
   transition: box-shadow 0.3s, width 0.3s, height 0.3s, top 0.3s, left 0.3s;
   transition-property: box-shadow, width, height, top, left;
   transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s;
   transition-timing-function: ease, ease, ease, ease, ease;
   transition-delay: 0s, 0s, 0s, 0s, 0s;
-}
-.tax-preferences__select:first-of-type {
-  margin-right: 12px;
-  margin-bottom: 0px;
-}
-@media screen and (min-width: 1160px) {
-  .tax-preferences__select:first-of-type {
-    margin-right: 0;
-    margin-bottom: 24px;
-  }
-}
-.tax-preferences__select:last-of-type {
-  margin-left: 12px;
-}
-@media screen and (min-width: 1160px) {
-  .tax-preferences__select:last-of-type {
-    margin-left: 0;
-  }
-}
-@media screen and (min-width: 576px) {
-  .tax-preferences__select {
-    display: flex;
-  }
-}
-@media screen and (min-width: 1160px) {
-  .tax-preferences__select {
-    width: 100%;
-  }
-}
-.tax-preferences__select_actived {
-  display: block;
   width: calc(100% + 16px);
   height: calc(100% + 16px);
   left: -8px;
   top: -8px;
-  border: 1px solid #e5e1e1;
-  padding: 36px 24px;
-  background: #ffffff;
   box-shadow: 0px 4px 6px #d2dce6;
   border-radius: 6px;
-  cursor: pointer;
-  transition: box-shadow 0.3s, width 0.3s, height 0.3s, top 0.3s, left 0.3s;
-  transition-property: box-shadow, width, height, top, left;
-  transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s;
-  transition-timing-function: ease, ease, ease, ease, ease;
-  transition-delay: 0s, 0s, 0s, 0s, 0s;
 }
-.tax-preferences__select_actived:first-of-type {
+.tax-preferences__button_actived:first-of-type {
   margin-right: 12px;
   margin-bottom: 0px;
 }
 @media screen and (min-width: 1160px) {
-  .tax-preferences__select_actived:first-of-type {
+  .tax-preferences__button_actived:first-of-type {
     margin-right: 0;
     margin-bottom: 24px;
   }
 }
-.tax-preferences__select_actived:last-of-type {
+.tax-preferences__button_actived:last-of-type {
   margin-left: 12px;
 }
 @media screen and (min-width: 1160px) {
-  .tax-preferences__select_actived:last-of-type {
+  .tax-preferences__button_actived:last-of-type {
     margin-left: 0;
   }
 }
 @media screen and (min-width: 576px) {
-  .tax-preferences__select_actived {
+  .tax-preferences__button_actived {
     display: flex;
   }
 }
 @media screen and (min-width: 1160px) {
-  .tax-preferences__select_actived {
+  .tax-preferences__button_actived {
     width: 100%;
   }
 }

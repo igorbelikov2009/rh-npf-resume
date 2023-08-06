@@ -117,7 +117,7 @@ const BusinessBlock = () => {
 
   return (
     <section className={styles["carousel"]}>
-      <div className={styles["carousel__carouselHeader"]}>
+      <div className={styles["carousel__carousel-header"]}>
         <CarouselHeader
           headerSubtitle="Какие задачи решает внедрение пенсионной программы"
           isBlurredLeft={isBlurredLeft}
@@ -139,7 +139,7 @@ const BusinessBlock = () => {
         </div>
       </div>
 
-      <div className={styles["carousel__box-for-transmitted"]}>
+      <div className={styles["carousel__container-changing-titles"]}>
         {subheadings.map((heading, index) => (
           <ChangingTitles key={index} title={heading.title} isActive={index === carouselValue} />
         ))}

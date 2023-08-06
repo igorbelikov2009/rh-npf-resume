@@ -21,7 +21,7 @@ const BusinessProgramm = () => {
           <h1 className={styles["business-programm__heading"]}>Как работает корпоративная пенсионная программа</h1>
         </div>
 
-        <div className={styles["business-programm__block"]}>
+        <div className={styles["business-programm__programm-block"]}>
           {isLoading && <ServerIsLoading />}
           {isError && <ServerError />}
 
