@@ -9,6 +9,7 @@ var AdaptiveRadioItem = function (_a) {
     };
     return (react_1["default"].createElement("label", { className: isActive ? AdaptiveRadioItem_module_scss_1["default"]["radio-item-active"] : AdaptiveRadioItem_module_scss_1["default"]["radio-item"] },
         title,
-        react_1["default"].createElement("input", { className: AdaptiveRadioItem_module_scss_1["default"]["radio-item__input"], type: "radio", value: value, id: id, onChange: radioHandler })));
+        react_1["default"].createElement("input", { className: AdaptiveRadioItem_module_scss_1["default"]["input"], type: "radio", value: value, id: id, onClick: radioHandler })));
 };
 exports["default"] = AdaptiveRadioItem;
+// Только  onClick={radioHandler}, onChange работает только на одно нажатие.

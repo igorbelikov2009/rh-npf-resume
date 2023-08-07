@@ -25,18 +25,16 @@ const ExpandingAnswer: FC<IObjectQuestionsAnswers> = ({ question, answer, isPara
             exit={{ height: 0, opacity: 0 }}
             style={{ overflow: "hidden" }}
           >
-            <div>
-              {isParagraph && (
-                <div className={styles["expanding__content"]}>
-                  <Paragraph paragraphs={answer} />
-                </div>
-              )}
-              {isParagraphBefore && (
-                <div className={styles["expanding__content"]}>
-                  <ParagraphBefore paragraphs={answer} />
-                </div>
-              )}
-            </div>
+            {isParagraph && (
+              <div className={styles["expanding__content"]}>
+                <Paragraph paragraphs={answer} />
+              </div>
+            )}
+            {isParagraphBefore && (
+              <div className={styles["expanding__content"]}>
+                <ParagraphBefore paragraphs={answer} />
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

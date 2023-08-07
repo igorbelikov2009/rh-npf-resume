@@ -5,7 +5,7 @@ import styles from "./OptionBlockForSelector.module.scss";
 
 interface OptionBlockForSelectorProps {
   optionsItems: IOptionItem[];
-  emitValue: (event: React.SetStateAction<string>, id: string) => void;
+  emitValue: (event: string, id: string) => void;
   onClickOptionsBlock: () => void;
   currentValue: string;
 }
@@ -16,7 +16,7 @@ const OptionBlockForSelector: FC<OptionBlockForSelectorProps> = ({
   emitValue,
   onClickOptionsBlock,
 }) => {
-  const onChangeOption = (value: React.SetStateAction<string>, id: string) => {
+  const onChangeOption = (value: string, id: string) => {
     emitValue(value, id);
   };
 

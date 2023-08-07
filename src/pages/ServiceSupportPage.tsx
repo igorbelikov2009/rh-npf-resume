@@ -10,16 +10,14 @@ const ServiceSupportPage = () => {
     <>
       <TopBlock heading="Поддержка" image={supportImage} />
 
-      <div>
-        <div id={"questionsAnswers"}>
-          <QuestionsAnswers />
-        </div>
+      <div id={"questionsAnswers"}>
+        <QuestionsAnswers />
+      </div>
 
-        <PensionPrograms />
+      <PensionPrograms />
 
-        <div id={"form"}>
-          <SupportForm />
-        </div>
+      <div id={"form"}>
+        <SupportForm />
       </div>
     </>
   );

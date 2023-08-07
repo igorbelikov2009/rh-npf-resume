@@ -42,7 +42,7 @@ var Reporting = function (_a) {
             react_1["default"].createElement("h1", { className: Reporting_module_scss_1["default"]["reporting__heading"] }, "\u041E\u0442\u0447\u0451\u0442\u043D\u043E\u0441\u0442\u044C"),
             react_1["default"].createElement("div", { className: Reporting_module_scss_1["default"]["reporting__flex-container"] },
                 react_1["default"].createElement("div", { className: Reporting_module_scss_1["default"]["reporting__select"] },
-                    react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: currentValue, optionsItems: optionsItemsReporting, isRadioListVisible: isSelectorOptionBlockVisible, onClickSelector: onClickSelector, emitOnChangeRadioListBlock: onChangeSelectorOptionBlock, emitOnClickRadioListBlock: onClickSelectorOptionBlock })),
+                    react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: currentValue, optionsItems: optionsItemsReporting, isVisible: isSelectorOptionBlockVisible, onClickSelector: onClickSelector, emitOnChangeRadio: onChangeSelectorOptionBlock, emitOnClickRadio: onClickSelectorOptionBlock })),
                 react_1["default"].createElement("div", { className: Reporting_module_scss_1["default"]["reporting__adaptive-radio"] },
                     react_1["default"].createElement(AdaptiveRadio_1["default"], { currentValue: currentValue, optionsItems: optionsItemsReporting, emitValue: onChangeAdaptiveRadio })),
                 react_1["default"].createElement("div", { className: Reporting_module_scss_1["default"]["reporting__container-button"], onClick: onClickArchiveReporting },

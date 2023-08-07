@@ -11,7 +11,7 @@ const TableQ: FC<ITableContributions> = ({ headings, arrayRows }) => {
             <tr className={styles["tr"]}>
               {headings.map((heading, index) => (
                 <td key={index} className={styles["td"]}>
-                  <p className={styles["table__headers"]}> {heading} </p>
+                  <p className={styles["table__headers-row"]}> {heading} </p>
                 </td>
               ))}
             </tr>
@@ -22,7 +22,7 @@ const TableQ: FC<ITableContributions> = ({ headings, arrayRows }) => {
               <tr key={index} className={styles["tr"]}>
                 {row.map((cell, index) => (
                   <td key={index} className={styles["td"]}>
-                    <p className={styles["table__rows"]}>{cell}</p>
+                    <p className={styles["table__cell-row"]}>{cell}</p>
                   </td>
                 ))}
               </tr>

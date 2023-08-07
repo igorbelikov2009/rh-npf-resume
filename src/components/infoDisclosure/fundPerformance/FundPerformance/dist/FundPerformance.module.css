@@ -40,13 +40,13 @@
     flex-wrap: nowrap;
   }
 }
-.fund-performance__select {
+.fund-performance__selector {
   width: 100%;
   position: relative;
   display: block;
 }
 @media screen and (min-width: 576px) {
-  .fund-performance__select {
+  .fund-performance__selector {
     display: none;
   }
 }
@@ -59,6 +59,6 @@
     display: block;
   }
 }
-.fund-performance__list {
+.fund-performance__indicators {
   width: 100%;
 }

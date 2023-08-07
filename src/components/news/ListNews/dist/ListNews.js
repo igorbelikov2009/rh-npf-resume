@@ -20,7 +20,7 @@ var ListNews_module_scss_1 = require("./ListNews.module.scss");
 var ListNews = function () {
     var _a = react_1.useState("2021"), selectedYear = _a[0], setSelectedYear = _a[1];
     var _b = react_1.useState("0"), setId = _b[1];
-    var _c = react_1.useState(false), isRadioListVisible = _c[0], setRadioListVisible = _c[1];
+    var _c = react_1.useState(false), isVisible = _c[0], setRadioListVisible = _c[1];
     // Получаем данные с newsReducer,
     var dispatch = redux_1.useAppDispatch();
     var _d = redux_1.useAppSelector(function (state) { return state.newsReducer; }), news = _d.news, isLoading = _d.isLoading, error = _d.error;
@@ -57,11 +57,11 @@ var ListNews = function () {
     var onClickSelector = function () {
         setRadioListVisible(function (prev) { return !prev; });
     };
-    var onChangeRadioListBlock = function (value, id) {
+    var onChangeRadio = function (value, id) {
         setSelectedYear(value);
         setId(id);
     };
-    var onClickRadioListBlock = function () {
+    var onClickRadio = function () {
         setRadioListVisible(false);
     };
     var onChangeAdaptiveRadio = function (value, id) {
@@ -74,7 +74,7 @@ var ListNews = function () {
             error && react_1["default"].createElement(ServerError_1["default"], null)),
         react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__container-select-radio"] },
             react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__select"] },
-                react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, isRadioListVisible: isRadioListVisible, onClickSelector: onClickSelector, emitOnChangeRadioListBlock: onChangeRadioListBlock, emitOnClickRadioListBlock: onClickRadioListBlock })),
+                react_1["default"].createElement(SelectorAndOptionBlock_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, isVisible: isVisible, onClickSelector: onClickSelector, emitOnChangeRadio: onChangeRadio, emitOnClickRadio: onClickRadio })),
             react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__radio"] },
                 react_1["default"].createElement(AdaptiveRadio_1["default"], { currentValue: selectedYear, optionsItems: optionsItems, emitValue: onChangeAdaptiveRadio }))),
         react_1["default"].createElement("div", { className: ListNews_module_scss_1["default"]["news__container-news"] },

@@ -1,11 +1,16 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
 .select-options_hide {
   width: calc(100% - 12px);
   position: absolute;
   left: 6px;
   top: 94px;
+  transition: all 0.28s;
   visibility: hidden;
   transform: scale(0.1);
-  transition: all 0.28s;
 }
 
 .select-options_show {
@@ -13,12 +18,7 @@
   position: absolute;
   left: 6px;
   top: 94px;
+  transition: all 0.28s;
   visibility: visible;
   transform: scale(1);
-  transition: all 0.28s;
-}
-
-.list {
-  width: 100%;
-  position: relative;
 }

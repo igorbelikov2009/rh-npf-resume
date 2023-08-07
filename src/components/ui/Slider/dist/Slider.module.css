@@ -36,8 +36,6 @@
   overflow: hidden;
   height: 4px;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
 }
 .slider-bicolor:hover {
   opacity: 1;

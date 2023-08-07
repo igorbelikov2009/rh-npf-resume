@@ -10,6 +10,11 @@
   }
 }
 
+.content {
+  width: 100%;
+  padding: 24px 0 48px;
+}
+
 .paragraph {
   font-size: 16px;
   line-height: 24px;
@@ -33,14 +38,4 @@
   font-weight: 400;
   letter-spacing: normal;
   margin: 24px 0;
-}
-
-.expanding {
-  width: 100%;
-  border-bottom: 1px solid #e6f0fa;
-  position: relative;
-}
-.expanding__content {
-  width: 100%;
-  padding: 24px 0 48px;
 }

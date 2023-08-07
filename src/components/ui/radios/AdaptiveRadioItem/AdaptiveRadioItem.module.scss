@@ -18,10 +18,6 @@
   &:hover {
     color: #50287d;
   }
-
-  &__input {
-    display: none;
-  }
 }
 
 .radio-item-active {
@@ -44,4 +40,8 @@
   &:hover {
     color: #ffffff;
   }
+}
+
+.input {
+  display: none;
 }

@@ -13,7 +13,7 @@ import styles from "./ListNews.module.scss";
 const ListNews = () => {
   const [selectedYear, setSelectedYear] = useState("2021");
   const [, setId] = useState("0");
-  const [isRadioListVisible, setRadioListVisible] = useState(false);
+  const [isVisible, setRadioListVisible] = useState(false);
 
   // Получаем данные с newsReducer,
   const dispatch = useAppDispatch();
@@ -58,11 +58,11 @@ const ListNews = () => {
   const onClickSelector = () => {
     setRadioListVisible((prev) => !prev);
   };
-  const onChangeRadioListBlock = (value: React.SetStateAction<string>, id: string) => {
+  const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
     setSelectedYear(value);
     setId(id);
   };
-  const onClickRadioListBlock = () => {
+  const onClickRadio = () => {
     setRadioListVisible(false);
   };
   const onChangeAdaptiveRadio = (value: string, id: string) => {
@@ -82,10 +82,10 @@ const ListNews = () => {
           <SelectorAndOptionBlock
             currentValue={selectedYear}
             optionsItems={optionsItems}
-            isRadioListVisible={isRadioListVisible}
+            isVisible={isVisible}
             onClickSelector={onClickSelector}
-            emitOnChangeRadioListBlock={onChangeRadioListBlock}
-            emitOnClickRadioListBlock={onClickRadioListBlock}
+            emitOnChangeRadio={onChangeRadio}
+            emitOnClickRadio={onClickRadio}
           />
         </div>
 

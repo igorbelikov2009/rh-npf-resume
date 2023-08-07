@@ -6,7 +6,7 @@ import styles from "./TaxationTable.module.scss";
 const TaxationTable = () => {
   return (
     <div className={styles["taxation"]}>
-      <div className={styles["expanding__content"]}>
+      <div className={styles["content"]}>
         <p className={styles["paragraph-bold"]}>Для Участника</p>
 
         <TableQ arrayRows={companyContributions.arrayRows} headings={companyContributions.headings} />

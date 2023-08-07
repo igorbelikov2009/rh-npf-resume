@@ -56,10 +56,10 @@ const Reporting: FC<ReportingProps> = ({ onClickArchiveReporting }) => {
             <SelectorAndOptionBlock
               currentValue={currentValue}
               optionsItems={optionsItemsReporting}
-              isRadioListVisible={isSelectorOptionBlockVisible}
+              isVisible={isSelectorOptionBlockVisible}
               onClickSelector={onClickSelector}
-              emitOnChangeRadioListBlock={onChangeSelectorOptionBlock}
-              emitOnClickRadioListBlock={onClickSelectorOptionBlock}
+              emitOnChangeRadio={onChangeSelectorOptionBlock}
+              emitOnClickRadio={onClickSelectorOptionBlock}
             />
           </div>
 

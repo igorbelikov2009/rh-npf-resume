@@ -5,44 +5,44 @@ import Selector from "../Selector/Selector";
 import styles from "./SelectorAndOptionBlock.module.scss";
 
 interface SelectorAndOptionBlockProps {
-  isRadioListVisible: boolean;
+  isVisible: boolean;
   optionsItems: IOptionItem[];
   currentValue: string;
   onClickSelector: () => void;
-  emitOnChangeRadioListBlock: (value: React.SetStateAction<string>, id: string) => void;
-  emitOnClickRadioListBlock: () => void;
+  emitOnChangeRadio: (value: string, id: string) => void;
+  emitOnClickRadio: () => void;
 }
 
 // const ControllerOption
 const SelectorAndOptionBlock: FC<SelectorAndOptionBlockProps> = ({
-  isRadioListVisible,
+  isVisible,
   optionsItems,
   currentValue,
   onClickSelector,
-  emitOnChangeRadioListBlock,
-  emitOnClickRadioListBlock,
+  emitOnChangeRadio,
+  emitOnClickRadio,
 }) => {
-  const onClickRadioListSelector = () => {
+  const onClickRadioSelector = () => {
     onClickSelector();
   };
 
-  const onChangeRadioListBlock = (value: React.SetStateAction<string>, id: string) => {
-    emitOnChangeRadioListBlock(value, id);
+  const onChangeRadio = (value: string, id: string) => {
+    emitOnChangeRadio(value, id);
   };
-  const onClickRadioListBlock = () => {
-    emitOnClickRadioListBlock();
+  const onClickRadio = () => {
+    emitOnClickRadio();
   };
 
   return (
-    <div className={styles["list"]}>
-      <Selector value={currentValue} isVisible={isRadioListVisible} onClickSelector={onClickRadioListSelector} />
+    <div className={styles["container"]}>
+      <Selector value={currentValue} isVisible={isVisible} onClickSelector={onClickRadioSelector} />
 
-      <div className={isRadioListVisible ? styles["select-options_show"] : styles["select-options_hide"]}>
+      <div className={isVisible ? styles["select-options_show"] : styles["select-options_hide"]}>
         <OptionBlockForSelector
           optionsItems={optionsItems}
           currentValue={currentValue}
-          emitValue={onChangeRadioListBlock}
-          onClickOptionsBlock={onClickRadioListBlock}
+          emitValue={onChangeRadio}
+          onClickOptionsBlock={onClickRadio}
         />
       </div>
     </div>

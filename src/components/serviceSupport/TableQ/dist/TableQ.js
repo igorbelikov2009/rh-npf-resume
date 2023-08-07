@@ -9,11 +9,11 @@ var TableQ = function (_a) {
             react_1["default"].createElement("table", null,
                 react_1["default"].createElement("thead", null,
                     react_1["default"].createElement("tr", { className: TableQ_module_scss_1["default"]["tr"] }, headings.map(function (heading, index) { return (react_1["default"].createElement("td", { key: index, className: TableQ_module_scss_1["default"]["td"] },
-                        react_1["default"].createElement("p", { className: TableQ_module_scss_1["default"]["table__headers"] },
+                        react_1["default"].createElement("p", { className: TableQ_module_scss_1["default"]["table__headers-row"] },
                             " ",
                             heading,
                             " "))); }))),
                 react_1["default"].createElement("tbody", null, arrayRows.map(function (row, index) { return (react_1["default"].createElement("tr", { key: index, className: TableQ_module_scss_1["default"]["tr"] }, row.map(function (cell, index) { return (react_1["default"].createElement("td", { key: index, className: TableQ_module_scss_1["default"]["td"] },
-                    react_1["default"].createElement("p", { className: TableQ_module_scss_1["default"]["table__rows"] }, cell))); }))); }))))));
+                    react_1["default"].createElement("p", { className: TableQ_module_scss_1["default"]["table__cell-row"] }, cell))); }))); }))))));
 };
 exports["default"] = TableQ;

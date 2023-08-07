@@ -11,7 +11,7 @@ import styles from "./FundPerformance.module.scss";
 const FundPerformance = () => {
   const [currentValue, setCurrentValue] = useState("2021");
   const [idOptions, setIdOptions] = useState("0");
-  const [isRadioListVisible, setRadioListVisible] = useState(false);
+  const [isVisible, setRadioListVisible] = useState(false);
 
   // Получаем данные с сервера
   const { data: fundIndicators, isLoading, isError } = fundIndicatorsAPI.useGetFundIndicatorsQuery();
@@ -24,11 +24,11 @@ const FundPerformance = () => {
   const onClickSelector = () => {
     setRadioListVisible((prev) => !prev);
   };
-  const onChangeRadioListBlock = (value: React.SetStateAction<string>, id: string) => {
+  const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
     setCurrentValue(value);
     setIdOptions(id);
   };
-  const onClickRadioListBlock = () => {
+  const onClickRadio = () => {
     setRadioListVisible(false);
   };
 
@@ -38,14 +38,14 @@ const FundPerformance = () => {
         <h1 className={styles["fund-performance__heading"]}>Показатели деятельности</h1>
 
         <div className={styles["fund-performance__flex-container"]}>
-          <div className={styles["fund-performance__select"]}>
+          <div className={styles["fund-performance__selector"]}>
             <SelectorAndOptionBlock
               currentValue={currentValue}
               optionsItems={optionsItemsFundPerformance}
-              isRadioListVisible={isRadioListVisible}
+              isVisible={isVisible}
               onClickSelector={onClickSelector}
-              emitOnChangeRadioListBlock={onChangeRadioListBlock}
-              emitOnClickRadioListBlock={onClickRadioListBlock}
+              emitOnChangeRadio={onChangeRadio}
+              emitOnClickRadio={onClickRadio}
             />
           </div>
 
@@ -61,7 +61,7 @@ const FundPerformance = () => {
         {isLoading && <ServerIsLoading />}
         {isError && <ServerError />}
 
-        <div className={styles["fund-performance__list"]}>
+        <div className={styles["fund-performance__indicators"]}>
           {fundIndicators &&
             fundIndicators.map((item, index) => (
               <IndicatorsYear

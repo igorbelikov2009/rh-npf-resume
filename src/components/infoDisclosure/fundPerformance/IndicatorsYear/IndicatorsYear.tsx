@@ -16,23 +16,22 @@ const IndicatorsYear: FC<IndicatorsYearProps> = ({ isVisible, heading, subheadin
   return (
     <>
       {isVisible && (
-        <div>
-          <div>
-            <div className={styles["indicators-year"]}>
-              <p className={styles["indicators-year__heading"]}>{heading}</p>
+        <>
+          <div className={styles["indicators-year"]}>
+            <p className={styles["indicators-year__heading"]}>{heading}</p>
 
-              <p className={styles["indicators-year__subheading"]}>{subheading}</p>
-            </div>
-            {indicatorRows &&
-              indicatorRows.map((indicatorRow, index) => (
-                <IndicatorRow key={index} title={indicatorRow.title} index={indicatorRow.index} />
-              ))}
+            <p className={styles["indicators-year__subheading"]}>{subheading}</p>
           </div>
+
+          {indicatorRows &&
+            indicatorRows.map((indicatorRow, index) => (
+              <IndicatorRow key={index} title={indicatorRow.title} index={indicatorRow.index} />
+            ))}
 
           {archiveLinks.map((link, index) => (
             <ArchiveLink key={index} href={link.href} title={link.title} />
           ))}
-        </div>
+        </>
       )}
     </>
   );

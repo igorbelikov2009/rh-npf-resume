@@ -6,7 +6,7 @@ var TableQ_1 = require("../serviceSupport/TableQ/TableQ");
 var TaxationTable_module_scss_1 = require("./TaxationTable.module.scss");
 var TaxationTable = function () {
     return (react_1["default"].createElement("div", { className: TaxationTable_module_scss_1["default"]["taxation"] },
-        react_1["default"].createElement("div", { className: TaxationTable_module_scss_1["default"]["expanding__content"] },
+        react_1["default"].createElement("div", { className: TaxationTable_module_scss_1["default"]["content"] },
             react_1["default"].createElement("p", { className: TaxationTable_module_scss_1["default"]["paragraph-bold"] }, "\u0414\u043B\u044F \u0423\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0430"),
             react_1["default"].createElement(TableQ_1["default"], { arrayRows: serviceSupportData_1.companyContributions.arrayRows, headings: serviceSupportData_1.companyContributions.headings }),
             react_1["default"].createElement("p", { className: TaxationTable_module_scss_1["default"]["paragraph"] },
