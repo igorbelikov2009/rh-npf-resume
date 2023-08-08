@@ -40,13 +40,13 @@ const ArchivePension = () => {
   ];
 
   return (
-    <div>
+    <>
       <p className={styles["heading"]}>Пенсионные правила</p>
 
       {links.map((link, index) => (
         <ArchiveLink key={index} href={link.href} title={link.title} />
       ))}
-    </div>
+    </>
   );
 };
 

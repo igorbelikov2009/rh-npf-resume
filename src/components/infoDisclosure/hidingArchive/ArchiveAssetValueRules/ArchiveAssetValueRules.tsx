@@ -16,13 +16,13 @@ const ArchiveAssetValueRules = () => {
   ];
 
   return (
-    <div>
+    <>
       <p className={styles["heading"]}>Правила определения стоимости чистых активов</p>
 
       {links.map((link, index) => (
         <ArchiveLink key={index} href={link.href} title={link.title} />
       ))}
-    </div>
+    </>
   );
 };
 

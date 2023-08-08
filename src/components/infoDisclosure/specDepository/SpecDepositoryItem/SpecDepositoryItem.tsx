@@ -9,7 +9,7 @@ export interface SpecDepositoryItemProps {
 
 const SpecDepositoryItem: FC<SpecDepositoryItemProps> = ({ subheading, title, subtitle }) => {
   return (
-    <div>
+    <>
       <p className={styles["spec-depository__paragraph"]}>
         <span className={styles["spec-depository__subheading"]}> {subheading} </span>
         <span className={styles["spec-depository__title"]}> {title} </span>
@@ -18,7 +18,7 @@ const SpecDepositoryItem: FC<SpecDepositoryItemProps> = ({ subheading, title, su
       <p className={styles["spec-depository__paragraph"]}>
         <span className={styles["spec-depository__title"]}> {subtitle} </span>
       </p>
-    </div>
+    </>
   );
 };
 

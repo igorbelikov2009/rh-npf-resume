@@ -4,7 +4,7 @@ import ArchiveLink from "../../../ui/links/ArchiveLink/ArchiveLink";
 import styles from "./ArchiveReporting.module.scss";
 
 const ArchiveReporting = () => {
-  const reports: IReports[] = [
+  const reportsArchive: IReports[] = [
     {
       heading: "Отчеты Фонда, аудиторское и актуарное заключения за 2014 г.",
       links: [
@@ -146,13 +146,13 @@ const ArchiveReporting = () => {
   ];
 
   return (
-    <div>
-      <p className={styles["heading"]}>Отчетность</p>
+    <>
+      <p className={styles["title"]}>Отчетность</p>
 
-      {reports.map((report, index) => (
+      {reportsArchive.map((report, index) => (
         <div key={index}>
-          <div className={styles["block-header"]}>
-            <p className={styles["block-header__heading-16"]}>{report.heading}</p>
+          <div className={styles["header"]}>
+            <p className={styles["heading"]}>{report.heading}</p>
           </div>
 
           {report.links.map((link, index) => (
@@ -160,7 +160,7 @@ const ArchiveReporting = () => {
           ))}
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

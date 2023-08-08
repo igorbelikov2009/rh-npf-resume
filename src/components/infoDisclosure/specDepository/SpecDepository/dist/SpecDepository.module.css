@@ -26,11 +26,11 @@
     margin-bottom: 48px;
   }
 }
-.spec-depository__param-switch {
+.spec-depository__button-container {
   margin-bottom: 24px;
 }
 @media screen and (min-width: 576px) {
-  .spec-depository__param-switch {
+  .spec-depository__button-container {
     margin-bottom: 48px;
   }
 }
@@ -51,11 +51,4 @@
   font-size: 16px;
   line-height: 24px;
   color: #5a646e;
-}
-.spec-depository__link {
-  text-decoration: none;
-  font-size: inherit;
-  line-height: inherit;
-  color: #50287d;
-  cursor: pointer;
 }

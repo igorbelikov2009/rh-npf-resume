@@ -14,34 +14,32 @@ const SpecDepository = () => {
   };
 
   return (
-    <article>
-      <section className={styles["spec-depository"]}>
+    <>
+      <div className={styles["spec-depository"]}>
         <div className={styles["spec-depository__container"]}>
           <h2 className={styles["spec-depository__heading"]}>Специализированный депозитарий</h2>
 
-          <div className={styles["spec-depository__param-switch"]}>
+          <div className={styles["spec-depository__button-container"]}>
             <RadioPrimary optionsItems={optionsItems} currentValue={currentValue} emitValue={onChangePrimaryRadio} />
           </div>
 
-          <div>
-            {currentValue === "Contracts operating" ? (
-              <SpecDepositoryItem
-                subheading={depository1.subheading}
-                title={depository1.title}
-                subtitle={depository1.subtitle}
-              />
-            ) : (
-              <SpecDepositoryItem
-                subheading={depository2.subheading}
-                title={depository2.title}
-                subtitle={depository2.subtitle}
-              />
-            )}
-          </div>
+          {currentValue === "Contracts operating" ? (
+            <SpecDepositoryItem
+              subheading={depository1.subheading}
+              title={depository1.title}
+              subtitle={depository1.subtitle}
+            />
+          ) : (
+            <SpecDepositoryItem
+              subheading={depository2.subheading}
+              title={depository2.title}
+              subtitle={depository2.subtitle}
+            />
+          )}
         </div>
-      </section>
+      </div>
 
-      <section className={styles["spec-depository__interactions"]}>
+      <div className={styles["spec-depository__interactions"]}>
         <div className={styles["spec-depository__container"]}>
           <p className={styles["spec-depository__description"]}>
             Для информационного взаимодействия АО НПФ «Ренессанс пенсии», являясь участником системы электронного
@@ -49,8 +47,8 @@ const SpecDepository = () => {
             Специализированный депозитарий.
           </p>
         </div>
-      </section>
-    </article>
+      </div>
+    </>
   );
 };
 

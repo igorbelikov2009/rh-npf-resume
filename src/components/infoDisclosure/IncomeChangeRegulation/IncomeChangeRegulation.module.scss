@@ -14,6 +14,15 @@
   margin: 0 auto;
 }
 
+.heading {
+  color: #28323c;
+  font-size: 34px;
+  line-height: 48px;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 24px 0;
+}
+
 .paragraph {
   width: 100%;
   display: block;
@@ -61,13 +70,4 @@
   &:hover {
     text-decoration: underline;
   }
-}
-
-.heading {
-  color: #28323c;
-  font-size: 34px;
-  line-height: 48px;
-  font-weight: 400;
-  letter-spacing: normal;
-  margin: 24px 0;
 }

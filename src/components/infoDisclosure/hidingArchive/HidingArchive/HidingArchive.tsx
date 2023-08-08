@@ -27,9 +27,9 @@ const HidingArchive: FC<HidingArchiveProps> = ({
     <section className={isVisible ? styles["left-50"] : styles["left-100"]}>
       <div className={isVisible ? styles["background_blur"] : styles["background"]}></div>
 
-      <div className={isVisible ? styles["archives_left-50"] : styles["archives_left-100"]}>
+      <div className={isVisible ? styles["container_left-50"] : styles["container_left-100"]}>
         <div className={styles["wrapper"]}>
-          <div>
+          <>
             {isArchiveShareholdersVisible && <ArchiveShareholders />}
 
             {isArchivePensionVisible && <ArchivePension />}
@@ -37,12 +37,12 @@ const HidingArchive: FC<HidingArchiveProps> = ({
             {isArchiveReportingVisible && <ArchiveReporting />}
 
             {isArchiveAssetValueRulesVisible && <ArchiveAssetValueRules />}
-          </div>
+          </>
 
           <div className={isVisible ? styles["top-block_left-50"] : styles["top-block_left-100"]}>
             <p className={styles["heading"]}>Архив</p>
 
-            <div className={styles["image"]} onClick={onClickHidingArchive}>
+            <div className={styles["icon-container"]} onClick={onClickHidingArchive}>
               <DarkIcon icon="Cross" />
             </div>
           </div>

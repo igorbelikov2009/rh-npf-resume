@@ -12,7 +12,7 @@ var FundPerformance_module_scss_1 = require("./FundPerformance.module.scss");
 var FundPerformance = function () {
     var _a = react_1.useState("2021"), currentValue = _a[0], setCurrentValue = _a[1];
     var _b = react_1.useState("0"), idOptions = _b[0], setIdOptions = _b[1];
-    var _c = react_1.useState(false), isVisible = _c[0], setRadioListVisible = _c[1];
+    var _c = react_1.useState(false), isVisible = _c[0], setVisible = _c[1];
     // Получаем данные с сервера
     var _d = fundIndicatorsAPI_1.fundIndicatorsAPI.useGetFundIndicatorsQuery(), fundIndicators = _d.data, isLoading = _d.isLoading, isError = _d.isError;
     var onChangeAdaptiveRadio = function (value, id) {
@@ -20,14 +20,14 @@ var FundPerformance = function () {
         setIdOptions(id);
     };
     var onClickSelector = function () {
-        setRadioListVisible(function (prev) { return !prev; });
+        setVisible(function (prev) { return !prev; });
     };
     var onChangeRadio = function (value, id) {
         setCurrentValue(value);
         setIdOptions(id);
     };
     var onClickRadio = function () {
-        setRadioListVisible(false);
+        setVisible(false);
     };
     return (react_1["default"].createElement("section", { className: FundPerformance_module_scss_1["default"]["fund-performance"] },
         react_1["default"].createElement("div", { className: FundPerformance_module_scss_1["default"]["fund-performance__container"] },

@@ -26,7 +26,7 @@
     }
   }
 
-  &__param-switch {
+  &__button-container {
     margin-bottom: 24px;
 
     @media screen and (min-width: 576px) {
@@ -51,13 +51,5 @@
     font-size: 16px;
     line-height: 24px;
     color: #5a646e;
-  }
-
-  &__link {
-    text-decoration: none;
-    font-size: inherit;
-    line-height: inherit;
-    color: #50287d;
-    cursor: pointer;
   }
 }

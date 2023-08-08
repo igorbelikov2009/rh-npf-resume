@@ -30,7 +30,7 @@ const Notifics = () => {
       <div className={styles["notifics__container"]}>
         <h2 className={styles["notifics__heading"]}>Уведомления</h2>
 
-        <div className={styles["notifics__triple-param-switch"]}>
+        <div className={styles["notifics__button-container"]}>
           <RadioCircle currentValue={currentValue} optionsItems={optionsItems} emitValue={onChangeRadio} />
         </div>
 

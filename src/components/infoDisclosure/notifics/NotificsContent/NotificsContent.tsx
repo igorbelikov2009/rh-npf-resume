@@ -11,13 +11,13 @@ const NotificsContent: FC<NotificsContentProps> = ({ content, isVisible }) => {
   return (
     <>
       {isVisible && (
-        <div>
+        <>
           <p className={styles["paragraph"]}>
             <span className={styles["paragraph-span"]}> {content.date}</span>
 
             <span className={styles["paragraph-span"]}>{content.description}</span>
           </p>
-        </div>
+        </>
       )}
     </>
   );

@@ -38,7 +38,7 @@ var ArchivePension = function () {
             title: 'Правила НПФ "Авива Пенсионное обеспечение"'
         },
     ];
-    return (react_1["default"].createElement("div", null,
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement("p", { className: ArchivePension_module_scss_1["default"]["heading"] }, "\u041F\u0435\u043D\u0441\u0438\u043E\u043D\u043D\u044B\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430"),
         links.map(function (link, index) { return (react_1["default"].createElement(ArchiveLink_1["default"], { key: index, href: link.href, title: link.title })); })));
 };

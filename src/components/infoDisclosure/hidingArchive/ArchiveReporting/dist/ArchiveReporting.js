@@ -4,7 +4,7 @@ var react_1 = require("react");
 var ArchiveLink_1 = require("../../../ui/links/ArchiveLink/ArchiveLink");
 var ArchiveReporting_module_scss_1 = require("./ArchiveReporting.module.scss");
 var ArchiveReporting = function () {
-    var reports = [
+    var reportsArchive = [
         {
             heading: "Отчеты Фонда, аудиторское и актуарное заключения за 2014 г.",
             links: [
@@ -132,11 +132,11 @@ var ArchiveReporting = function () {
             ]
         },
     ];
-    return (react_1["default"].createElement("div", null,
-        react_1["default"].createElement("p", { className: ArchiveReporting_module_scss_1["default"]["heading"] }, "\u041E\u0442\u0447\u0435\u0442\u043D\u043E\u0441\u0442\u044C"),
-        reports.map(function (report, index) { return (react_1["default"].createElement("div", { key: index },
-            react_1["default"].createElement("div", { className: ArchiveReporting_module_scss_1["default"]["block-header"] },
-                react_1["default"].createElement("p", { className: ArchiveReporting_module_scss_1["default"]["block-header__heading-16"] }, report.heading)),
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+        react_1["default"].createElement("p", { className: ArchiveReporting_module_scss_1["default"]["title"] }, "\u041E\u0442\u0447\u0435\u0442\u043D\u043E\u0441\u0442\u044C"),
+        reportsArchive.map(function (report, index) { return (react_1["default"].createElement("div", { key: index },
+            react_1["default"].createElement("div", { className: ArchiveReporting_module_scss_1["default"]["header"] },
+                react_1["default"].createElement("p", { className: ArchiveReporting_module_scss_1["default"]["heading"] }, report.heading)),
             report.links.map(function (link, index) { return (react_1["default"].createElement(ArchiveLink_1["default"], { key: index, href: link.href, title: link.title })); }))); })));
 };
 exports["default"] = ArchiveReporting;

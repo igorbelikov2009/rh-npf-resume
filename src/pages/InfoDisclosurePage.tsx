@@ -66,12 +66,12 @@ const InfoDisclosurePage = () => {
         onClickArchiveShareholders={onClickArchiveShareholders}
         onClickArchivePension={onClickArchivePension}
       />
-
       <Reporting onClickArchiveReporting={onClickArchiveReporting} />
-
       <PortfolioStructure />
+
       <IncomeChangeRegulation />
       <AssetValueRules onClickArchiveAssetValueRules={onClickArchiveAssetValueRules} />
+
       <HidingArchive
         isVisible={isHidingArchiveVisible}
         isArchiveShareholdersVisible={isArchiveShareholdersVisible}

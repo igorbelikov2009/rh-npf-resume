@@ -26,11 +26,11 @@
     margin-bottom: 48px;
   }
 }
-.notifics__triple-param-switch {
+.notifics__button-container {
   margin-bottom: 24px;
 }
 @media screen and (min-width: 576px) {
-  .notifics__triple-param-switch {
+  .notifics__button-container {
     margin-bottom: 48px;
   }
 }

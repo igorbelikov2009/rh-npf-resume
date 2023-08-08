@@ -47,7 +47,7 @@ var Reporting = function (_a) {
                     react_1["default"].createElement(AdaptiveRadio_1["default"], { currentValue: currentValue, optionsItems: optionsItemsReporting, emitValue: onChangeAdaptiveRadio })),
                 react_1["default"].createElement("div", { className: Reporting_module_scss_1["default"]["reporting__container-button"], onClick: onClickArchiveReporting },
                     react_1["default"].createElement(ButtonToArchive_1["default"], null))),
-            react_1["default"].createElement("div", null,
+            react_1["default"].createElement(react_1["default"].Fragment, null,
                 isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
                 isError && react_1["default"].createElement(ServerError_1["default"], null),
                 reportings &&

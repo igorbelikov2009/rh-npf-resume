@@ -19,7 +19,7 @@ const ManagementCompanies = () => {
     },
   ];
 
-  const onChangePrimaryRadio = (value: React.SetStateAction<string>) => {
+  const onChangePrimaryRadio = (value: string) => {
     setCurrentValue(value);
   };
 
@@ -28,13 +28,13 @@ const ManagementCompanies = () => {
       <div className={styles["management-companies__container"]}>
         <h2 className={styles["management-companies__heading"]}>Управляющие компании</h2>
 
-        <div className={styles["management-companies__param-switch"]}>
+        <div className={styles["management-companies__button-container"]}>
           <RadioPrimary optionsItems={optionsItems} currentValue={currentValue} emitValue={onChangePrimaryRadio} />
         </div>
 
         <div className={styles["management-companies__content"]}>
           {currentValue === "Contracts operating" ? (
-            <div>
+            <>
               <p className={styles["management-companies__paragraph"]}>
                 <span className={styles["management-companies__paragraph-bold"]}>
                   Акционерное общество «Сбер Управление Активами»
@@ -122,9 +122,9 @@ const ManagementCompanies = () => {
                   Договор № 311220/1, заключен 31.12.2020г., бессрочный, действует.
                 </span>
               </p>
-            </div>
+            </>
           ) : (
-            <div>
+            <>
               <p className={styles["management-companies__paragraph"]}>
                 <span className={styles["management-companies__paragraph-bold"]}>
                   Акционерное общество «Сбербанк Управление Активами» (до переименования в ноябре 2012 г. - ЗАО
@@ -168,7 +168,7 @@ const ManagementCompanies = () => {
                   295/2007, заключен 27.06.2007 г. на срок 2 года, прекращен 31.12.2009 г.
                 </span>
               </p>
-            </div>
+            </>
           )}
         </div>
       </div>

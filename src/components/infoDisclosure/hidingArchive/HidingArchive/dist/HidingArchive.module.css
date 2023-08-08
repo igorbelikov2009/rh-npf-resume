@@ -5,8 +5,8 @@
   right: 0;
   bottom: 0;
   display: block;
-  left: 50%;
   transition: left 500ms ease;
+  left: 50%;
 }
 
 .left-100 {
@@ -15,18 +15,18 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 100%;
   transition: left 0.5s ease;
+  left: 100%;
 }
 
 .background {
   width: 100%;
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: #000;
+  position: absolute;
   opacity: 0;
 }
 
@@ -41,7 +41,7 @@
   opacity: 0.16;
 }
 
-.archives_left-50 {
+.container_left-50 {
   width: 50vw;
   position: fixed;
   top: 0;
@@ -52,17 +52,17 @@
   box-shadow: 0px 8px 8px gray;
   padding-right: 24px;
   padding-left: 24px;
-  left: 50%;
   transition: left 500ms ease;
+  left: 50%;
 }
 @media screen and (min-width: 576px) {
-  .archives_left-50 {
+  .container_left-50 {
     padding-right: 28px;
     padding-left: 28px;
   }
 }
 
-.archives_left-100 {
+.container_left-100 {
   width: 50vw;
   position: fixed;
   top: 0;
@@ -73,11 +73,11 @@
   box-shadow: 0px 8px 8px gray;
   padding-right: 24px;
   padding-left: 24px;
-  left: 100%;
   transition: left 0.5s ease;
+  left: 100%;
 }
 @media screen and (min-width: 576px) {
-  .archives_left-100 {
+  .container_left-100 {
     padding-right: 28px;
     padding-left: 28px;
   }
@@ -100,8 +100,8 @@
   background-color: #fff;
   padding-right: 24px;
   padding-left: 24px;
-  left: 50%;
   transition: left 500ms ease;
+  left: 50%;
 }
 @media screen and (min-width: 576px) {
   .top-block_left-50 {
@@ -123,8 +123,8 @@
   background-color: #fff;
   padding-right: 24px;
   padding-left: 24px;
-  left: 100%;
   transition: left 0.5s ease;
+  left: 100%;
 }
 @media screen and (min-width: 576px) {
   .top-block_left-100 {
@@ -141,13 +141,6 @@
   color: black;
 }
 
-.image {
+.icon-container {
   cursor: pointer;
-}
-
-.subheading {
-  font-size: 16px;
-  line-height: 24px;
-  color: #5a646e;
-  margin-bottom: 48px;
 }

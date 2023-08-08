@@ -11,7 +11,7 @@ import styles from "./FundPerformance.module.scss";
 const FundPerformance = () => {
   const [currentValue, setCurrentValue] = useState("2021");
   const [idOptions, setIdOptions] = useState("0");
-  const [isVisible, setRadioListVisible] = useState(false);
+  const [isVisible, setVisible] = useState(false);
 
   // Получаем данные с сервера
   const { data: fundIndicators, isLoading, isError } = fundIndicatorsAPI.useGetFundIndicatorsQuery();
@@ -22,14 +22,14 @@ const FundPerformance = () => {
   };
 
   const onClickSelector = () => {
-    setRadioListVisible((prev) => !prev);
+    setVisible((prev) => !prev);
   };
   const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
     setCurrentValue(value);
     setIdOptions(id);
   };
   const onClickRadio = () => {
-    setRadioListVisible(false);
+    setVisible(false);
   };
 
   return (

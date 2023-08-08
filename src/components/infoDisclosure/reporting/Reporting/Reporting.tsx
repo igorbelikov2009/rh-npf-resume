@@ -76,7 +76,7 @@ const Reporting: FC<ReportingProps> = ({ onClickArchiveReporting }) => {
           </div>
         </div>
 
-        <div>
+        <>
           {isLoading && <ServerIsLoading />}
           {isError && <ServerError />}
 
@@ -84,7 +84,7 @@ const Reporting: FC<ReportingProps> = ({ onClickArchiveReporting }) => {
             reportings.map((reports, index) => (
               <Reports key={index} reports={reports} isVisible={index === Number(id)} />
             ))}
-        </div>
+        </>
       </div>
     </section>
   );

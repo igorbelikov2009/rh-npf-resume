@@ -4,7 +4,7 @@ import ArchiveLink from "../../../ui/links/ArchiveLink/ArchiveLink";
 import style from "./ArchiveShareholders.module.scss";
 
 const ArchiveShareholders = () => {
-  const links: ArchiveLinkProps[] = [
+  const linksArchiveShareholders: ArchiveLinkProps[] = [
     {
       href: "/pdf/infoOpening/archive-aktsionerov/01 Beneficiaries structure 16.03.2021.pdf",
       title: "Список акционеров Фонда и лиц, под контролем либо значительным влиянием находится Фонд (на 16.03.2021)",
@@ -62,13 +62,13 @@ const ArchiveShareholders = () => {
   ];
 
   return (
-    <div>
+    <>
       <p className={style["heading"]}>Структура и состав акционеров</p>
 
-      {links.map((link, index) => (
+      {linksArchiveShareholders.map((link, index) => (
         <ArchiveLink key={index} href={link.href} title={link.title} />
       ))}
-    </div>
+    </>
   );
 };
 
