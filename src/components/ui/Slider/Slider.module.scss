@@ -7,7 +7,7 @@
     margin-bottom: 48px;
   }
 
-  &__description {
+  &__container {
     display: flex;
     justify-content: space-between;
   }
@@ -17,19 +17,19 @@
     color: #b5bdc8;
   }
 
-  &__output {
+  &__current-value {
     font-size: 16px;
     line-height: 24px;
     font-style: normal;
     color: #5a646e;
   }
 
-  &__sub-output {
-    font-size: 11px;
-    line-height: 24px;
-    font-style: normal;
-    color: #b5bdc8;
-  }
+  // &__sub-output {
+  //   font-size: 11px;
+  //   line-height: 24px;
+  //   font-style: normal;
+  //   color: #b5bdc8;
+  // }
 }
 
 .slider-bicolor {

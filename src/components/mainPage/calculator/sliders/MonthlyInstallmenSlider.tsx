@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SliderString, { ISlider } from "../../../ui/Slider";
+import Slider, { ISlider } from "../../../ui/Slider";
 
 interface MonthlyInstallmenSliderProps {
   monthlyInstallmenSliderHandler: (value: string) => void;
@@ -19,7 +19,7 @@ const MonthlyInstallmenSlider: FC<MonthlyInstallmenSliderProps> = ({ monthlyInst
   };
 
   return (
-    <SliderString
+    <Slider
       title={monthlyInstallmenSlider.title}
       name={monthlyInstallmenSlider.name}
       min={monthlyInstallmenSlider.min}

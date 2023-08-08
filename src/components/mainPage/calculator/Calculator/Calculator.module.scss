@@ -61,6 +61,11 @@
 
   &__block {
     width: 100%;
+    position: relative;
+  }
+
+  &__box {
+    width: 100%;
     display: block;
 
     @media screen and (min-width: 576px) {
@@ -113,8 +118,6 @@
 
 // sliders
 .slider-block {
-  width: 100%;
-
   &__age {
     width: 100%;
     display: block;
@@ -125,7 +128,7 @@
     }
   }
 
-  &__switch {
+  &__radio-container {
     min-width: 136px;
     max-width: 136px;
     margin-right: 0;
@@ -138,20 +141,12 @@
     }
   }
 
-  &__time-invest-inner {
-    font-size: 11px;
-    color: #b5bdc8;
-    position: absolute;
-    bottom: -24px;
-    left: 36px;
-  }
-
   &__checkbox {
     width: 100%;
     display: block;
   }
 
-  &__checkbox-value {
+  &__checkbox-info {
     font-size: 11px;
     line-height: 15px;
     color: #5a646e;

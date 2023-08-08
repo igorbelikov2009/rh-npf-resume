@@ -48,7 +48,6 @@ const Calculator: FC = () => {
   const toogleChecked = () => {
     setEarlyRretirement((prev) => !prev);
   };
-
   // console.log("ageMan :" + ageMan);
   // console.log("ageWoman :" + ageWoman);
   // console.log("genderValue :" + genderValue);
@@ -69,7 +68,6 @@ const Calculator: FC = () => {
 
   useEffect(() => {
     setInvestmentTerm(Number(genderValue) - Number(ageValue));
-
     // console.log("investmentTerm :" + investmentTerm);
     // console.log("downPayment :" + downPayment);
     // console.log("monthlyInstallment :" + monthlyInstallment);
@@ -129,43 +127,46 @@ const Calculator: FC = () => {
         <h1 className={styles["calculator__subheading"]}>Рассчитайте будущую пенсию</h1>
 
         <div className={styles["calculator__block"]}>
-          <div className={styles["calculator__sliders"]}>
-            <form className={styles["slider-block"]}>
-              <div className={styles["slider-block__age"]}>
-                <div className={styles["slider-block__switch"]}>
-                  <GenderRadio
-                    ageMan={ageMan}
-                    ageWoman={ageWoman}
-                    genderValue={genderValue}
-                    onChangeGenderRadio={onChangeGenderRadio}
-                  />
+          <div className={styles["calculator__box"]}>
+            <div className={styles["calculator__sliders"]}>
+              <form>
+                <div className={styles["slider-block__age"]}>
+                  <div className={styles["slider-block__radio-container"]}>
+                    <GenderRadio
+                      ageMan={ageMan}
+                      ageWoman={ageWoman}
+                      genderValue={genderValue}
+                      onChangeGenderRadio={onChangeGenderRadio}
+                    />
+                  </div>
+                  <AgeSlider ageSliderMax={ageSliderMax} ageSliderHandler={ageSliderHandler} />
                 </div>
-                <AgeSlider ageSliderMax={ageSliderMax} ageSliderHandler={ageSliderHandler} />
-              </div>
 
-              <>
-                <DownPaymentSlider downPaymentSliderHandler={downPaymentSliderHandler} />
-                <MonthlyInstallmenSlider monthlyInstallmenSliderHandler={monthlyInstallmenSliderHandler} />
-                <PeriodPaymentPensionSlider periodPaymentPensionSliderHandler={periodPaymentPensionSliderHandler} />
-              </>
+                <>
+                  <DownPaymentSlider downPaymentSliderHandler={downPaymentSliderHandler} />
+                  <MonthlyInstallmenSlider monthlyInstallmenSliderHandler={monthlyInstallmenSliderHandler} />
+                  <PeriodPaymentPensionSlider periodPaymentPensionSliderHandler={periodPaymentPensionSliderHandler} />
+                </>
 
-              <div className={styles["slider-block__checkbox"]}>
-                <Checkbox checkedValue={earlyRretirement} toogleChecked={toogleChecked} />
-              </div>
+                <div className={styles["slider-block__checkbox"]}>
+                  <Checkbox checkedValue={earlyRretirement} toogleChecked={toogleChecked} />
+                </div>
 
-              {!earlyRretirement && (
-                <p className={styles["slider-block__checkbox-value"]}>
-                  * Расчет производится на основании достижения возраста, дающего право на получение страховой пенсии по
-                  старости, в случае если это предусмотрено пенсионным договором.
-                </p>
-              )}
-            </form>
+                {!earlyRretirement && (
+                  <p className={styles["slider-block__checkbox-info"]}>
+                    * Расчет производится на основании достижения возраста, дающего право на получение страховой пенсии
+                    по старости, в случае если это предусмотрено пенсионным договором.
+                  </p>
+                )}
+              </form>
+            </div>
+
+            <PensionInfo generalAccumValue={generalAccumValue} pensionValue={pensionValue} />
           </div>
-          <PensionInfo generalAccumValue={generalAccumValue} pensionValue={pensionValue} />
-        </div>
 
-        <div className={styles["calculator__graph-container"]}>
-          <Graph />
+          <div className={styles["calculator__graph-container"]}>
+            <Graph />
+          </div>
         </div>
       </div>
     </section>

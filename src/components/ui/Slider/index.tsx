@@ -11,21 +11,20 @@ export interface ISlider {
   emitValue: (event: string) => void;
 }
 
-const SliderString: FC<ISlider> = ({ emitValue, max, min, name, step, title, value }) => {
+const Slider: FC<ISlider> = ({ emitValue, max, min, name, step, title, value }) => {
   const [currentValue, setCurrentValue] = useState(value);
 
   const handlerSlider = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentValue(event.target.value);
     emitValue(event.target.value);
-    console.log(event.target.value);
   };
 
   return (
     <div className={styles["slider"]}>
-      <div className={styles["slider__description"]}>
+      <div className={styles["slider__container"]}>
         <p className={styles["slider__title"]}> {title}</p>
 
-        <p className={styles["slider__output"]}> {currentValue} </p>
+        <p className={styles["slider__current-value"]}> {currentValue} </p>
       </div>
 
       <input
@@ -42,4 +41,4 @@ const SliderString: FC<ISlider> = ({ emitValue, max, min, name, step, title, val
   );
 };
 
-export default SliderString;
+export default Slider;

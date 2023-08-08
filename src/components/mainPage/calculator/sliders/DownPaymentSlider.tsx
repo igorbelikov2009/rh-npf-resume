@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SliderString, { ISlider } from "../../../ui/Slider";
+import Slider, { ISlider } from "../../../ui/Slider";
 
 interface DownPaymentSliderProps {
   downPaymentSliderHandler: (value: string) => void;
@@ -19,7 +19,7 @@ const DownPaymentSlider: FC<DownPaymentSliderProps> = ({ downPaymentSliderHandle
   };
 
   return (
-    <SliderString
+    <Slider
       title={downPaymentSlider.title}
       name={downPaymentSlider.name}
       min={downPaymentSlider.min}

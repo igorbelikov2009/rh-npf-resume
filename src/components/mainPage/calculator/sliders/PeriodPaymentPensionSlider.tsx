@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SliderString, { ISlider } from "../../../ui/Slider";
+import Slider, { ISlider } from "../../../ui/Slider";
 
 interface PeriodPaymentPensionSliderProps {
   periodPaymentPensionSliderHandler: (value: string) => void;
@@ -19,7 +19,7 @@ const PeriodPaymentPensionSlider: FC<PeriodPaymentPensionSliderProps> = ({ perio
   };
 
   return (
-    <SliderString
+    <Slider
       title={periodPaymentPensionSlider.title}
       name={periodPaymentPensionSlider.name}
       min={periodPaymentPensionSlider.min}

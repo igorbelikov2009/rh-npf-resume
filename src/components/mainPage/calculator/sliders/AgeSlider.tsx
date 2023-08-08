@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SliderString, { ISlider } from "../../../ui/Slider";
+import Slider, { ISlider } from "../../../ui/Slider";
 
 interface AgeSliderProps {
   ageSliderMax: string;
@@ -19,7 +19,7 @@ const AgeSlider: FC<AgeSliderProps> = ({ ageSliderMax, ageSliderHandler }) => {
     },
   };
   return (
-    <SliderString
+    <Slider
       title={ageSlider.title}
       name={ageSlider.name}
       min={ageSlider.min}
