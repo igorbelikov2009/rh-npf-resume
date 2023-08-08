@@ -1,25 +1,25 @@
 import React, { FC } from "react";
-import Slider, { SliderProps } from "../../../ui/Slider/Slider";
+import SliderString, { ISlider } from "../../../ui/Slider";
 
 interface MonthlyInstallmenSliderProps {
-  monthlyInstallmenSliderHandler: (value: React.SetStateAction<number>) => void;
+  monthlyInstallmenSliderHandler: (value: string) => void;
 }
 
 const MonthlyInstallmenSlider: FC<MonthlyInstallmenSliderProps> = ({ monthlyInstallmenSliderHandler }) => {
-  const monthlyInstallmenSlider: SliderProps = {
+  const monthlyInstallmenSlider: ISlider = {
     title: "Ежемесячный взнос, р.",
     name: "monthlyInstallment",
-    min: 0,
-    max: 50000,
-    step: 500,
-    value: 5000,
-    emitValue: function (event: React.SetStateAction<number>): void {
+    min: "0",
+    max: "50000",
+    step: "500",
+    value: "5000",
+    emitValue: function (event: string): void {
       throw new Error("Function not implemented.");
     },
   };
 
   return (
-    <Slider
+    <SliderString
       title={monthlyInstallmenSlider.title}
       name={monthlyInstallmenSlider.name}
       min={monthlyInstallmenSlider.min}

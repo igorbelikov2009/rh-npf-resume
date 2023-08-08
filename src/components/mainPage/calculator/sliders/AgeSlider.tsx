@@ -1,25 +1,25 @@
 import React, { FC } from "react";
-import Slider, { SliderProps } from "../../../ui/Slider/Slider";
+import SliderString, { ISlider } from "../../../ui/Slider";
 
 interface AgeSliderProps {
-  ageSliderMax: number;
-  ageSliderHandler: (value: React.SetStateAction<number>) => void;
+  ageSliderMax: string;
+  ageSliderHandler: (value: string) => void;
 }
 
 const AgeSlider: FC<AgeSliderProps> = ({ ageSliderMax, ageSliderHandler }) => {
-  const ageSlider: SliderProps = {
+  const ageSlider: ISlider = {
     title: "Возраст, лет",
     name: "ageSlider",
-    min: 18,
+    min: "18",
     max: ageSliderMax,
-    step: 1,
-    value: 30,
-    emitValue: function (event: React.SetStateAction<number>): void {
+    step: "1",
+    value: "30",
+    emitValue: function (event: string): void {
       throw new Error("Function not implemented.");
     },
   };
   return (
-    <Slider
+    <SliderString
       title={ageSlider.title}
       name={ageSlider.name}
       min={ageSlider.min}

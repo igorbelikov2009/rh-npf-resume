@@ -7,7 +7,8 @@ import Calculator from "../components/mainPage/calculator/Calculator/Calculator"
 import ImagesCalculator from "../components/mainPage/ImagesCalculator/ImagesCalculator";
 import NewsBlock from "../components/mainPage/newsBlock/NewsBlock/NewsBlock";
 import { cardsMainPage } from "../data/mainPageData";
-import SliderString from "../components/ui/SliderString/SliderString";
+
+import SliderString from "../components/ui/Slider";
 
 const MainPage = () => {
   const handlerSlider = (value: string) => {

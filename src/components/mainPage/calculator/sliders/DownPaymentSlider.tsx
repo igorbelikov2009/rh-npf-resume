@@ -1,25 +1,25 @@
 import React, { FC } from "react";
-import Slider, { SliderProps } from "../../../ui/Slider/Slider";
+import SliderString, { ISlider } from "../../../ui/Slider";
 
 interface DownPaymentSliderProps {
-  downPaymentSliderHandler: (value: React.SetStateAction<number>) => void;
+  downPaymentSliderHandler: (value: string) => void;
 }
 
 const DownPaymentSlider: FC<DownPaymentSliderProps> = ({ downPaymentSliderHandler }) => {
-  const downPaymentSlider: SliderProps = {
+  const downPaymentSlider: ISlider = {
     title: " Первоначальный взнос, р",
     name: "downPayment",
-    min: 0,
-    max: 1000000,
-    step: 10000,
-    value: 10000,
-    emitValue: function (event: React.SetStateAction<number>): void {
+    min: "0",
+    max: "1000000",
+    step: "10000",
+    value: "10000",
+    emitValue: function (event: string): void {
       throw new Error("Function not implemented.");
     },
   };
 
   return (
-    <Slider
+    <SliderString
       title={downPaymentSlider.title}
       name={downPaymentSlider.name}
       min={downPaymentSlider.min}

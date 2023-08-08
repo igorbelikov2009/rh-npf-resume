@@ -14,12 +14,12 @@ const Calculator: FC = () => {
   const [genderValue, setGenderValue] = useState<string>("60"); // гендерный возраст выхода на пенсию
   const [ageMan, setAgeMan] = useState("65"); // возраст выхода на пенсию мужчины
   const [ageWoman, setAgeWoman] = useState("60"); // возраст выхода на пенсию женщины
-  const [ageValue, setAgeValue] = useState(30); // текущий возраст
-  const [ageSliderMax, setAgeSliderMax] = useState(65); // устанавливаем атрибуты для ageSlider
+  const [ageValue, setAgeValue] = useState("30"); // текущий возраст
+  const [ageSliderMax, setAgeSliderMax] = useState("65"); // устанавливаем атрибуты для ageSlider
   const [investmentTerm, setInvestmentTerm] = useState(35); // срок инвестирования => investmentTerm
-  const [downPayment, setDownPayment] = useState(1000); // первичный взнос => downPayment
-  const [monthlyInstallment, setMonthlyInstallment] = useState(5000); // ежемесячный взнос => monthlyInstallment
-  const [periodPaymentPension, setPeriodPaymentPension] = useState(15); // срок выплат пенсии => periodPaymentPension
+  const [downPayment, setDownPayment] = useState("1000"); // первичный взнос => downPayment
+  const [monthlyInstallment, setMonthlyInstallment] = useState("5000"); // ежемесячный взнос => monthlyInstallment
+  const [periodPaymentPension, setPeriodPaymentPension] = useState("15"); // срок выплат пенсии => periodPaymentPension
   const yearPersent = 0.05; // годовой процент накопления => annualPercentage
   const [generalAccumValue, setGeneralAccumValue] = useState(0); // общие накопления => generalSavings
   const [pensionValue, setPensionValue] = useState(0); // размер выплаты пенсии => pension
@@ -30,18 +30,18 @@ const Calculator: FC = () => {
       setGenderValue("60");
       setAgeMan("60");
       setAgeWoman("55");
-      setAgeSliderMax(60);
+      setAgeSliderMax("60");
     } else {
       setGenderValue("60");
       setAgeMan("65");
       setAgeWoman("60");
-      setAgeSliderMax(60);
+      setAgeSliderMax("60");
     }
   }, [earlyRretirement]);
 
   const onChangeGenderRadio = (emitGenderRadio: React.SetStateAction<string>) => {
     setGenderValue(emitGenderRadio);
-    setAgeSliderMax(Number(emitGenderRadio));
+    setAgeSliderMax(emitGenderRadio);
   };
   // console.log("ageSliderMax :" + ageSliderMax);
 
@@ -54,21 +54,21 @@ const Calculator: FC = () => {
   // console.log("genderValue :" + genderValue);
   // console.log(earlyRretirement);
 
-  const ageSliderHandler = (ageSliderValue: React.SetStateAction<number>) => {
+  const ageSliderHandler = (ageSliderValue: string) => {
     setAgeValue(ageSliderValue);
   };
-  const downPaymentSliderHandler = (downPaymentValue: React.SetStateAction<number>) => {
+  const downPaymentSliderHandler = (downPaymentValue: string) => {
     setDownPayment(downPaymentValue);
   };
-  const monthlyInstallmenSliderHandler = (monthlyInstallmentValue: React.SetStateAction<number>) => {
+  const monthlyInstallmenSliderHandler = (monthlyInstallmentValue: string) => {
     setMonthlyInstallment(monthlyInstallmentValue);
   };
-  const periodPaymentPensionSliderHandler = (periodPaymentPension: React.SetStateAction<number>) => {
+  const periodPaymentPensionSliderHandler = (periodPaymentPension: string) => {
     setPeriodPaymentPension(periodPaymentPension);
   };
 
   useEffect(() => {
-    setInvestmentTerm(Number(genderValue) - ageValue);
+    setInvestmentTerm(Number(genderValue) - Number(ageValue));
 
     // console.log("investmentTerm :" + investmentTerm);
     // console.log("downPayment :" + downPayment);
@@ -86,7 +86,7 @@ const Calculator: FC = () => {
     // console.log("percent:", percentInvestmentTerm);
 
     // // вычисляем накопления от первичного взноса
-    firstInvestAccumValue = downPayment * percentInvestmentTerm;
+    firstInvestAccumValue = Number(downPayment) * percentInvestmentTerm;
     firstInvestAccumValue = Math.round(firstInvestAccumValue);
     // console.log("firstInvestAccumValue:" + firstInvestAccumValue);
 
@@ -97,8 +97,8 @@ const Calculator: FC = () => {
     // // вычисляем накопления ежемесячных взносов за нескольк лет (количество месяцев ежемесячных взносов)
     monthInvestAccumValue = 0; // обнуляем при каждом новом движении слайдера или свиттча
     monthInvestAccumValue = Math.round(
-      monthlyInstallment * numberOfMonths +
-        monthlyInstallment * (numberOfMonths - 1) * ((yearPersent * numberOfMonths) / 24)
+      Number(monthlyInstallment) * numberOfMonths +
+        Number(monthlyInstallment) * (numberOfMonths - 1) * ((yearPersent * numberOfMonths) / 24)
     );
     // console.log("monthInvestAccumValue:" + monthInvestAccumValue);
 
@@ -108,7 +108,7 @@ const Calculator: FC = () => {
     // console.log("generalAccumValue:" + generalAccumValue);
 
     // // вычисляем размер ежемесячной пенсии
-    setPensionValue(Math.round(generalAccumValue / periodPaymentPension / 12));
+    setPensionValue(Math.round(generalAccumValue / Number(periodPaymentPension) / 12));
     // console.log("pensionValue:", pensionValue);
     // console.log("finish");
   }, [
@@ -127,46 +127,45 @@ const Calculator: FC = () => {
       <div className={styles["calculator__container"]}>
         <h2 className={styles["calculator__heading"]}>Калькулятор</h2>
         <h1 className={styles["calculator__subheading"]}>Рассчитайте будущую пенсию</h1>
+
         <div className={styles["calculator__block"]}>
-          <div className={styles["calculator__box"]}>
-            <div className={styles["calculator__sliders"]}>
-              <form className={styles["slider-block"]}>
-                <div className={styles["slider-block__age"]}>
-                  <div className={styles["slider-block__switch"]}>
-                    <GenderRadio
-                      ageMan={ageMan}
-                      ageWoman={ageWoman}
-                      genderValue={genderValue}
-                      onChangeGenderRadio={onChangeGenderRadio}
-                    />
-                  </div>
-                  <AgeSlider ageSliderMax={ageSliderMax} ageSliderHandler={ageSliderHandler} />
+          <div className={styles["calculator__sliders"]}>
+            <form className={styles["slider-block"]}>
+              <div className={styles["slider-block__age"]}>
+                <div className={styles["slider-block__switch"]}>
+                  <GenderRadio
+                    ageMan={ageMan}
+                    ageWoman={ageWoman}
+                    genderValue={genderValue}
+                    onChangeGenderRadio={onChangeGenderRadio}
+                  />
                 </div>
+                <AgeSlider ageSliderMax={ageSliderMax} ageSliderHandler={ageSliderHandler} />
+              </div>
 
-                <div>
-                  <DownPaymentSlider downPaymentSliderHandler={downPaymentSliderHandler} />
-                  <MonthlyInstallmenSlider monthlyInstallmenSliderHandler={monthlyInstallmenSliderHandler} />
-                  <PeriodPaymentPensionSlider periodPaymentPensionSliderHandler={periodPaymentPensionSliderHandler} />
-                </div>
+              <>
+                <DownPaymentSlider downPaymentSliderHandler={downPaymentSliderHandler} />
+                <MonthlyInstallmenSlider monthlyInstallmenSliderHandler={monthlyInstallmenSliderHandler} />
+                <PeriodPaymentPensionSlider periodPaymentPensionSliderHandler={periodPaymentPensionSliderHandler} />
+              </>
 
-                <div className={styles["slider-block__checkbox"]}>
-                  <Checkbox checkedValue={earlyRretirement} toogleChecked={toogleChecked} />
-                </div>
+              <div className={styles["slider-block__checkbox"]}>
+                <Checkbox checkedValue={earlyRretirement} toogleChecked={toogleChecked} />
+              </div>
 
-                {!earlyRretirement && (
-                  <p className={styles["slider-block__checkbox-value"]}>
-                    * Расчет производится на основании достижения возраста, дающего право на получение страховой пенсии
-                    по старости, в случае если это предусмотрено пенсионным договором.
-                  </p>
-                )}
-              </form>
-            </div>
-            <PensionInfo generalAccumValue={generalAccumValue} pensionValue={pensionValue} />
+              {!earlyRretirement && (
+                <p className={styles["slider-block__checkbox-value"]}>
+                  * Расчет производится на основании достижения возраста, дающего право на получение страховой пенсии по
+                  старости, в случае если это предусмотрено пенсионным договором.
+                </p>
+              )}
+            </form>
           </div>
+          <PensionInfo generalAccumValue={generalAccumValue} pensionValue={pensionValue} />
+        </div>
 
-          <div className={styles["calculator__graph-container"]}>
-            <Graph />
-          </div>
+        <div className={styles["calculator__graph-container"]}>
+          <Graph />
         </div>
       </div>
     </section>

@@ -64,14 +64,10 @@
 }
 .calculator__block {
   width: 100%;
-  position: relative;
-}
-.calculator__box {
-  width: 100%;
   display: block;
 }
 @media screen and (min-width: 576px) {
-  .calculator__box {
+  .calculator__block {
     display: flex;
     justify-content: space-between;
   }

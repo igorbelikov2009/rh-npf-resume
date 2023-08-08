@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
-import styles from "./SliderString.module.scss";
+import styles from "./Slider.module.scss";
 
-interface SliderStringProps {
+export interface ISlider {
   title: string;
   name: string;
   min: string;
@@ -11,7 +11,7 @@ interface SliderStringProps {
   emitValue: (event: string) => void;
 }
 
-const SliderString: FC<SliderStringProps> = ({ emitValue, max, min, name, step, title, value }) => {
+const SliderString: FC<ISlider> = ({ emitValue, max, min, name, step, title, value }) => {
   const [currentValue, setCurrentValue] = useState(value);
 
   const handlerSlider = (event: React.ChangeEvent<HTMLInputElement>) => {

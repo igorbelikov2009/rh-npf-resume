@@ -61,11 +61,6 @@
 
   &__block {
     width: 100%;
-    position: relative;
-  }
-
-  &__box {
-    width: 100%;
     display: block;
 
     @media screen and (min-width: 576px) {
