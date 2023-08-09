@@ -1,16 +1,14 @@
 .news-page {
-  &__head {
-    width: 100%;
-    padding: 24px;
-    box-sizing: border-box;
-    margin-top: 72px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  margin-top: 72px;
 
-    @media screen and (min-width: 576px) {
-      padding-top: 48px;
-      padding-left: 24px;
-      padding-right: 24px;
-      padding-bottom: 24px;
-    }
+  @media screen and (min-width: 576px) {
+    padding-top: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
   }
 
   &__container {
@@ -43,29 +41,6 @@
 
     &:hover {
       color: black;
-    }
-  }
-
-  &__footer {
-    width: 100%;
-    padding-top: 24px;
-    padding-bottom: 0;
-
-    @media screen and (min-width: 576px) {
-      padding-top: 48px;
-      padding-bottom: 24px;
-    }
-  }
-
-  &__footer-heading {
-    font-size: 34px;
-    line-height: 48px;
-    color: #000000;
-    display: block;
-    margin-bottom: 24px;
-
-    @media screen and (min-width: 576px) {
-      margin-bottom: 48px;
     }
   }
 }

@@ -161,7 +161,7 @@ var NewsBlock = function () {
         react_1["default"].createElement(react_1["default"].Fragment, null,
             isLoading && react_1["default"].createElement(ServerIsLoading_1["default"], null),
             error && react_1["default"].createElement(ServerError_1["default"], null)),
-        react_1["default"].createElement("div", null,
+        react_1["default"].createElement(react_1["default"].Fragment, null,
             react_1["default"].createElement(CarouselHeader_1["default"], { headerTitle: "\u041D\u043E\u0432\u043E\u0441\u0442\u0438", isBlurredLeft: isBlurredLeft, isBlurredRight: isBlurredRight, isHoveredLeft: isHoveredLeft, isHoveredRight: isHoveredRight, onClickLeft: onClickLeftArrow, onClickRight: onClickRightArrow }),
             react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["carousel"] },
                 react_1["default"].createElement("div", { className: NewsBlock_module_scss_1["default"]["scrollableElement"], style: { right: right + "px" } },

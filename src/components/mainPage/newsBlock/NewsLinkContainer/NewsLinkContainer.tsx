@@ -6,7 +6,7 @@ import styles from "./NewsLinkContainer.module.scss";
 interface NewsLinkContainerProps {
   isClear: boolean;
   link: INewsLink;
-  emitWidthColumn: (value: React.SetStateAction<number>) => void;
+  emitWidthColumn: (value: number) => void;
 }
 
 const NewsLinkContainer: FC<NewsLinkContainerProps> = ({ isClear, link, emitWidthColumn }) => {

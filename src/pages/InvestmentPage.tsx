@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import UserDate from "../api/useDate/useDate";
+import useDate from "../api/useDate/useDate";
 import investImage from "../assets/images/invest/InvestTop.jpg";
 import Cards from "../components/general/cards/Cards/Cards";
 import ServerError from "../components/general/ServerError/ServerError";
@@ -52,8 +52,8 @@ const InvestmentPage = () => {
   let formattedOptionsItems: IOptionItem[] = [];
   if (investmentOptions) {
     formattedOptionsItems = investmentOptions.map((item) => ({
-      date: String(UserDate.format(new Date(item.date))),
-      value: String(UserDate.format(new Date(item.date))),
+      date: String(useDate.format(new Date(item.date))),
+      value: String(useDate.format(new Date(item.date))),
       id: String(item.id),
     }));
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import UserDate from "../api/useDate/useDate";
+import useDate from "../api/useDate/useDate";
 import ServerError from "../components/general/ServerError/ServerError";
 import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
 import TripleIcon from "../components/general/TripleIcon/TripleIcon";
@@ -36,7 +36,7 @@ const NewsPage = () => {
   const formatedAnotherNews: INews[] = [...anotherNews].map((item) => ({
     id: Number(item.id),
     title: String(item.title),
-    date: String(UserDate.format(new Date(item.date))),
+    date: String(useDate.format(new Date(item.date))),
     paragraphs: item.paragraphs,
   }));
 
@@ -49,43 +49,45 @@ const NewsPage = () => {
   const formatedCurrentNews: INews[] = [...currentNews].map((item) => ({
     id: Number(item.id),
     title: String(item.title),
-    date: String(UserDate.format(new Date(item.date))),
+    date: String(useDate.format(new Date(item.date))),
     paragraphs: item.paragraphs,
   }));
 
   return (
     <div className="news-page">
-      <div className="news-page__head">
-        <div>
-          {isLoading && <ServerIsLoading />}
-          {error && <ServerError />}
-        </div>
-        <div className="news-page__container">
-          <Link
-            to="/news"
-            className="news-page__link-to-news"
-            onMouseOver={() => setHovered(true)}
-            onMouseOut={() => setHovered(false)}
-          >
-            <div className="news-page__icons">
-              <TripleIcon hovered={isHovered} light={false} icon="Arrow Down" />
-            </div>
-            <p className="news-page__link-title">К списку новостей</p>
-          </Link>
+      <>
+        {isLoading && <ServerIsLoading />}
+        {error && <ServerError />}
+      </>
 
+      <div className="news-page__container">
+        <Link
+          to="/news"
+          className="news-page__link-to-news"
+          onMouseOver={() => setHovered(true)}
+          onMouseOut={() => setHovered(false)}
+        >
+          <div className="news-page__icons">
+            <TripleIcon hovered={isHovered} light={false} icon="Arrow Down" />
+          </div>
+
+          <p className="news-page__link-title">К списку новостей</p>
+        </Link>
+
+        <>
           {formatedCurrentNews ? (
             formatedCurrentNews.map((item) => (
               <Article key={item.id} id={item.id} date={item.date} title={item.date} paragraphs={item.paragraphs} />
             ))
           ) : (
-            <div> Новости с ID {id} не найдено</div>
+            <p> Новости с ID {id} не найдено</p>
           )}
 
           {formatedAnotherNews &&
             formatedAnotherNews.map((item) => (
               <NewsLink key={item.id} date={item.date} title={item.title} id={Number(item.id)} />
             ))}
-        </div>
+        </>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import UserDate from "../../../api/useDate/useDate";
+import useDate from "../../../api/useDate/useDate";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { INews } from "../../../models/types";
 import { getNews } from "../../../store/reducers/newsReducer";
@@ -50,7 +50,7 @@ const ListNews = () => {
     return [...newsFilteredByYear].map((item) => ({
       id: Number(item.id),
       title: String(item.title),
-      date: String(UserDate.format(new Date(item.date))),
+      date: String(useDate.format(new Date(item.date))),
       paragraphs: item.paragraphs,
     }));
   }, [newsFilteredByYear]);
@@ -58,7 +58,7 @@ const ListNews = () => {
   const onClickSelector = () => {
     setRadioListVisible((prev) => !prev);
   };
-  const onChangeRadio = (value: React.SetStateAction<string>, id: string) => {
+  const onChangeRadio = (value: string, id: string) => {
     setSelectedYear(value);
     setId(id);
   };

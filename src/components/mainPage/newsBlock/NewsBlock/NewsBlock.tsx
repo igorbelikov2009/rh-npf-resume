@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
-import UserDate from "../../../../api/useDate/useDate";
+import useDate from "../../../../api/useDate/useDate";
 // import { news } from "../../../../data/newsData";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { INews } from "../../../../models/types";
@@ -48,7 +48,7 @@ const NewsBlock = () => {
   const formatedDateNews: INews[] = [...sortedNews].map((item) => ({
     id: Number(item.id),
     title: String(item.title),
-    date: String(UserDate.format(new Date(item.date))),
+    date: String(useDate.format(new Date(item.date))),
     paragraphs: item.paragraphs,
   }));
 
@@ -173,7 +173,7 @@ const NewsBlock = () => {
         {error && <ServerError />}
       </>
 
-      <div>
+      <>
         <CarouselHeader
           headerTitle="Новости"
           isBlurredLeft={isBlurredLeft}
@@ -189,7 +189,7 @@ const NewsBlock = () => {
             <MainCarousel qq={q} jj={j} carouselLinks={formatedDateNews} emitWidthColumn={getWidthColumn} />
           </div>
         </div>
-      </div>
+      </>
     </>
   );
 };

@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion"; // анимация
 import React, { FC, useState, useEffect, useContext } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import UserDate from "../api/useDate/useDate";
+import useDate from "../api/useDate/useDate";
 import NewsItem from "../components/adminPanel/NewsItem/NewsItem";
 import ServerError from "../components/general/ServerError/ServerError";
 import ServerIsLoading from "../components/general/ServerIsLoading/ServerIsLoading";
@@ -41,7 +41,7 @@ const AdminPanel = () => {
   const formatedDateNews: INews[] = [...newsSortedByDate].map((item) => ({
     id: Number(item.id),
     title: String(item.title),
-    date: String(UserDate.format(new Date(item.date))),
+    date: String(useDate.format(new Date(item.date))),
     paragraphs: item.paragraphs,
   }));
 
