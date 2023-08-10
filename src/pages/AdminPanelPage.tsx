@@ -136,7 +136,7 @@ const AdminPanel = () => {
 
         <h1 className="admin-panel__heading"> Список всех новостей </h1>
 
-        <div>
+        <>
           {formatedDateNews &&
             formatedDateNews.map((item) => (
               <NewsItem
@@ -148,7 +148,7 @@ const AdminPanel = () => {
                 handlerRemove={() => handleDeleteNews(item.id)}
               />
             ))}
-        </div>
+        </>
 
         <AnimatePresence>
           {modal && (
@@ -159,7 +159,7 @@ const AdminPanel = () => {
               style={{ overflow: "hidden" }}
             >
               <MyModal isVisible={modal} setVisible={setModal}>
-                <div>
+                <>
                   <Form.Control
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -215,7 +215,7 @@ const AdminPanel = () => {
                       </Col>
                     </Row>
                   ))}
-                </div>
+                </>
 
                 <div>
                   <Button variant="outline-success" onClick={handleAddNewsItem}>

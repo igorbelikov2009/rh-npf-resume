@@ -3,20 +3,20 @@
     position: absolute;
     left: 0px;
     color: #78828c;
+    transition: all 0.5s;
 
     top: 24px;
     font-size: 16px;
-    transition: all 0.5s;
   }
 
   &__title-top {
     position: absolute;
     left: 0px;
     color: #78828c;
+    transition: all 0.5s;
 
     top: 0px;
     font-size: 11px;
-    transition: all 0.5s;
   }
 
   &__title-else-none {
@@ -25,9 +25,9 @@
     left: 0px;
     font-size: 11px;
     color: #78828c;
-    opacity: 0;
-
     transition: all 0.01s 0.01s;
+
+    opacity: 0;
   }
 
   &__title-else-visible {
@@ -36,8 +36,8 @@
     left: 0px;
     font-size: 11px;
     color: #78828c;
-    opacity: 1;
-
     transition: all 0.01s 0.49s;
+
+    opacity: 1;
   }
 }

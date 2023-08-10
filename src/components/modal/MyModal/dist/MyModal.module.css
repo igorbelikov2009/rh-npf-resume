@@ -4,8 +4,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: none;
   background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 .myModalContent {
@@ -19,6 +21,4 @@
 
 .myModal.active {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }

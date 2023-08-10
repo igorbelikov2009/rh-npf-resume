@@ -22,7 +22,7 @@ var MenuMobil = function (_a) {
         { to: "/support#questionsAnswers", children: "Вопросы и ответы" },
     ];
     return (react_1["default"].createElement("section", { className: isVisible ? MenuMobil_module_scss_1["default"]["menu-mobil__right-20"] : MenuMobil_module_scss_1["default"]["menu-mobil__right-100"] },
-        react_1["default"].createElement("div", null,
+        react_1["default"].createElement(react_1["default"].Fragment, null,
             react_1["default"].createElement("div", { className: MenuMobil_module_scss_1["default"]["menu-mobil__logos"], onClick: function () { return navigate("/", { replace: true }); } },
                 react_1["default"].createElement(Logotypes_1["default"], { isBackgroundWhite: isBackgroundWhite })),
             topLinks.map(function (link, index) { return (react_1["default"].createElement(react_router_dom_1.Link, { to: link.to, onClick: closeMenuMobil, className: MenuMobil_module_scss_1["default"]["menu-mobil__link"], key: index }, link.children)); }),
@@ -31,11 +31,11 @@ var MenuMobil = function (_a) {
             react_1["default"].createElement("div", { className: MenuMobil_module_scss_1["default"]["menu-mobil__phone"] },
                 react_1["default"].createElement("a", { href: "tel:+78002004766", className: MenuMobil_module_scss_1["default"]["menu-mobil__link"] },
                     react_1["default"].createElement("p", { className: MenuMobil_module_scss_1["default"]["menu-mobil__phone-number"] }, "8 800 200-47-66")))),
-        react_1["default"].createElement("div", null,
+        react_1["default"].createElement(react_1["default"].Fragment, null,
             react_1["default"].createElement("p", { className: MenuMobil_module_scss_1["default"]["menu-mobil__copy-right"] }, "\u00A92009-2019 \u041D\u041F\u0424\u0420\u0435\u043D\u0435\u0441\u0441\u0430\u043D\u0441. \u041F\u0435\u043D\u0441\u0438\u0438"),
             react_1["default"].createElement("p", { className: MenuMobil_module_scss_1["default"]["menu-mobil__copy-right"] }, "\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F \u2116 383/2 \u043E\u0442 16 \u0438\u044E\u043D\u044F 2009 \u0433\u043E\u0434\u0430")),
-        react_1["default"].createElement("button", { className: MenuMobil_module_scss_1["default"]["menu-mobil__cross-switch"] },
-            react_1["default"].createElement("div", { className: MenuMobil_module_scss_1["default"]["menu-mobil__cross-image"], onClick: closeMenuMobil },
+        react_1["default"].createElement("button", { className: MenuMobil_module_scss_1["default"]["menu-mobil__button"] },
+            react_1["default"].createElement("div", { className: MenuMobil_module_scss_1["default"]["menu-mobil__icon-container"], onClick: closeMenuMobil },
                 react_1["default"].createElement(DarkIcon_1["default"], { icon: "Cross" })))));
 };
 exports["default"] = MenuMobil;

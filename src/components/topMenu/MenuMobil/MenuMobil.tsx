@@ -29,7 +29,7 @@ const MenuMobil: FC<MenuMobilProps> = ({ isVisible, closeMenuMobil }) => {
 
   return (
     <section className={isVisible ? styles["menu-mobil__right-20"] : styles["menu-mobil__right-100"]}>
-      <div>
+      <>
         <div className={styles["menu-mobil__logos"]} onClick={() => navigate("/", { replace: true })}>
           <Logotypes isBackgroundWhite={isBackgroundWhite} />
         </div>
@@ -53,16 +53,16 @@ const MenuMobil: FC<MenuMobilProps> = ({ isVisible, closeMenuMobil }) => {
             <p className={styles["menu-mobil__phone-number"]}>8 800 200-47-66</p>
           </a>
         </div>
-      </div>
+      </>
 
-      <div>
+      <>
         <p className={styles["menu-mobil__copy-right"]}>©2009-2019 НПФРенессанс. Пенсии</p>
 
         <p className={styles["menu-mobil__copy-right"]}>Лицензия № 383/2 от 16 июня 2009 года</p>
-      </div>
+      </>
 
-      <button className={styles["menu-mobil__cross-switch"]}>
-        <div className={styles["menu-mobil__cross-image"]} onClick={closeMenuMobil}>
+      <button className={styles["menu-mobil__button"]}>
+        <div className={styles["menu-mobil__icon-container"]} onClick={closeMenuMobil}>
           <DarkIcon icon="Cross" />
         </div>
       </button>

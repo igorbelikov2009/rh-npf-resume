@@ -186,11 +186,11 @@ var AdminPanel = function () {
             react_1["default"].createElement("div", { className: "admin-panel__container-input-button" },
                 react_1["default"].createElement(react_bootstrap_1.Button, { variant: modal ? "outline-danger" : "primary", onClick: handleModal }, modal ? "Закрыть панель администратора" : "Открыть панель администратора")),
             react_1["default"].createElement("h1", { className: "admin-panel__heading" }, " \u0421\u043F\u0438\u0441\u043E\u043A \u0432\u0441\u0435\u0445 \u043D\u043E\u0432\u043E\u0441\u0442\u0435\u0439 "),
-            react_1["default"].createElement("div", null, formatedDateNews &&
+            react_1["default"].createElement(react_1["default"].Fragment, null, formatedDateNews &&
                 formatedDateNews.map(function (item) { return (react_1["default"].createElement(NewsItem_1["default"], { key: item.id, id: item.id, title: item.date, date: item.date, paragraphs: item.paragraphs, handlerRemove: function () { return handleDeleteNews(item.id); } })); })),
             react_1["default"].createElement(framer_motion_1.AnimatePresence, null, modal && (react_1["default"].createElement(framer_motion_1.motion.div, { initial: { height: 0, opacity: 0 }, animate: { height: "auto", opacity: 1 }, exit: { height: 0, opacity: 0 }, style: { overflow: "hidden" } },
                 react_1["default"].createElement(MyModal_1["default"], { isVisible: modal, setVisible: setModal },
-                    react_1["default"].createElement("div", null,
+                    react_1["default"].createElement(react_1["default"].Fragment, null,
                         react_1["default"].createElement(react_bootstrap_1.Form.Control, { value: title, onChange: function (e) { return setTitle(e.target.value); }, className: "admin-panel__container-input-button", placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043D\u043E\u0432\u043E\u0441\u0442\u0435\u0439" }),
                         react_1["default"].createElement("h4", { className: "admin-panel__paragraph" }, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u0442\u0443 \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u043D\u043E\u0432\u043E\u0441\u0442\u0435\u0439"),
                         react_1["default"].createElement(react_bootstrap_1.Form.Control, { type: "date", id: "start", name: "trip-start", min: "2015-01-01", max: "2022-12-31", value: date, onChange: function (e) { return setDate(e.target.value); }, className: "admin-panel__container-input-button" }),

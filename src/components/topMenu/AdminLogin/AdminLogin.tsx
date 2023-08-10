@@ -61,73 +61,70 @@ const AdminLogin: FC<AdminLoginProps> = ({ closeAdminLogin }) => {
 
   return (
     <form className={styles["admin-login"]} onSubmit={handleSubmit(onSubmit)}>
-      <p className={styles["admin-login__admin"]}>Вы администратор?</p>
-      <div className={styles["admin-login__input-container"]}>
-        <label className={styles["my-input__label"]}>
-          <InputTitle title="Ваше имя" isDormancy={isDormancyUserName} />
+      <p className={styles["admin-login__title"]}>Вы администратор?</p>
 
-          <input
-            className={errors?.userName ? styles["my-input__field_invalid"] : styles["my-input__field"]}
-            type="text"
-            {...register("userName", {
-              required: "Это поле обязательно к заполнению",
-              onChange: (event) => {
-                setDormancyUserName(false);
-              },
-              onBlur: () => {
-                if (watch("userName").length === 0) {
-                  setDormancyUserName(true);
-                }
-              },
-              minLength: {
-                value: 3,
-                message: "Минимум 3 символов",
-              },
-            })}
-          />
+      <label className={styles["my-input__label"]}>
+        <InputTitle title="Ваше имя" isDormancy={isDormancyUserName} />
 
-          {errors?.userName && (
-            <span className={styles["my-input__error"]}>
-              <> {errors?.userName?.message || "Error!"}</>
-            </span>
-          )}
-        </label>
-      </div>
+        <input
+          className={errors?.userName ? styles["my-input__field_invalid"] : styles["my-input__field"]}
+          type="text"
+          {...register("userName", {
+            required: "Это поле обязательно к заполнению",
+            onChange: (event) => {
+              setDormancyUserName(false);
+            },
+            onBlur: () => {
+              if (watch("userName").length === 0) {
+                setDormancyUserName(true);
+              }
+            },
+            minLength: {
+              value: 3,
+              message: "Минимум 3 символов",
+            },
+          })}
+        />
 
-      <div className={styles["admin-login__input-container"]}>
-        <label className={styles["my-input__label"]}>
-          <InputTitle title="Телефон" isDormancy={isDormancyPhone} />
+        {errors?.userName && (
+          <span className={styles["my-input__error"]}>
+            <> {errors?.userName?.message || "Error!"}</>
+          </span>
+        )}
+      </label>
 
-          <input
-            className={errors?.phone ? styles["my-input__field_invalid"] : styles["my-input__field"]}
-            type="tel"
-            {...register("phone", {
-              required: "Это поле обязательно к заполнению",
-              onChange: (event) => {
-                setDormancyPhone(false);
-              },
-              onBlur: () => {
-                if (watch("phone").length === 0) {
-                  setDormancyPhone(true);
-                }
-              },
-              minLength: {
-                value: 11,
-                message: "Минимум 11 символов",
-              },
-              maxLength: {
-                value: 16,
-                message: "Максимум 16 символов",
-              },
-            })}
-          />
-          {errors?.phone && (
-            <span className={styles["my-input__error"]}>
-              <> {errors?.phone?.message || "Error!"} </>
-            </span>
-          )}
-        </label>
-      </div>
+      <label className={styles["my-input__label"]}>
+        <InputTitle title="Телефон" isDormancy={isDormancyPhone} />
+
+        <input
+          className={errors?.phone ? styles["my-input__field_invalid"] : styles["my-input__field"]}
+          type="tel"
+          {...register("phone", {
+            required: "Это поле обязательно к заполнению",
+            onChange: (event) => {
+              setDormancyPhone(false);
+            },
+            onBlur: () => {
+              if (watch("phone").length === 0) {
+                setDormancyPhone(true);
+              }
+            },
+            minLength: {
+              value: 11,
+              message: "Минимум 11 символов",
+            },
+            maxLength: {
+              value: 16,
+              message: "Максимум 16 символов",
+            },
+          })}
+        />
+        {errors?.phone && (
+          <span className={styles["my-input__error"]}>
+            <> {errors?.phone?.message || "Error!"} </>
+          </span>
+        )}
+      </label>
 
       <div className={styles["admin-login__button-container"]}>
         <InputSubmit children="Отправить" disabled={!isValid} />

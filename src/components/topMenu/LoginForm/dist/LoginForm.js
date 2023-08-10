@@ -48,7 +48,7 @@ var LoginForm = function (_a) {
     // Здесь через onSubmit мы передаём данные полей в обёртку handleSubmit()
     react_1["default"].createElement("form", { className: isVisible ? LoginForm_module_scss_1["default"]["login-form__opacity1"] : LoginForm_module_scss_1["default"]["login-form__opacity0"], onSubmit: handleSubmit(onSubmit) },
         react_1["default"].createElement("h1", { className: LoginForm_module_scss_1["default"]["login-form__heading"] }, "\u0412\u0445\u043E\u0434/\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"),
-        react_1["default"].createElement("div", { className: LoginForm_module_scss_1["default"]["login-form__block-of-forms"] },
+        react_1["default"].createElement(react_1["default"].Fragment, null,
             react_1["default"].createElement("div", { className: LoginForm_module_scss_1["default"]["login-form__input-container"] },
                 react_1["default"].createElement("label", { className: LoginForm_module_scss_1["default"]["my-input__label"] },
                     react_1["default"].createElement(InputTitle_1["default"], { title: "\u0422\u0435\u043B\u0435\u0444\u043E\u043D", isDormancy: isDormancyPhone }),

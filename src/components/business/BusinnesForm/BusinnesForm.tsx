@@ -51,9 +51,9 @@ const BusinnesForm = () => {
   return (
     <section className={styles["businnes-form"]}>
       <div className={styles["businnes-form__container"]}>
-        <h2 className={styles["businnes-form__subheading"]}>Свяжитесь с нами</h2>
+        <h2 className={styles["businnes-form__heading"]}>Свяжитесь с нами</h2>
 
-        <h1 className={styles["businnes-form__heading"]}>
+        <h1 className={styles["businnes-form__subheading"]}>
           Наши специалисты по пенсионным программам помогут составить персональную программу для сотрудников вашей
           компании
         </h1>

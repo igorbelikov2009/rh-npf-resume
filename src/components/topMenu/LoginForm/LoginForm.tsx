@@ -55,7 +55,7 @@ const LoginForm: FC<LoginFormProps> = ({ isVisible, closeLoginForm }) => {
       {/* включить проверку с обязательными или другими стандартными правилами проверки HTML */}
       <h1 className={styles["login-form__heading"]}>Вход/Регистрация</h1>
 
-      <div className={styles["login-form__block-of-forms"]}>
+      <>
         <div className={styles["login-form__input-container"]}>
           <label className={styles["my-input__label"]}>
             <InputTitle title="Телефон" isDormancy={isDormancyPhone} />
@@ -100,7 +100,7 @@ const LoginForm: FC<LoginFormProps> = ({ isVisible, closeLoginForm }) => {
         <div className={styles["login-form__button-container"]}>
           <InputSubmit children="Продолжить" disabled={!isValid || !isAgree} />
         </div>
-      </div>
+      </>
 
       <p className={styles["login-form__title"]}>
         Вход для клиентов

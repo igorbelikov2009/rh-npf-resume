@@ -4,9 +4,10 @@
   line-height: 23px;
   padding: 24px 0 8px;
   color: #28323c;
-  border-bottom: 1px solid #b5bdc8;
   box-sizing: border-box;
   cursor: pointer;
+
+  border-bottom: 1px solid #b5bdc8;
 
   &:hover {
     line-height: 22px;
@@ -25,9 +26,10 @@
   line-height: 23px;
   padding: 24px 0 8px;
   color: #28323c;
-  border-bottom: 1px solid red;
   box-sizing: border-box;
   cursor: pointer;
+
+  border-bottom: 1px solid #f20707;
 
   &:hover {
     line-height: 22px;

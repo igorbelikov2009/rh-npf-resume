@@ -16,16 +16,14 @@ const InputField: FC<InputFieldProps> = ({ type, name, isError, emitBlur, emitFo
   };
 
   return (
-    <>
-      <input
-        type={type}
-        name={name}
-        onFocus={emitFocus}
-        onBlur={emitBlur}
-        onChange={handlerInput}
-        className={isError ? styles["my-input__field_invalid"] : styles["my-input__field"]}
-      />
-    </>
+    <input
+      type={type}
+      name={name}
+      onFocus={emitFocus}
+      onBlur={emitBlur}
+      onChange={handlerInput}
+      className={isError ? styles["my-input__field_invalid"] : styles["my-input__field"]}
+    />
   );
 };
 

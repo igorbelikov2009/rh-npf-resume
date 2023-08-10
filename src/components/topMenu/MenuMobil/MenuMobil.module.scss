@@ -93,10 +93,6 @@
     }
   }
 
-  &__phone-link {
-    text-decoration: none;
-  }
-
   &__phone-number {
     font-size: 18px;
   }
@@ -106,7 +102,7 @@
     color: #5a646e;
   }
 
-  &__cross-switch {
+  &__button {
     width: 24px;
     height: 24px;
     line-height: 12px;
@@ -125,7 +121,7 @@
     }
   }
 
-  &__cross-image {
+  &__icon-container {
     width: 24px;
     height: 24px;
   }

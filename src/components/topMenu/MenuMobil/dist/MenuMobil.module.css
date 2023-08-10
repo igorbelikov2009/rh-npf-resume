@@ -83,9 +83,6 @@
     margin-bottom: 48px;
   }
 }
-.menu-mobil__phone-link {
-  text-decoration: none;
-}
 .menu-mobil__phone-number {
   font-size: 18px;
 }
@@ -93,7 +90,7 @@
   font-size: 11px;
   color: #5a646e;
 }
-.menu-mobil__cross-switch {
+.menu-mobil__button {
   width: 24px;
   height: 24px;
   line-height: 12px;
@@ -103,15 +100,15 @@
   left: 20px;
 }
 @media screen and (min-width: 576px) {
-  .menu-mobil__cross-switch {
+  .menu-mobil__button {
     top: 24px;
     left: 24px;
   }
 }
-.menu-mobil__cross-switch:hover {
+.menu-mobil__button:hover {
   border: 1px solid #50287d;
 }
-.menu-mobil__cross-image {
+.menu-mobil__icon-container {
   width: 24px;
   height: 24px;
 }

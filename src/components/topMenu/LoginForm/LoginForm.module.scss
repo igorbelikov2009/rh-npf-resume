@@ -10,10 +10,10 @@
     left: 50%;
     background: #f3f5f7;
     box-shadow: 0px 4px 6px rgba(26, 65, 101, 0.15);
+    transition: all 0.5s ease;
 
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
-    transition: all 0.5s ease;
 
     @media screen and (min-width: 450px) {
       padding: 76px;
@@ -35,14 +35,10 @@
     left: 50%;
     background: #f3f5f7;
     box-shadow: 0px 4px 6px rgba(26, 65, 101, 0.15);
+    transition: all 0.5s ease;
 
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.01);
-    // // ниже удалить
-    // opacity: 1;
-    // transform: translate(-50%, -50%) scale(1);
-    // // выше удалить
-    transition: all 0.5s ease;
 
     @media screen and (min-width: 450px) {
       padding: 76px;
@@ -59,10 +55,6 @@
     color: black;
     text-align: center;
     margin-bottom: 36px;
-  }
-
-  &__block-of-forms {
-    width: 100%;
   }
 
   &__input-container {

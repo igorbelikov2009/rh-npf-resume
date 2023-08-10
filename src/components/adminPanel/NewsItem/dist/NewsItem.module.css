@@ -4,6 +4,13 @@
   border-top: 1px solid #e4e4e4;
   padding: 24px;
 }
+.news-item__id {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #28323c;
+}
 .news-item__title {
   display: block;
   margin-bottom: 24px;
@@ -16,13 +23,6 @@
     font-size: 34px;
     line-height: 48px;
   }
-}
-.news-item__id {
-  display: block;
-  margin-bottom: 18px;
-  font-size: 14px;
-  line-height: 18px;
-  color: #28323c;
 }
 .news-item__date {
   display: block;

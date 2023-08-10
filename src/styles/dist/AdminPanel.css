@@ -23,15 +23,6 @@
 .admin-panel__container-input-button {
   margin-bottom: 12px;
 }
-.admin-panel__input {
-  border: 1px solid #28323c;
-  margin-bottom: 36px;
-}
-.admin-panel__button {
-  border: 1px solid #28323c;
-  margin-left: 36px;
-  margin-bottom: 36px;
-}
 .admin-panel__heading {
   display: block;
   width: 100%;
